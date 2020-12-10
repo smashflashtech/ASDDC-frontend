@@ -27,9 +27,9 @@ export default (
   // <div>
   <Switch>
     <Route exact path='/' component={Home} />
-    <Route path='/urlconstructor' component={Urlconstructor} />
+    {/* <Route path='/urlconstructor' component={Urlconstructor} /> */}
     <Route path='/particpant/:id' component={ParticipantInfo} />
-    <Route path='/:group/:participantId/:dyadL/:dyadN' component={ParticipantStart} />
+    {/* <Route path='/:group/:participantId/:dyadL/:dyadN' component={ParticipantStart} /> */}
     <Route path='/dct' component={Dct} />
     {/* <Route path='/tp' component={TactProbe} /> */}
     <Route path='/tsf/' component={Tsf} />
