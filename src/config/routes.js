@@ -11,7 +11,7 @@ export default (
   // <div>
   <Switch>
     <Route exact path='/' component={Home} />
-    <Route path='/dct' component={ParticipantInfo} />
+    <Route path='/participantinfo' component={ParticipantInfo} />
     <Route path='/dct' component={Dct} />
   </Switch>
   // </div>
