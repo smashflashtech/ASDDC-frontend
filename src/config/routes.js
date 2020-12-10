@@ -26,7 +26,6 @@ import UrlConstructor from "../pages/UrlConstructor";
 
 //exporting routes
 export default (
-  // <div>
   <Switch>
     <Route exact path='/' component={Home} />
     <Route path='/urlconstructor' component={UrlConstructor} />
@@ -48,5 +47,4 @@ export default (
     <Route path='/novelpst/' component={NovelPST} />
     <Route path='/exitsurvey/' component={ExitSurvey} />
   </Switch>
-  // </div>
 );
