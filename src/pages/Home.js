@@ -29,20 +29,20 @@ const [response, setResponse] = useState("")
       <ol>
       <li>Instructions:
           <ul>
-            <li><Link to="/instructions/amts">amts</Link></li>
-            <li><Link to="/instructions/dct">dct</Link></li>
-            <li><Link to="/instructions/evotiv">evotiv</Link></li>
-            <li><Link to="/instructions/evott">evott</Link></li>
-            <li><Link to="/instructions/namts">namts</Link></li>
-            <li><Link to="/instructions/npst">npst</Link></li>
-            <li><Link to="/instructions/psvotiv">psvotiv</Link></li>
-            <li><Link to="/instructions/psvotps">psvotps</Link></li>
-            <li><Link to="/instructions/psvott">psvott</Link></li>
-            <li><Link to="/instructions/sdisc">sdisc</Link></li>
-            <li><Link to="/instructions/spair">spair</Link></li>
-            <li><Link to="/instructions/tat">tat</Link></li>
-            <li><Link to="/instructions/tp">tp</Link></li>
-            <li><Link to="/instructions/tsf">tsf</Link></li>
+            <li><Link to="/instructions/amts/0">amts</Link></li>
+            <li><Link to="/instructions/dct/0">dct</Link></li>
+            <li><Link to="/instructions/evotiv/0">evotiv</Link></li>
+            <li><Link to="/instructions/evott/0">evott</Link></li>
+            <li><Link to="/instructions/namts/A">namts</Link></li>
+            <li><Link to="/instructions/npst/0">npst</Link></li>
+            <li><Link to="/instructions/psvotiv/0">psvotiv</Link></li>
+            <li><Link to="/instructions/psvotps/0">psvotps</Link></li>
+            <li><Link to="/instructions/psvott/0">psvott</Link></li>
+            <li><Link to="/instructions/sdisc/0">sdisc</Link></li>
+            <li><Link to="/instructions/spair/0">spair</Link></li>
+            <li><Link to="/instructions/tat/0">tat</Link></li>
+            <li><Link to="/instructions/tp/0">tp</Link></li>
+            <li><Link to="/instructions/tsf/0">tsf</Link></li>
           </ul>
       </li>
       <li><Link to="/dct">DCT</Link></li>
