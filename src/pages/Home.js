@@ -27,6 +27,24 @@ const [response, setResponse] = useState("")
 
 
       <ol>
+      <li>Instructions:
+          <ul>
+            <li><Link to="/instructions/amts">amts</Link></li>
+            <li><Link to="/instructions/dct">dct</Link></li>
+            <li><Link to="/instructions/evotiv">evotiv</Link></li>
+            <li><Link to="/instructions/evott">evott</Link></li>
+            <li><Link to="/instructions/namts">namts</Link></li>
+            <li><Link to="/instructions/npst">npst</Link></li>
+            <li><Link to="/instructions/psvotiv">psvotiv</Link></li>
+            <li><Link to="/instructions/psvotps">psvotps</Link></li>
+            <li><Link to="/instructions/psvott">psvott</Link></li>
+            <li><Link to="/instructions/sdisc">sdisc</Link></li>
+            <li><Link to="/instructions/spair">spair</Link></li>
+            <li><Link to="/instructions/tat">tat</Link></li>
+            <li><Link to="/instructions/tp">tp</Link></li>
+            <li><Link to="/instructions/tsf">tsf</Link></li>
+          </ul>
+      </li>
       <li><Link to="/dct">DCT</Link></li>
       <li><Link to="/tp">TactProbe</Link></li>
       <li><Link to="/tsf">Tsf</Link></li>

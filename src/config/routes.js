@@ -21,6 +21,7 @@ import Psvotps from "../pages/Psvotps";
 import Npst from "../pages/Npst";
 import ExitSurvey from "../pages/ExitSurvey";
 import UrlConstructor from "../pages/UrlConstructor";
+import Instructions from "../pages/Instructions";
 
 
 
@@ -31,20 +32,21 @@ export default (
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/particpant/:id' component={ParticipantInfo} />
     <Route path='/:group/:participantId/:dyadL/:dyadN' component={ParticipantStart} />
-    <Route path='/dct' component={Dct} />
-    <Route path='/tp' component={Tp} />
-    <Route path='/tsf' component={Tsf} />
-    <Route path='/namts/:set' component={Namts} />
+    <Route path='/instructions/:phase' component={Instructions} />
     <Route path='/amts' component={Amts} />
-    <Route path='/tat' component={Tat} />
-    <Route path='/spair' component={SPair} />
-    <Route path='/sdisc' component={SDisc} />
-    <Route path='/evott' component={Evott} />
+    <Route path='/dct' component={Dct} />
     <Route path='/evotiv' component={Evotiv} />
-    <Route path='/psvott' component={Psvott} />
+    <Route path='/evott' component={Evott} />
+    <Route path='/namts/:set' component={Namts} />
+    <Route path='/npst' component={Npst} />
     <Route path='/psvotiv' component={Psvotiv} />
     <Route path='/psvotps' component={Psvotps} />
-    <Route path='/npst' component={Npst} />
+    <Route path='/psvott' component={Psvott} />
+    <Route path='/spair' component={SPair} />
+    <Route path='/sdisc' component={SDisc} />
+    <Route path='/tat' component={Tat} />
+    <Route path='/tp' component={Tp} />
+    <Route path='/tsf' component={Tsf} />
     <Route path='/exitsurvey' component={ExitSurvey} />
   </Switch>
 );
