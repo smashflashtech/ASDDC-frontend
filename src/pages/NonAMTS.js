@@ -2,35 +2,38 @@ import React, { useState, useEffect } from 'react'
 import NonamtsModel from '../models/nonamts'
 
 const NonAMTS = (props) => {
+  const [comparison, setComparison] = useState()
   const [set, setSet] = useState(props.match.params.set)
   const [instructions, setInstructions] = useState()
   const [os, setOs] = useState()
-  const [sample, setSample] = useState()
+  // const [sample, setSample] = useState()
   const [trials, setTrials] = useState()
-  const [pretest, setPretest] = useState()
-  const [posttest, setPostest] = useState()
+  // const [pretest, setPretest] = useState() //criteria not yet added to json file on the backend
+  // const [posttest, setPostest] = useState()
 
   const fetchStimuli=() => {
     NonamtsModel.stimuli(set).then((data)=>{
-      console.log(data.namts)
+      
       //constructs the image path string
-      // setSample(require(`../stimuli/${data.dct.trials[0][0].imagePath}`).default)
+      setComparison(require(`../stimuli/${data.namts.trials[0][1].imagePath}`).default)
 
       // //these need to be passed as props
-      // setInstructions(data.dct.instructions)
-      // setOs(data.dct.observingStim)
-      // setTrials(data.dct.trials)
-      // setPretest(data.dct.masteryCriterion.preTest.percentage)
-      // setPostest(data.dct.masteryCriterion.postTest.percentage)
+      setInstructions(data.namts.instructions)
+      setOs(data.namts.observingStim)
+      setTrials(data.namts.trials)
+      // setPretest(data.namts.masteryCriterion.preTest.percentage)
+      // setPostest(data.namts.masteryCriterion.postTest.percentage)
       })
   }
-
   useEffect( () => { fetchStimuli() },[])
-
+  
+  console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
+  console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
+  console.log("~~~~~~~~~~~~~~~~~~~~~~~", instructions)
 
   return (
     <div>
-      
+            { comparison !== undefined ? <img src= { comparison } /> : "" }
     </div>
   )
 }
