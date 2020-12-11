@@ -30,35 +30,35 @@ const [response, setResponse] = useState("")
       <li><Link to="/dct">DCT</Link></li>
       <li><Link to="/tp">TactProbe</Link></li>
       <li><Link to="/tsf">Tsf</Link></li>
-      <li>NonAMTS
+      <li>Non-Arbitrary MTS
           <ul>
-            <li><Link to="/nonamts/A">NonAMTS - SET A</Link></li>
-            <li><Link to="/nonamts/B">NonAMTS - SET B</Link></li>
-            <li><Link to="/nonamts/C">NonAMTS - SET C</Link></li>
-            <li><Link to="/nonamts/D">NonAMTS - SET D</Link></li>
-            <li><Link to="/nonamts/E">NonAMTS - SET E</Link></li>
-            <li><Link to="/nonamts/F">NonAMTS - SET F</Link></li>
-            <li><Link to="/nonamts/G">NonAMTS - SET G</Link></li>
-            <li><Link to="/nonamts/H">NonAMTS - SET H</Link></li>
-            <li><Link to="/nonamts/I">NonAMTS - SET I</Link></li>
-            <li><Link to="/nonamts/J">NonAMTS - SET J</Link></li>
-            <li><Link to="/nonamts/K">NonAMTS - SET K</Link></li>
-            <li><Link to="/nonamts/L">NonAMTS - SET L</Link></li>
-            <li><Link to="/nonamts/M">NonAMTS - SET M</Link></li>
-            <li><Link to="/nonamts/N">NonAMTS - SET N</Link></li>
-            <li><Link to="/nonamts/O">NonAMTS - SET O</Link></li>
+            <li><Link to="/namts/A">NAMTS - SET A</Link></li>
+            <li><Link to="/namts/B">NAMTS - SET B</Link></li>
+            <li><Link to="/namts/C">NAMTS - SET C</Link></li>
+            <li><Link to="/namts/D">NAMTS - SET D</Link></li>
+            <li><Link to="/namts/E">NAMTS - SET E</Link></li>
+            <li><Link to="/namts/F">NAMTS - SET F</Link></li>
+            <li><Link to="/namts/G">NAMTS - SET G</Link></li>
+            <li><Link to="/namts/H">NAMTS - SET H</Link></li>
+            <li><Link to="/namts/I">NAMTS - SET I</Link></li>
+            <li><Link to="/namts/J">NAMTS - SET J</Link></li>
+            <li><Link to="/namts/K">NAMTS - SET K</Link></li>
+            <li><Link to="/namts/L">NAMTS - SET L</Link></li>
+            <li><Link to="/namts/M">NAMTS - SET M</Link></li>
+            <li><Link to="/namts/N">NAMTS - SET N</Link></li>
+            <li><Link to="/namts/O">NAMTS - SET O</Link></li>
           </ul>
       </li>
-      <li><Link to="/amts">ArbMTS</Link></li>
+      <li><Link to="/amts">Arbitrary MTS</Link></li>
       <li><Link to="/tat">Tat</Link></li>
       <li><Link to="/spair">SPair</Link></li>
       <li><Link to="/sdisc">SDisc</Link></li>
-      <li><Link to="/evott">EvotT</Link></li>
-      <li><Link to="/evotiv">EvotIV</Link></li>
-      <li><Link to="/psvott">PsvotT</Link></li>
-      <li><Link to="/psvotiv">PsvotIV</Link></li>
-      <li><Link to="/psvotps">PsvotPS</Link></li>
-      <li><Link to="/novelpst">NovelPST</Link></li>
+      <li><Link to="/evott">Evot T</Link></li>
+      <li><Link to="/evotiv">Evot IV</Link></li>
+      <li><Link to="/psvott">Psvot T</Link></li>
+      <li><Link to="/psvotiv">Psvot IV</Link></li>
+      <li><Link to="/psvotps">Psvot PS</Link></li>
+      <li><Link to="/npst">Novel PST</Link></li>
       <li><Link to="/exitsurvey">ExitSurvey</Link></li>
       </ol>
     </div>

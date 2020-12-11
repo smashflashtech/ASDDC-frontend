@@ -1,6 +1,6 @@
 const url = `http://localhost:5000`
 
-class NonamtsModel {
+class NamtsModel {
 
   static stimuli = (set) => {
     return fetch(`${url}/nonamts/${set}`).then(res => res.json())
@@ -8,4 +8,4 @@ class NonamtsModel {
 
 }
 
-export default NonamtsModel
+export default NamtsModel

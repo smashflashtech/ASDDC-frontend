@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import EvotIVModel from '../models/evotiv'
+import EvotivModel from '../models/evotiv'
 
-const EvotIV = () => {
+const Evotiv = () => {
   const [comparison, setComparison] = useState()
   const [instructions, setInstructions] = useState()
   // const [os, setOs] = useState()
@@ -11,7 +11,7 @@ const EvotIV = () => {
   // const [posttest, setPostest] = useState()
 
   const fetchStimuli=() => {
-    EvotIVModel.stimuli().then((data)=>{
+    EvotivModel.stimuli().then((data)=>{
       
       //constructs the image path string
       // setComparison(require(`../stimuli/${data.evotiv.trials[0][1].imagePath}`).default)
@@ -37,4 +37,4 @@ const EvotIV = () => {
     </div>
   )
 }
-export default EvotIV
+export default Evotiv

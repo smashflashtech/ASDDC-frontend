@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PsvottModel from '../models/psvott'
 
-const PsvotT = () => {
+const Psvott = () => {
   const [comparison, setComparison] = useState()
   const [instructions, setInstructions] = useState()
   // const [os, setOs] = useState()
@@ -39,4 +39,4 @@ const PsvotT = () => {
 }
 
 
-export default PsvotT
+export default Psvott

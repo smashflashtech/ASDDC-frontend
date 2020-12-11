@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import NonamtsModel from '../models/nonamts'
+import AmtsModel from '../models/amts'
 
-const NonAMTS = (props) => {
+const Amts = () => {
   const [comparison, setComparison] = useState()
-  const [set, setSet] = useState(props.match.params.set)
   const [instructions, setInstructions] = useState()
   const [os, setOs] = useState()
   // const [sample, setSample] = useState()
@@ -12,17 +11,17 @@ const NonAMTS = (props) => {
   // const [posttest, setPostest] = useState()
 
   const fetchStimuli=() => {
-    NonamtsModel.stimuli(set).then((data)=>{
+    AmtsModel.stimuli().then((data)=>{
       
       //constructs the image path string
-      setComparison(require(`../stimuli/${data.namts.trials[0][1].imagePath}`).default)
+      setComparison(require(`../stimuli/${data.amts.trials[0][1].imagePath}`).default)
 
       // //these need to be passed as props
-      setInstructions(data.namts.instructions)
-      setOs(data.namts.observingStim)
-      setTrials(data.namts.trials)
-      // setPretest(data.namts.masteryCriterion.preTest.percentage)
-      // setPostest(data.namts.masteryCriterion.postTest.percentage)
+      setInstructions(data.amts.instructions)
+      setOs(data.amts.observingStim)
+      setTrials(data.amts.trials)
+      // setPretest(data.amts.masteryCriterion.preTest.percentage)
+      // setPostest(data.amts.masteryCriterion.postTest.percentage)
       })
   }
   useEffect( () => { fetchStimuli() },[])
@@ -38,4 +37,5 @@ const NonAMTS = (props) => {
   )
 }
 
-export default NonAMTS
+
+export default Amts

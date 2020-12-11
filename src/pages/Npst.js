@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NpstModel from '../models/npst'
 
-const NovelPST = () => {
+const Npst = () => {
   const [comparison, setComparison] = useState()
   const [instructions, setInstructions] = useState()
   // const [os, setOs] = useState()
@@ -38,4 +38,4 @@ const NovelPST = () => {
   )
 }
 
-export default NovelPST
+export default Npst

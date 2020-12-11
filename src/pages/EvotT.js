@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import EvotTModel from '../models/evott'
+import EvottModel from '../models/evott'
 
-const EvotT = () => {
+const Evott = () => {
   const [comparison, setComparison] = useState()
   const [instructions, setInstructions] = useState()
   // const [os, setOs] = useState()
@@ -11,7 +11,7 @@ const EvotT = () => {
   // const [posttest, setPostest] = useState()
 
   const fetchStimuli=() => {
-    EvotTModel.stimuli().then((data)=>{
+    EvottModel.stimuli().then((data)=>{
       
       //constructs the image path string
       // setComparison(require(`../stimuli/${data.evott.trials[0][1].imagePath}`).default)
@@ -38,4 +38,4 @@ const EvotT = () => {
   )
 }
 
-export default EvotT
+export default Evott
