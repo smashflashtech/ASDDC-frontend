@@ -18,19 +18,26 @@ const SplitScreen = (props) => {
   const [i, setI] = useState(0)
   const [samplePath, setSamplePath] = useState(props.trials[i][0])
 
+
+
+
+
+
+
+
   return (
     <div id="container">
-      <div class="top">
-        <div class="sample-container">
-          {/* <img class="os-sample" src={src} /> */}
-          <img class="os-sample" src={samplePath} value={props.trials[i][1]}/>
+      <div className="top">
+        <div className="sample-container">
+          {/* <img className="os-sample" src={src} /> */}
+          <img className="os-sample" src={samplePath} value={props.trials[i][1]}/>
         </div>
       </div>
-      <div class="bottom">
-        <div class="comparison-container">
-          <img src={props.trials[i][2]} class={props.trials[i][3]} value={props.trials[i][4]}/>
-          <img src={props.trials[i][5]} class={props.trials[i][6]} value={props.trials[i][7]}/>
-          <img src={props.trials[i][8]} class={props.trials[i][9]} value={props.trials[i][10]}/>
+      <div className="bottom">
+        <div className="comparison-container">
+          <img src={props.trials[i][2]} className={props.trials[i][3]} value={props.trials[i][4]}/>
+          <img src={props.trials[i][5]} className={props.trials[i][6]} value={props.trials[i][7]}/>
+          <img src={props.trials[i][8]} className={props.trials[i][9]} value={props.trials[i][10]}/>
         </div>
       </div>
     </div>
