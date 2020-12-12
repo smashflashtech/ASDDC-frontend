@@ -33,20 +33,20 @@ export default (
     <Route path='/particpant/:id' component={ParticipantInfo} />
     <Route path='/:group/:participantId/:dyadL/:dyadN' component={ParticipantStart} />
     <Route path='/instructions/:phase/:set' component={Instructions} />
-    <Route path='/amts' component={Amts} />
-    <Route path='/dct/:condition' component={Dct} />
-    <Route path='/evotiv' component={Evotiv} />
-    <Route path='/evott' component={Evott} />
-    <Route path='/namts/:set' component={Namts} />
-    <Route path='/npst' component={Npst} />
-    <Route path='/psvotiv' component={Psvotiv} />
-    <Route path='/psvotps' component={Psvotps} />
-    <Route path='/psvott' component={Psvott} />
-    <Route path='/spair' component={SPair} />
-    <Route path='/sdisc' component={SDisc} />
-    <Route path='/tat' component={Tat} />
-    <Route path='/tp/:condition' component={Tp} />
-    <Route path='/tsf/:condition' component={Tsf} />
+    <Route path='/amts/:block' component={Amts} />
+    <Route path='/dct/:block' component={Dct} />
+    <Route path='/evotiv/:block' component={Evotiv} />
+    <Route path='/evott/:block' component={Evott} />
+    <Route path='/namts/:set/:block' component={Namts} />
+    <Route path='/npst/:block' component={Npst} />
+    <Route path='/psvotiv/:block' component={Psvotiv} />
+    <Route path='/psvotps/:block' component={Psvotps} />
+    <Route path='/psvott/:block' component={Psvott} />
+    <Route path='/spair/:block' component={SPair} />
+    <Route path='/sdisc/:block' component={SDisc} />
+    <Route path='/tat/:block' component={Tat} />
+    <Route path='/tp/:block' component={Tp} />
+    <Route path='/tsf/:block' component={Tsf} />
     <Route path='/exitsurvey' component={ExitSurvey} />
   </Switch>
 );
