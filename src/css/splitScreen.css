@@ -21,3 +21,22 @@
   height: 50vh;
   background-color: rgb(255, 245, 136);
 }
+
+/* Sample Display */
+.os-sample{
+  width: 12vw;
+}
+
+
+/* Comparison Display */
+.left{
+  width: 12vw;
+}
+
+.center{
+  width: 12vw;
+}
+
+.right{
+  width: 12vw;
+}
