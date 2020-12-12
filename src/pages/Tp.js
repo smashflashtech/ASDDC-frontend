@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import SplitScreen from '../components/SplitScreen'
 import TpModel from '../models/tp'
 
 const Tp = () => {
@@ -10,9 +11,9 @@ const Tp = () => {
   // const [pretest, setPretest] = useState() //criteria not yet added to json file on the backend
   // const [posttest, setPostest] = useState()
 
-  const fetchStimuli=() => {
-    TpModel.stimuli().then((data)=>{
-      
+  const fetchStimuli = () => {
+    TpModel.stimuli().then((data) => {
+
       //constructs the image path string
       // setComparison(require(`../stimuli/${data.tp.trials[0][1].imagePath}`).default)
 
@@ -22,18 +23,17 @@ const Tp = () => {
       // setTrials(data.tp.trials)
       // setPretest(data.tp.masteryCriterion.preTest.percentage)
       // setPostest(data.tp.masteryCriterion.postTest.percentage)
-      })
+    })
   }
-  useEffect( () => { fetchStimuli() },[])
-  
+  useEffect(() => { fetchStimuli() }, [])
+
   // console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
   // console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", instructions)
+  //console.log("~~~~~~~~~~~~~~~~~~~~~~~", instructions)
 
   return (
     <div>
-      Instructions: {instructions}
-            {/* { comparison !== undefined ? <img src= { comparison } /> : "" } */}
+      <SplitScreen />
     </div>
   )
 }

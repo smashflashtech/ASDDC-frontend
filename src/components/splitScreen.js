@@ -1,11 +1,13 @@
 import React from 'react'
+import "../css/splitScreen.css";
 
-const splitScreen = () => {
+const SplitScreen = () => {
   return (
-    <div>
-      
+    <div id="container">
+      <div class="top">top</div>
+      <div class="bottom">bottom</div>
     </div>
   )
 }
 
-export default splitScreen
+export default SplitScreen
