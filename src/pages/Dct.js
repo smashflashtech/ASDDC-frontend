@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import DctModel from '../models/dct'
-import orange from '../stimuli/orange.jpg'
-// import small from '../stimuli/small.jpg'
-// import medium from '../stimuli/medium.jpg'
-// import large from '../stimuli/large.jpg'
-// import green from '../stimuli/green.jpg'
-// import purple from '../stimuli/purple.jpg'
-// import blue from '../stimuli/blue.jpg'
-// import red from '../stimuli/red.jpg'
+import SplitScreen from '../components/SplitScreen'
 
 const Dct = () => {
   const [instructions, setInstructions] = useState()
@@ -37,8 +30,10 @@ const Dct = () => {
   //THIS IS LIKELY GOING TO BE PASS DOWN TO COMPONENTS WHEN YOU WORK IT OUT
   return (
     <div>
-      { sample !== undefined ? <img src= { sample } /> : "" }
-      <img src= {orange} />
+      {/* { sample !== undefined ? <img src= { sample } /> : "" }
+      <img src= {orange} /> */}
+      {console.log(os)}
+      { os !== undefined ? <SplitScreen os={os} /> : "" } 
     </div>
   )
 }

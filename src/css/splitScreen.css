@@ -12,6 +12,9 @@
 .top {
   height: 50vh;
   background-color: rgb(154, 216, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .bottom{
