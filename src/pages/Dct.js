@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import DctModel from '../models/dct'
 import SplitScreen from '../components/SplitScreen'
 
-const Dct = () => {
+const Dct = (props) => {
   const [trials, setTrials] = useState()
 
   const [os, setOs] = useState()
@@ -57,7 +57,7 @@ const Dct = () => {
       {/* { sample !== undefined ? <img src= { sample } /> : "" }
       <img src= {orange} /> */}
       { console.log(trials)}
-      { os !== undefined ? <SplitScreen os={os} trials={trials} trials={trials}/> : "" } 
+      { os !== undefined ? <SplitScreen os={os} trials={trials} trials={trials} block={props.match.params.block}/> : "" } 
     </div>
   )
 }
