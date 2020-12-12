@@ -7,7 +7,7 @@ const SplitScreen = (props) => {
   const [src, setSrc] = useState(require(`../stimuli/${props.os.imagePath}`).default)
 
   //these are set on a trial by trial basis
-  const [samplePath, setSamplePath] = useState()
+  const [samplePath, setSamplePath] = useState(props.trials[0])
   const [comparisonArray, setComparisonArray] = useState([])//constructor will set this as jsx
   //phase trackinig logic
   const [block, setBlock] = useState(1)
@@ -47,11 +47,15 @@ const SplitScreen = (props) => {
     <div id="container">
       <div class="top">
         <div class="sample-container">
-          <img class="os-sample" src={src} />
+          {/* <img class="os-sample" src={src} /> */}
+          <img class="os-sample" src={props.trials[0]} />
         </div>
       </div>
       <div class="bottom">
         <div class="comparison-container">
+        <img class={props.trials[4]} src={props.trials[1]} />
+        <img class={props.trials[5]} src={props.trials[2]} />
+        <img class={props.trials[6]} src={props.trials[3]} />
         </div>
       </div>
     </div>
