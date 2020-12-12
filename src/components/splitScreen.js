@@ -8,7 +8,7 @@ const SplitScreen = (props) => {
   return (
     <div id="container">
       <div class="top">
-        <SampleDisplay os={props.os}/>
+        <SampleDisplay os={props.os} samplePath={props.samplePath}/>
       </div>
       <div class="bottom">
       <ComparisonDisplay/>

@@ -5,7 +5,7 @@ import SplitScreen from '../components/SplitScreen'
 const Dct = () => {
   const [instructions, setInstructions] = useState()
   const [os, setOs] = useState()
-  const [sample, setSample] = useState()
+  const [samplePath, setSamplePath] = useState()
   const [trials, setTrials] = useState()
   const [pretest, setPretest] = useState()
   const [posttest, setPostest] = useState()
@@ -14,7 +14,7 @@ const Dct = () => {
     DctModel.stimuli().then((data)=>{
       console.log(data.dct)
       //constructs the image path string
-      setSample(require(`../stimuli/${data.dct.trials[0][0].imagePath}`).default)
+      setSamplePath(require(`../stimuli/${data.dct.trials[0][0].imagePath}`).default)
 
       //these need to be passed as props
       setInstructions(data.dct.instructions)
@@ -33,7 +33,7 @@ const Dct = () => {
       {/* { sample !== undefined ? <img src= { sample } /> : "" }
       <img src= {orange} /> */}
       {console.log(os)}
-      { os !== undefined ? <SplitScreen os={os} /> : "" } 
+      { os !== undefined ? <SplitScreen os={os} samplePath={samplePath}/> : "" } 
     </div>
   )
 }
