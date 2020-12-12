@@ -19,24 +19,16 @@ const Dct = () => {
         const temp = []
         const sample = require(`../stimuli/${data.dct.trials[i][0].imagePath}`).default
         temp.push(sample)
+        const trialCode = data.dct.trials[i][0].trialCode
+        temp.push(trialCode)
         for(let j = 1; j < data.dct.trials[i].length; j++) {
           let comparison = require(`../stimuli/${data.dct.trials[i][j].imagePath}`).default
           temp.push(comparison)
           let position = data.dct.trials[i][j].class
           temp.push(position)
+          let value = data.dct.trials[i][j].value
+          temp.push(value)
         }
-        // const comparison1 = require(`../stimuli/${data.dct.trials[i][1].imagePath}`).default
-        // const comparison2 = require(`../stimuli/${data.dct.trials[i][2].imagePath}`).default
-        // const comparison3 = require(`../stimuli/${data.dct.trials[i][3].imagePath}`).default
-        // const position1 = data.dct.trials[i][1].class
-        // const position2 = data.dct.trials[i][2].class
-        // const position3 = data.dct.trials[i][3].class
-        // temp.push(comparison1)
-        // temp.push(comparison2)
-        // temp.push(comparison3)
-        // temp.push(position1)
-        // temp.push(position2)
-        // temp.push(position3)
         megaStimulusBank.push(temp)
       }
       setTrials(megaStimulusBank)
