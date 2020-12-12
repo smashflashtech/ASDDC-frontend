@@ -34,7 +34,7 @@ export default (
     <Route path='/:group/:participantId/:dyadL/:dyadN' component={ParticipantStart} />
     <Route path='/instructions/:phase/:set' component={Instructions} />
     <Route path='/amts' component={Amts} />
-    <Route path='/dct' component={Dct} />
+    <Route path='/dct/:condition' component={Dct} />
     <Route path='/evotiv' component={Evotiv} />
     <Route path='/evott' component={Evott} />
     <Route path='/namts/:set' component={Namts} />
@@ -45,8 +45,8 @@ export default (
     <Route path='/spair' component={SPair} />
     <Route path='/sdisc' component={SDisc} />
     <Route path='/tat' component={Tat} />
-    <Route path='/tp' component={Tp} />
-    <Route path='/tsf' component={Tsf} />
+    <Route path='/tp/:condition' component={Tp} />
+    <Route path='/tsf/:condition' component={Tsf} />
     <Route path='/exitsurvey' component={ExitSurvey} />
   </Switch>
 );

@@ -19,39 +19,24 @@ const Home = () => {
 
   return (
     <div>
-    <h1>Help me graduate.</h1>
+      <h1>Help me graduate.</h1>
       <h4>Response: {response}</h4>
 
-      
+
       <h3>Researcher Tools:</h3>
       <ul>
         <li><Link to="/urlconstructor">UrlConstructor</Link></li>
         <li><Link to="/particpant/1">Participant ONE Info</Link></li>
       </ul>
-      <h3>Instructions:</h3>
-      <ul>
-        <ul>
-          <li><Link to="/instructions/amts/0">amts</Link></li>
-          <li><Link to="/instructions/dct/0">dct</Link></li>
-          <li><Link to="/instructions/evotiv/0">evotiv</Link></li>
-          <li><Link to="/instructions/evott/0">evott</Link></li>
-          <li><Link to="/instructions/namts/A">namts</Link></li>
-          <li><Link to="/instructions/npst/0">npst</Link></li>
-          <li><Link to="/instructions/psvotiv/0">psvotiv</Link></li>
-          <li><Link to="/instructions/psvotps/0">psvotps</Link></li>
-          <li><Link to="/instructions/psvott/0">psvott</Link></li>
-          <li><Link to="/instructions/sdisc/0">sdisc</Link></li>
-          <li><Link to="/instructions/spair/0">spair</Link></li>
-          <li><Link to="/instructions/tat/0">tat</Link></li>
-          <li><Link to="/instructions/tp/0">tp</Link></li>
-          <li><Link to="/instructions/tsf/0">tsf</Link></li>
-        </ul>
-      </ul>
+
       <h3>Conditions</h3>
       <ol>
-        <li><Link to="/dct">DCT</Link></li>
-        <li><Link to="/tp">TactProbe</Link></li>
-        <li><Link to="/tsf">Tsf</Link></li>
+        <li><Link to="/dct/pre">DCT-pre</Link></li>
+        <li><Link to="/dct/post">DCT-post</Link></li>
+        <li><Link to="/tp/pre">TactProbe-pre</Link></li>
+        <li><Link to="/tp/post">TactProbe-post</Link></li>
+        <li><Link to="/tsf/pre">Tsf-pre</Link></li>
+        <li><Link to="/tsf/post">Tsf-post</Link></li>
         <li>Non-Arbitrary MTS
           <ul>
             <li><Link to="/namts/A">NAMTS - SET A</Link></li>
@@ -83,6 +68,25 @@ const Home = () => {
         <li><Link to="/npst">Novel PST</Link></li>
         <li><Link to="/exitsurvey">ExitSurvey</Link></li>
       </ol>
+      <h3>Instructions:</h3>
+      <ul>
+        <ul>
+          <li><Link to="/instructions/amts/0">amts</Link></li>
+          <li><Link to="/instructions/dct/0">dct</Link></li>
+          <li><Link to="/instructions/evotiv/0">evotiv</Link></li>
+          <li><Link to="/instructions/evott/0">evott</Link></li>
+          <li><Link to="/instructions/namts/A">namts</Link></li>
+          <li><Link to="/instructions/npst/0">npst</Link></li>
+          <li><Link to="/instructions/psvotiv/0">psvotiv</Link></li>
+          <li><Link to="/instructions/psvotps/0">psvotps</Link></li>
+          <li><Link to="/instructions/psvott/0">psvott</Link></li>
+          <li><Link to="/instructions/sdisc/0">sdisc</Link></li>
+          <li><Link to="/instructions/spair/0">spair</Link></li>
+          <li><Link to="/instructions/tat/0">tat</Link></li>
+          <li><Link to="/instructions/tp/0">tp</Link></li>
+          <li><Link to="/instructions/tsf/0">tsf</Link></li>
+        </ul>
+      </ul>
     </div>
   )
 }
