@@ -30,6 +30,12 @@ const Dct = () => {
           temp.push(value)
         }
         megaStimulusBank.push(temp)
+        for (let k = 0; k < megaStimulusBank.length; k++) {                                       //SHUFFLES THE ARRAY
+          let l = Math.floor(Math.random() * megaStimulusBank.length);  
+          let temp = megaStimulusBank[k]; 
+          megaStimulusBank[k] = megaStimulusBank[l];
+          megaStimulusBank[l] = temp;   
+        }
       }
       setTrials(megaStimulusBank)
       // data.dct.trials
