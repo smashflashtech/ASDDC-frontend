@@ -6,7 +6,7 @@ import routes from './config/routes'
 function App() {
   return (
     <div className="App">
-      <h1>Help me graduate.<Link to="/">💩</Link></h1>
+<Link to="/">💩</Link>
         { routes }
     </div>
   );
