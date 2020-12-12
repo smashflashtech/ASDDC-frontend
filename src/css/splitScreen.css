@@ -20,6 +20,9 @@
 .bottom{
   height: 50vh;
   background-color: rgb(255, 245, 136);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Sample Display */
@@ -29,6 +32,12 @@
 
 
 /* Comparison Display */
+
+.comparison-container{
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
 .left{
   width: 12vw;
 }

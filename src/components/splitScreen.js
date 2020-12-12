@@ -48,14 +48,14 @@ const SplitScreen = (props) => {
       <div class="top">
         <div class="sample-container">
           {/* <img class="os-sample" src={src} /> */}
-          <img class="os-sample" src={props.trials[0]} />
+          <img class="os-sample" src={props.trials[0][0]} />
         </div>
       </div>
       <div class="bottom">
         <div class="comparison-container">
-        <img class={props.trials[4]} src={props.trials[1]} />
-        <img class={props.trials[5]} src={props.trials[2]} />
-        <img class={props.trials[6]} src={props.trials[3]} />
+        <img src={props.trials[0][1]} class={props.trials[0][2]} />
+        <img src={props.trials[0][3]} class={props.trials[0][4]} />
+        <img src={props.trials[0][5]} class={props.trials[0][6]} />
         </div>
       </div>
     </div>
