@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import "../css/splitScreen.css";
 
 
@@ -8,7 +9,7 @@ const SplitScreen = (props) => {
 
   //these are set on a trial by trial basis
   //phase trackinig logic
-  const [block, setBlock] = useState(1)
+  const [block, setBlock] = useState(props.block)
   const [trial, setTrial] = useState(1)
   const [totalTrials] = useState(props.trials.length)
   const [corrects, setCorrects] = useState(0)
@@ -29,6 +30,7 @@ const SplitScreen = (props) => {
     <div id="container">
       <div className="top">
         <div className="sample-container">
+        {console.log(block)}
           {/* <img className="os-sample" src={src} /> */}
           <img className="os-sample" src={samplePath} value={props.trials[i][1]}/>
         </div>
@@ -39,8 +41,10 @@ const SplitScreen = (props) => {
           <img src={props.trials[i][5]} className={props.trials[i][6]} value={props.trials[i][7]}/>
           <img src={props.trials[i][8]} className={props.trials[i][9]} value={props.trials[i][10]}/>
         </div>
+        <Link to="/dct/pre">DCT AGAIN (test)</Link>
       </div>
     </div>
+    // there will be a link generated based on an if statement that will either reset page or send to the next phase
   )
 }
 
