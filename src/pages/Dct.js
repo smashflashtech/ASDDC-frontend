@@ -8,6 +8,7 @@ const Dct = (props) => {
   const [os, setOs] = useState()
   const [block, setBlock] = useState()
   const [maxTrials, setMaxTrials] = useState()
+  const [criteria, setCriteria] = useState()
 
   const fetchStimuli =() => {
     DctModel.stimuli().then((data)=>{
@@ -15,6 +16,7 @@ const Dct = (props) => {
       //Sets Observing stimuls
       const tempOs = require(`../stimuli/${data.dct.observingStim.imagePath}`).default
       setOs(tempOs)
+      setCriteria(19)
       setMaxTrials(data.dct.trials.length)
       // constructs the image path string
       const megaStimulusBank = []
@@ -64,6 +66,7 @@ const Dct = (props) => {
         block={props.match.params.block}
         setBlock={setBlock}
         maxTrials={maxTrials}
+        criteria={criteria}
       /> : "" } 
     </div>
   )
