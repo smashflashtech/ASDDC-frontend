@@ -3,7 +3,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 //Pages
 import ParticipantInfo from "../pages/ParticipantInfo";
-import ParticipantStart from "../pages/ParticipantStart";
+import Welcome from "../pages/Welcome";
 import Home from "../pages/Home";
 import Dct from "../pages/Dct";
 import Tp from "../pages/Tp";
@@ -31,7 +31,7 @@ export default (
     <Route exact path='/' component={Home} />
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/particpant/:id' component={ParticipantInfo} />
-    <Route path='/:group/:participantId/:dyadL/:dyadN' component={ParticipantStart} />
+    <Route path='/:group/:participantId/:dyadL/:dyadN' component={Welcome} />
     <Route path='/instructions/:phase/:set' component={Instructions} />
     <Route path='/amts/:block' component={Amts} />
     <Route path='/dct/:condition/:block' component={Dct} />
