@@ -33,12 +33,12 @@ const Home = () => {
 
       <h3>Welcome Pages</h3>
       <ul className="home-list">
-        <li><Link to="/1/1/A/1">Group 1 (MET) - dyad 1</Link></li>
-        <li><Link to="/1/1/A/2">Group 1 (MET) - dyad 2</Link></li>
-        <li><Link to="/2/1/I/1">Group 2 (EVOT) - dyad 1</Link></li>
-        <li><Link to="/2/1/I/2">Group 2 (EVOT) - dyad 2</Link></li>
-        <li><Link to="/3/1/Q/1">Group 3 (PSVOT) - dyad 1</Link></li>
-        <li><Link to="/3/1/Q/2">Group 3 (PSVOT) - dyad 2</Link></li>
+        <li><Link to="/ASDDC/1/1/A/1">Group 1 (MET) - dyad 1</Link></li>
+        <li><Link to="/ASDDC/1/1/A/2">Group 1 (MET) - dyad 2</Link></li>
+        <li><Link to="/ASDDC/2/1/I/1">Group 2 (EVOT) - dyad 1</Link></li>
+        <li><Link to="/ASDDC/2/1/I/2">Group 2 (EVOT) - dyad 2</Link></li>
+        <li><Link to="/ASDDC/3/1/Q/1">Group 3 (PSVOT) - dyad 1</Link></li>
+        <li><Link to="/ASDDC/3/1/Q/2">Group 3 (PSVOT) - dyad 2</Link></li>
       </ul>
 
       <h3>Conditions</h3>
