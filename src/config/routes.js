@@ -33,7 +33,7 @@ export default (
     <Route path='/instructions/:phase/:set' component={Instructions} />
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/particpant/:id' component={ParticipantInfo} />
-    <Route path='/amts/:block' component={Amts} />
+    <Route path='/amts/:block/:feedback' component={Amts} />
     <Route path='/dct/:condition/:block' component={Dct} />
     <Route path='/evotiv/:block' component={Evotiv} />
     <Route path='/evott/:block' component={Evott} />
