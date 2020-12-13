@@ -27,7 +27,7 @@ const Welcome = (props) => {
       <div className="welcome-note">
         <h1>Welcome!</h1>
         <h3>Thank you for yor participation.</h3><br/>
-        <Button url={startUrl}/>
+        <Button url={startUrl} text={"Start"}/>
       </div>
     </div>
   )
