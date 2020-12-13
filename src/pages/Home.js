@@ -89,7 +89,6 @@ const Home = () => {
         <ul className="home-list">
           <li><Link to="/instructions/amts/Z/Z">amts</Link></li>
           <li><Link to="/instructions/dct/pre/1">dct-pre - block 1</Link></li>
-          <li><Link to="/instructions/dct/post/1">dct-post - block 1</Link></li>
           <li><Link to="/instructions/evotiv/Z/Z">evotiv</Link></li>
           <li><Link to="/instructions/evott/Z/Z">evott</Link></li>
           <li><Link to="/instructions/namts/101/1">namts - set A - block 1</Link></li>
