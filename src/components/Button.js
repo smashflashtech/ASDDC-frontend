@@ -5,7 +5,7 @@ import '../css/button.css'
 const Button = (props) => {
   return (
     <>
-      <Link to={props.Url}>
+      <Link to={props.url}>
         <button className="welcome-btn">
           Start
         </button>
