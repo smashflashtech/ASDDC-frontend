@@ -14,9 +14,9 @@
   width: 80vh;
   min-width:550px;
   height: 350px;
-  border: 2px solid rgba(201, 201, 201, 0.262);
+  border: 2px solid rgba(156, 184, 169, 0.262);
   margin: 0;
-  box-shadow: 5px 5px 15px #cffff6;
+  box-shadow: 5px 5px 15px #d8e9e5;
   border-radius: 5px;
 }
 
