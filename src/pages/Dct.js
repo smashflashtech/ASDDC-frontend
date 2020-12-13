@@ -7,10 +7,10 @@ const Dct = (props) => {
 
   const [os, setOs] = useState()
   const [block, setBlock] = useState()
+  const [condition, setCondition] = useState()
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [metUrl, setMetUrl] = useState()
-  const [notMetUrl, setNotMetUrl] = useState()
 
   const fetchStimuli =() => {
     DctModel.stimuli().then((data)=>{
@@ -49,6 +49,13 @@ const Dct = (props) => {
       setTrials(megaStimulusBank)
 
     //CONSTRUCT MET AND UNMET URLS
+      //if dyad = 1 and block = 1 move to namts OR dyad = 2 and block = 3 move to namts
+
+      //
+
+      //if dyad = 2, and block < 3 create link with block + 1
+
+
     })
   }
   
@@ -58,14 +65,14 @@ const Dct = (props) => {
   //THIS IS LIKELY GOING TO BE PASS DOWN TO COMPONENTS WHEN YOU WORK IT OUT
   return (
     <div>
-      {/* { sample !== undefined ? <img src= { sample } /> : "" }
-      <img src= {orange} /> */}
-      { console.log("THIS IS STATE", block)}
+
+      { console.log("THIS IS condition", condition)}
       { console.log( trials)}
       { trials.length !== undefined ? 
       <SplitScreen3 
         os={os} 
         trials={trials} 
+        set={props.match.params.condition}
         block={props.match.params.block}
         setBlock={setBlock}
         maxTrials={maxTrials}
