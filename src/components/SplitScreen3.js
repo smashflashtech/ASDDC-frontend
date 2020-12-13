@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import "../css/splitScreen3.css";
+import Button from './Button'
 
 
 const SplitScreen3 = (props) => {
@@ -84,7 +84,7 @@ const SplitScreen3 = (props) => {
             <div />
           }
 
-          {trial === props.maxTrials + 1 && corrects < props.criteria ? <Link to={props.metUrl}>Next Task</Link> : <></>}
+          {trial === props.maxTrials + 1 && corrects < props.criteria ? <Button url={props.metUrl} text={"Next Task"}/> : <></>}
         </div>
       </div>
     </div>
