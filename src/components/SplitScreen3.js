@@ -6,6 +6,7 @@ import "../css/splitScreen3.css";
 const SplitScreen3 = (props) => {
   console.log("are we in bidness", props.trials)
   console.log("post this to the db: ", props.block)
+  console.log("post this to the db: ", props.set)
   console.log("use this to determine if trials are done: ", props.maxTrials)
   console.log("heres the OS: ", props.os)
   console.log("heres the passing criteria: ", props.criteria)
@@ -24,7 +25,7 @@ const SplitScreen3 = (props) => {
     //grabs the trial code
     setTrialCode(e.target.getAttribute("value"))
     //constructs the block code and stores in state
-    setBlockCode(`${props.block}-${trial}`)
+    setBlockCode(`${props.set}-${props.block}-${trial}`)
     //changes os image to sample image
     e.target.setAttribute("src", props.trials[i][0])
     //adds to click count which will determine if comparisons should display
