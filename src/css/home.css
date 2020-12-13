@@ -1,0 +1,4 @@
+ul.home-List {
+  /* if you want the standard bullets, use 'disc' instead of 'circle' */
+  list-style: circle inside;
+}
