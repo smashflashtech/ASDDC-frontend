@@ -7,7 +7,7 @@ const Button = (props) => {
     <>
       <Link to={props.url}>
         <button className="welcome-btn">
-          Start
+          {props.text}
         </button>
         </Link>
     </>
