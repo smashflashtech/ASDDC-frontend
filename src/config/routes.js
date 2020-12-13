@@ -29,10 +29,10 @@ import Instructions from "../pages/Instructions";
 export default (
   <Switch>
     <Route exact path='/' component={Home} />
+    <Route path='/ASDDC/:groupId/:participantId/:dyadL/:dyadN' component={Welcome} />
+    <Route path='/instructions/:phase/:set' component={Instructions} />
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/particpant/:id' component={ParticipantInfo} />
-    <Route path='/:groupId/:participantId/:dyadL/:dyadN' component={Welcome} />
-    <Route path='/instructions/:phase/:set' component={Instructions} />
     <Route path='/amts/:block' component={Amts} />
     <Route path='/dct/:condition/:block' component={Dct} />
     <Route path='/evotiv/:block' component={Evotiv} />
