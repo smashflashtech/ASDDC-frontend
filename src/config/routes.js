@@ -31,7 +31,7 @@ export default (
     <Route exact path='/' component={Home} />
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/particpant/:id' component={ParticipantInfo} />
-    <Route path='/:group/:participantId/:dyadL/:dyadN' component={Welcome} />
+    <Route path='/:groupId/:participantId/:dyadL/:dyadN' component={Welcome} />
     <Route path='/instructions/:phase/:set' component={Instructions} />
     <Route path='/amts/:block' component={Amts} />
     <Route path='/dct/:condition/:block' component={Dct} />
