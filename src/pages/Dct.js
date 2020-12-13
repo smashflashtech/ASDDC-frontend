@@ -3,10 +3,11 @@ import DctModel from '../models/dct'
 import SplitScreen3 from '../components/SplitScreen3'
 
 const Dct = (props) => {
+  const [dyadN] = useState(parseInt(localStorage.getItem('dyadN')))
   const [trials, setTrials] = useState([])
 
   const [os, setOs] = useState()
-  const [block, setBlock] = useState()
+  const [block, setBlock] = useState(parseInt(props.match.params.block))
   const [condition, setCondition] = useState()
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
@@ -50,7 +51,16 @@ const Dct = (props) => {
 
     //CONSTRUCT MET AND UNMET URLS
       //if dyad = 1 and block = 1 move to namts OR dyad = 2 and block = 3 move to namts
-      setMetUrl('/instructions/namts/101')
+      console.log("WHATS dyadN", dyadN)
+      console.log("WHATS block", block)
+      if (dyadN === 1) {
+        setMetUrl('/instructions/namts/101')
+      } else if (dyadN === 2 && block < 3){
+        setMetUrl(`/dct/pre/${block + 1}`)
+      } else if (dyadN === 2 && block === 3) {
+        setMetUrl('/instructions/namts/101')
+      }
+      console.log("WHATS UP WITH URL",metUrl)
       //
 
       //if dyad = 2, and block < 3 create link with block + 1
@@ -73,8 +83,7 @@ const Dct = (props) => {
         os={os} 
         trials={trials} 
         set={props.match.params.condition}
-        block={props.match.params.block}
-        setBlock={setBlock}
+        block={block}
         maxTrials={maxTrials}
         criteria={criteria}
         metUrl={metUrl}
