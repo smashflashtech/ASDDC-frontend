@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import SplitScreen from '../components/SplitScreen'
+
 import TpModel from '../models/tp'
 
 const Tp = () => {
@@ -33,7 +33,7 @@ const Tp = () => {
 
   return (
     <div>
-      <SplitScreen />
+
     </div>
   )
 }

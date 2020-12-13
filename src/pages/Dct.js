@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import DctModel from '../models/dct'
-import SplitScreen from '../components/SplitScreen'
+import SplitScreen3 from '../components/SplitScreen3'
 
 const Dct = (props) => {
   const [trials, setTrials] = useState([])
@@ -9,6 +9,8 @@ const Dct = (props) => {
   const [block, setBlock] = useState()
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
+  const [metUrl, setMetUrl] = useState()
+  const [notMetUrl, setNotMetUrl] = useState()
 
   const fetchStimuli =() => {
     DctModel.stimuli().then((data)=>{
@@ -46,7 +48,6 @@ const Dct = (props) => {
       }
       setTrials(megaStimulusBank)
 
-
     //CONSTRUCT MET AND UNMET URLS
     })
   }
@@ -62,7 +63,7 @@ const Dct = (props) => {
       { console.log("THIS IS STATE", block)}
       { console.log( trials)}
       { trials.length !== undefined ? 
-      <SplitScreen 
+      <SplitScreen3 
         os={os} 
         trials={trials} 
         block={props.match.params.block}

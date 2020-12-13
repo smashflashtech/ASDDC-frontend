@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import "../css/splitScreen.css";
+import "../css/splitScreen3.css";
 
 
-const SplitScreen = (props) => {
+const SplitScreen3 = (props) => {
   console.log("are we in bidness", props.trials)
   console.log("post this to the db: ", props.block)
   console.log("use this to determine if trials are done: ", props.maxTrials)
@@ -69,6 +69,7 @@ const SplitScreen = (props) => {
         </div>
       </div>
       <div className="bottom">
+            What happens
         <div className="comparison-container">
           {props.trials.length && sClick  === 2 ?
             <>
@@ -86,4 +87,4 @@ const SplitScreen = (props) => {
   )
 }
 
-export default SplitScreen
+export default SplitScreen3
