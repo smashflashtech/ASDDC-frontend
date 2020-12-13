@@ -3,17 +3,20 @@ import DctModel from '../models/dct'
 import SplitScreen from '../components/SplitScreen'
 
 const Dct = (props) => {
-  const [trials, setTrials] = useState()
+  const [trials, setTrials] = useState([])
 
   const [os, setOs] = useState()
-  const [samplePath, setSamplePath] = useState()
-  const [pretest, setPretest] = useState()
-  const [posttest, setPostest] = useState()
+  const [block, setBlock] = useState()
+  const [maxTrials, setMaxTrials] = useState()
 
   const fetchStimuli =() => {
     DctModel.stimuli().then((data)=>{
-      // console.log(data.dct)
-      //constructs the image path string
+      console.log(data.dct)
+      //Sets Observing stimuls
+      const tempOs = require(`../stimuli/${data.dct.observingStim.imagePath}`).default
+      setOs(tempOs)
+      setMaxTrials(data.dct.trials.length)
+      // constructs the image path string
       const megaStimulusBank = []
       for (let i = 0; i < data.dct.trials.length; i++) {
         const temp = []
@@ -38,13 +41,9 @@ const Dct = (props) => {
         }
       }
       setTrials(megaStimulusBank)
-      // data.dct.trials
 
 
-      //these need to be passed as props
-      setOs(data.dct.observingStim)
-      setPretest(data.dct.masteryCriterion.preTest.percentage)
-      setPostest(data.dct.masteryCriterion.postTest.percentage)  
+    //CONSTRUCT MET AND UNMET URLS
     })
   }
   
@@ -56,8 +55,16 @@ const Dct = (props) => {
     <div>
       {/* { sample !== undefined ? <img src= { sample } /> : "" }
       <img src= {orange} /> */}
-      { console.log(trials)}
-      { os !== undefined ? <SplitScreen os={os} trials={trials} trials={trials} block={props.match.params.block}/> : "" } 
+      { console.log("THIS IS STATE", block)}
+      { console.log( trials)}
+      { trials.length !== undefined ? 
+      <SplitScreen 
+        os={os} 
+        trials={trials} 
+        block={props.match.params.block}
+        setBlock={setBlock}
+        maxTrials={maxTrials}
+      /> : "" } 
     </div>
   )
 }

@@ -36,6 +36,7 @@ const Namts = (props) => {
             { comparison !== undefined ? <img src= { comparison } /> : "" }
     </div>
   )
+      // there will be a link generated based on an if statement that will either link to next phase/condition or restart same condition with updated block code in the link...
 }
 
 export default Namts

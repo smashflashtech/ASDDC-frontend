@@ -39,21 +39,21 @@ const Home = () => {
         <li><Link to="/tsf/post">Tsf-post</Link></li>
         <li>Non-Arbitrary MTS
           <ul>
-            <li><Link to="/namts/A/1">NAMTS - SET A</Link></li>
-            <li><Link to="/namts/B/1">NAMTS - SET B</Link></li>
-            <li><Link to="/namts/C/1">NAMTS - SET C</Link></li>
-            <li><Link to="/namts/D/1">NAMTS - SET D</Link></li>
-            <li><Link to="/namts/E/1">NAMTS - SET E</Link></li>
-            <li><Link to="/namts/F/1">NAMTS - SET F</Link></li>
-            <li><Link to="/namts/G/1">NAMTS - SET G</Link></li>
-            <li><Link to="/namts/H/1">NAMTS - SET H</Link></li>
-            <li><Link to="/namts/I/1">NAMTS - SET I</Link></li>
-            <li><Link to="/namts/J/1">NAMTS - SET J</Link></li>
-            <li><Link to="/namts/K/1">NAMTS - SET K</Link></li>
-            <li><Link to="/namts/L/1">NAMTS - SET L</Link></li>
-            <li><Link to="/namts/M/1">NAMTS - SET M</Link></li>
-            <li><Link to="/namts/N/1">NAMTS - SET N</Link></li>
-            <li><Link to="/namts/O/1">NAMTS - SET O</Link></li>
+            <li><Link to="/namts/101/1">NAMTS - SET A</Link></li>
+            <li><Link to="/namts/102/1">NAMTS - SET B</Link></li>
+            <li><Link to="/namts/103/1">NAMTS - SET C</Link></li>
+            <li><Link to="/namts/104/1">NAMTS - SET D</Link></li>
+            <li><Link to="/namts/105/1">NAMTS - SET E</Link></li>
+            <li><Link to="/namts/106/1">NAMTS - SET F</Link></li>
+            <li><Link to="/namts/107/1">NAMTS - SET G</Link></li>
+            <li><Link to="/namts/108/1">NAMTS - SET H</Link></li>
+            <li><Link to="/namts/109/1">NAMTS - SET I</Link></li>
+            <li><Link to="/namts/110/1">NAMTS - SET J</Link></li>
+            <li><Link to="/namts/111/1">NAMTS - SET K</Link></li>
+            <li><Link to="/namts/112/1">NAMTS - SET L</Link></li>
+            <li><Link to="/namts/113/1">NAMTS - SET M</Link></li>
+            <li><Link to="/namts/114/1">NAMTS - SET N</Link></li>
+            <li><Link to="/namts/125/1">NAMTS - SET O</Link></li>
           </ul>
         </li>
         <li><Link to="/amts/1">Arbitrary MTS</Link></li>
