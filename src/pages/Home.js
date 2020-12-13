@@ -79,7 +79,7 @@ const Home = () => {
           <li><Link to="/instructions/dct/Z">dct</Link></li>
           <li><Link to="/instructions/evotiv/Z">evotiv</Link></li>
           <li><Link to="/instructions/evott/Z">evott</Link></li>
-          <li><Link to="/instructions/namts/A">namts</Link></li>
+          <li><Link to="/instructions/namts/101">namts</Link></li>
           <li><Link to="/instructions/npst/Z">npst</Link></li>
           <li><Link to="/instructions/psvotiv/Z">psvotiv</Link></li>
           <li><Link to="/instructions/psvotps/Z">psvotps</Link></li>
