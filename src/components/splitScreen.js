@@ -15,6 +15,7 @@ const SplitScreen = (props) => {
   const [corrects, setCorrects] = useState(0)
   const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
+  const [color, setColor] = useState()
   const [value, setValue] = useState()
   const [position, setPosition] = useState()
 
@@ -33,6 +34,7 @@ const SplitScreen = (props) => {
   const handleComparisonClick = (e) => {
     e.preventDefault()
     //info on how the participant did
+    setColor(e.target.getAttribute("alt"))
     setPosition(e.target.getAttribute("class"))
     let selectedValue = e.target.getAttribute("value")
     setValue(selectedValue)
@@ -52,6 +54,9 @@ const SplitScreen = (props) => {
       //and trialCode (create a join)
     //STORE THIS
       //position
+      //color
+      //value
+      //cumulative corrects
   }
 
   return (
