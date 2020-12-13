@@ -31,8 +31,12 @@ const Home = () => {
 
       <h3>Conditions</h3>
       <ol>
-        <li><Link to="/dct/pre">DCT-pre</Link></li>
-        <li><Link to="/dct/post">DCT-post</Link></li>
+        <li><Link to="/dct/pre/1">DCT-pre1</Link></li>
+        <li><Link to="/dct/pre/2">DCT-pre2</Link></li>
+        <li><Link to="/dct/pre/3">DCT-pre3</Link></li>
+        <li><Link to="/dct/post/1">DCT-post1</Link></li>
+        <li><Link to="/dct/post/2">DCT-post2</Link></li>
+        <li><Link to="/dct/post/3">DCT-post3</Link></li>
         <li><Link to="/tp/pre">TactProbe-pre</Link></li>
         <li><Link to="/tp/post">TactProbe-post</Link></li>
         <li><Link to="/tsf/pre">Tsf-pre</Link></li>
