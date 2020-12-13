@@ -19,7 +19,13 @@ const Instructions = (props) => {
   useEffect(() => { fetchStimuli() }, [])
   
   let url = ""
-  phaseName !== "namts" || "dct" ? url = `/${phaseName}/1` : url = `/${phaseName}/${set}/1`
+  if (phaseName === "namts"){
+    url = `/${phaseName}/${set}/1`
+  } else if (phaseName === "dct"){
+    url = `/${phaseName}/${set}/1`
+  } else {
+    url = `/${phaseName}/1`
+  }
 
   return (
     <div>
