@@ -18,7 +18,7 @@ const Dct = (props) => {
       //Sets Observing stimuls
       const tempOs = require(`../stimuli/${data.dct.observingStim.imagePath}`).default
       setOs(tempOs)
-      setCriteria(19)
+      setCriteria(99)
       setMaxTrials(data.dct.trials.length)
       // constructs the image path string
       const megaStimulusBank = []
@@ -50,7 +50,7 @@ const Dct = (props) => {
 
     //CONSTRUCT MET AND UNMET URLS
       //if dyad = 1 and block = 1 move to namts OR dyad = 2 and block = 3 move to namts
-
+      setMetUrl('/instructions/namts/101')
       //
 
       //if dyad = 2, and block < 3 create link with block + 1
@@ -77,6 +77,7 @@ const Dct = (props) => {
         setBlock={setBlock}
         maxTrials={maxTrials}
         criteria={criteria}
+        metUrl={metUrl}
       /> : "" } 
     </div>
   )

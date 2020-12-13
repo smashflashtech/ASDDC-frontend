@@ -40,24 +40,26 @@ const SplitScreen3 = (props) => {
     let selectedValue = e.target.getAttribute("value")
     setValue(selectedValue)
     if (selectedValue === "correct") {
-      setCorrects(corrects + 1 )
+      setCorrects(corrects + 1)
     }
-    
+
     //resets the os-sample stimulus, clicks to 0
     document.getElementById("os-sample").setAttribute("src", props.os)
     setSClick(0)
-    //adds to iterator and trial
+    //adds to iterator
     setI(i + 1)
+    //counts trial
     setTrial(trial + 1)
 
+
     //NEED TO ADD POST to the Database
-      //where PARTICIPANT ID (stored in local storate)
-      //and trialCode (create a join)
+    //where PARTICIPANT ID (stored in local storate)
+    //and trialCode (create a join)
     //STORE THIS
-      //position
-      //color
-      //value
-      //cumulative corrects
+    //position
+    //color
+    //value
+    //cumulative corrects
   }
 
   return (
@@ -65,22 +67,24 @@ const SplitScreen3 = (props) => {
       <div className="top">
         <div className="sample-container">
           {props.trials.length && trial <= props.maxTrials ?
-            <img alt="os-sample" id="os-sample" className="os-sample" src={props.os} value={props.trials[i][1]} onClick={handleSampleClick}/>
-            : <div/>}
+            <img alt="os-sample" id="os-sample" className="os-sample" src={props.os} value={props.trials[i][1]} onClick={handleSampleClick} />
+            : <div />}
         </div>
       </div>
       <div className="bottom">
-            What happens
+
         <div className="comparison-container">
-          {props.trials.length && sClick  === 2 ?
+          {props.trials.length && sClick === 2 ?
             <>
               <img alt={props.trials[i][2]} src={props.trials[i][3]} className={props.trials[i][4]} value={props.trials[i][5]} onClick={handleComparisonClick} />
-              <img alt={props.trials[i][6]} src={props.trials[i][7]} className={props.trials[i][8]} value={props.trials[i][9]} onClick={handleComparisonClick}/>
-              <img alt={props.trials[i][10]} src={props.trials[i][11]} className={props.trials[i][12]} value={props.trials[i][13]} onClick={handleComparisonClick}/>
+              <img alt={props.trials[i][6]} src={props.trials[i][7]} className={props.trials[i][8]} value={props.trials[i][9]} onClick={handleComparisonClick} />
+              <img alt={props.trials[i][10]} src={props.trials[i][11]} className={props.trials[i][12]} value={props.trials[i][13]} onClick={handleComparisonClick} />
             </>
             :
-            <div/>
-            }
+            <div />
+          }
+
+          {trial === props.maxTrials + 1 && corrects < props.criteria ? <Link to={props.metUrl}>Next Task</Link> : <></>}
         </div>
       </div>
     </div>
