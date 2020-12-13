@@ -34,7 +34,7 @@ export default (
     <Route path='/:group/:participantId/:dyadL/:dyadN' component={ParticipantStart} />
     <Route path='/instructions/:phase/:set' component={Instructions} />
     <Route path='/amts/:block' component={Amts} />
-    <Route path='/dct/:block' component={Dct} />
+    <Route path='/dct/:condition/:block' component={Dct} />
     <Route path='/evotiv/:block' component={Evotiv} />
     <Route path='/evott/:block' component={Evott} />
     <Route path='/namts/:set/:block' component={Namts} />
