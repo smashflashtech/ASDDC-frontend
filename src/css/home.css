@@ -1,4 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
 ul.home-List {
   /* if you want the standard bullets, use 'disc' instead of 'circle' */
-  list-style: circle inside;
+  list-style: circle; 
+  list-style-position: inside !important;
 }
