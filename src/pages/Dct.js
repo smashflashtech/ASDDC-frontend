@@ -9,6 +9,7 @@ const Dct = (props) => {
   const [os, setOs] = useState()
   const [block] = useState(parseInt(props.match.params.block))
   const [condition] = useState()
+  const [phase] = useState('namts')
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [metUrl, setMetUrl] = useState()
@@ -78,6 +79,7 @@ const Dct = (props) => {
           maxTrials={maxTrials}
           criteria={criteria}
           metUrl={metUrl}
+          phase={phase}
         /> : ""}
     </div>
   )
