@@ -22,25 +22,20 @@ const SplitScreen = (props) => {
     e.preventDefault()
     //grabs the trial code
     setTrialCode(e.target.getAttribute("value"))
-    console.log("HERES THE TRIAL CODE", trialCode)
     //constructs the block code and stores in state
     setBlockCode(`${props.block}-${trial}`)
-    console.log("~~~~~~BLOCK CODE", blockCode)
     //changes os image to sample image
     e.target.setAttribute("src", props.trials[i][0])
     //adds to click count which will determine if comparisons should display
     setSClick(sClick + 1)
-    console.log(sClick)
   }
 
   const handleComparisonClick = (e) => {
     e.preventDefault()
     //info on how the participant did
     setPosition(e.target.getAttribute("class"))
-    console.log(position)
     let selectedValue = e.target.getAttribute("value")
     setValue(selectedValue)
-    console.log("HERES THE VALUE", value)
     if (selectedValue === "correct") {
       setCorrects(corrects + 1 )
     }
@@ -48,12 +43,15 @@ const SplitScreen = (props) => {
     //resets the os-sample stimulus, clicks to 0
     document.getElementById("os-sample").setAttribute("src", props.os)
     setSClick(0)
-    console.log("CLEAR S-CLICKS: ",sClick)
     //adds to iterator and trial
     setI(i + 1)
-    console.log("iterator should increase: ", i)
     setTrial(trial + 1)
-    console.log("trial should increase: ", trial)
+
+    //NEED TO ADD POST to the Database
+      //where PARTICIPANT ID (stored in local storate)
+      //and trialCode (create a join)
+    //STORE THIS
+      //position
   }
 
   return (
@@ -69,9 +67,9 @@ const SplitScreen = (props) => {
         <div className="comparison-container">
           {props.trials.length && sClick  === 2 ?
             <>
-              <img alt={props.trials[i][3]} src={props.trials[i][2]} className={props.trials[i][3]} value={props.trials[i][4]} onClick={handleComparisonClick} />
-              <img alt={props.trials[i][6]} src={props.trials[i][5]} className={props.trials[i][6]} value={props.trials[i][7]} onClick={handleComparisonClick}/>
-              <img alt={props.trials[i][9]} src={props.trials[i][8]} className={props.trials[i][9]} value={props.trials[i][10]} onClick={handleComparisonClick}/>
+              <img alt={props.trials[i][2]} src={props.trials[i][3]} className={props.trials[i][4]} value={props.trials[i][5]} onClick={handleComparisonClick} />
+              <img alt={props.trials[i][6]} src={props.trials[i][7]} className={props.trials[i][8]} value={props.trials[i][9]} onClick={handleComparisonClick}/>
+              <img alt={props.trials[i][10]} src={props.trials[i][11]} className={props.trials[i][12]} value={props.trials[i][13]} onClick={handleComparisonClick}/>
             </>
             :
             <div/>

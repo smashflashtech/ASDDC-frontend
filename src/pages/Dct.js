@@ -27,6 +27,8 @@ const Dct = (props) => {
         const trialCode = data.dct.trials[i][0].trialCode
         temp.push(trialCode)
         for(let j = 1; j < data.dct.trials[i].length; j++) {
+          let color = data.dct.trials[i][j].imagePath
+          temp.push(color)
           let comparison = require(`../stimuli/${data.dct.trials[i][j].imagePath}`).default
           temp.push(comparison)
           let position = data.dct.trials[i][j].class
