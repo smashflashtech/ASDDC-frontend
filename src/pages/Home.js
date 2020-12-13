@@ -72,7 +72,8 @@ const Home = () => {
             <li><Link to="/namts/125/1">NAMTS - SET O</Link></li>
           </ul>
         </li>
-        <li><Link to="/amts/1">Arbitrary MTS</Link></li>
+        <li><Link to="/amts/1/true">Arbitrary MTS - TRUE (feedback)</Link></li>
+        <li><Link to="/amts/1/false">Arbitrary MTS - FALSE (No feedback)</Link></li>
         <li><Link to="/tat/1">Tat</Link></li>
         <li><Link to="/spair/1">SPair</Link></li>
         <li><Link to="/sdisc/1">SDisc</Link></li>

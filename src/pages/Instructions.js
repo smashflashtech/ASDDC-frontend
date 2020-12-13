@@ -23,6 +23,8 @@ const Instructions = (props) => {
     url = `/${phaseName}/${set}/1`
   } else if (phaseName === "dct"){
     url = `/${phaseName}/${set}/1`
+  } else if (phaseName === "amts") {
+    url = `/${phaseName}/1/${set}`
   } else {
     url = `/${phaseName}/1`
   }
