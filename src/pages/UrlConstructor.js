@@ -9,10 +9,6 @@ const UrlConstructor = () => {
   const [dyadN, setDyadN] = useState('')
 
 
-  const handleChange = (e) => {
-
-  }
-
   return (
     <div className="uc-body">
       <div className="uc-container">
