@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import HomeModel from '../models/home'
+import '../css/home.css'
 
 const Home = () => {
   const [response, setResponse] = useState("")
@@ -19,14 +20,25 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Help me graduate.</h1>
-      <h4>Response: {response}</h4>
+      <h1>Developer Navigation</h1><br/>
+      <h2>Help me graduate.</h2>
+      <h4><u>Response:</u> {response}</h4><br/>
 
 
       <h3>Researcher Tools:</h3>
-      <ul>
+      <ul className="home-list">
         <li><Link to="/urlconstructor">UrlConstructor</Link></li>
         <li><Link to="/particpant/1">Participant ONE Info</Link></li>
+      </ul>
+
+      <h3>Welcome Pages</h3>
+      <ul className="home-list">
+        <li><Link to="/1/1/A/1">Group 1 (MET) - dyad 1</Link></li>
+        <li><Link to="/1/1/A/2">Group 1 (MET) - dyad 2</Link></li>
+        <li><Link to="/2/1/I/1">Group 2 (EVOT) - dyad 1</Link></li>
+        <li><Link to="/2/1/I/2">Group 2 (EVOT) - dyad 2</Link></li>
+        <li><Link to="/3/1/Q/1">Group 3 (PSVOT) - dyad 1</Link></li>
+        <li><Link to="/3/1/Q/2">Group 3 (PSVOT) - dyad 2</Link></li>
       </ul>
 
       <h3>Conditions</h3>
@@ -42,7 +54,7 @@ const Home = () => {
         <li><Link to="/tsf/pre">Tsf-pre</Link></li>
         <li><Link to="/tsf/post">Tsf-post</Link></li>
         <li>Non-Arbitrary MTS
-          <ul>
+          <ul className="home-list">
             <li><Link to="/namts/101/1">NAMTS - SET A</Link></li>
             <li><Link to="/namts/102/1">NAMTS - SET B</Link></li>
             <li><Link to="/namts/103/1">NAMTS - SET C</Link></li>
@@ -73,8 +85,8 @@ const Home = () => {
         <li><Link to="/exitsurvey">ExitSurvey</Link></li>
       </ol>
       <h3>Instructions:</h3>
-      <ul>
-        <ul>
+      <ul className="home-list">
+        <ul className="home-list">
           <li><Link to="/instructions/amts/Z">amts</Link></li>
           <li><Link to="/instructions/dct/Z">dct</Link></li>
           <li><Link to="/instructions/evotiv/Z">evotiv</Link></li>
