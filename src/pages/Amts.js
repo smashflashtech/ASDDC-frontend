@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import SplitScreen2 from '../components/SplitScreen2'
+import SplitScreenAmts from '../components/SplitScreenAmts'
 import AmtsModel from '../models/amts'
 
 const Amts = (props) => {
@@ -55,7 +55,7 @@ const Amts = (props) => {
   return (
     <div>
       { trials.length !== undefined ?
-        <SplitScreen2
+        <SplitScreenAmts
           os={os}
           trials={trials}
           block={block}

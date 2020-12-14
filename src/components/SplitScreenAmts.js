@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "../css/splitScreen2.css";
+import "../css/splitScreenAmts.css";
 import '../css/button.css'
 
-const SplitScreen2 = (props) => {
+const SplitScreenAmts = (props) => {
   console.log("are we in bidness", props.trials)
   console.log("HERES THE CRITERIA", props.criteria)
   const [sClick, setSClick] = useState(0)
@@ -124,4 +124,4 @@ const SplitScreen2 = (props) => {
   )
 }
 
-export default SplitScreen2
+export default SplitScreenAmts
