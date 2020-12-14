@@ -52,24 +52,18 @@ const Amts = (props) => {
 
   useEffect(() => { fetchStimuli() }, [])
 
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
-
   return (
     <div>
       { trials.length !== undefined ?
         <SplitScreen2
           os={os}
           trials={trials}
-          set={condition}
           block={block}
           maxTrials={maxTrials}
           criteria={criteria}
           phase={phase}
-          criteriaRequired={criteriaRequired}
-          setDone={setDone}
-          setConsecutive={setConsecutive}
           feedback={feedback}
+          criteriaRequired={criteriaRequired}
         /> : ""}
     </div>
   )

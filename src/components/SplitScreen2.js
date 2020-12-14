@@ -15,27 +15,39 @@ const SplitScreen2 = (props) => {
   const [value, setValue] = useState()
   const [position, setPosition] = useState()
   const [criteria, setCriteria] = useState()
-  const [twoConsecutive, setTwoConsecutive] = useState([])
+  const [twoConsecutive] = useState(parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)))
 
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
 
 
   const constructUrl = () => {
+    if (corrects === props.criteria ){
+      console.log("Hello?")
+      localStorage.setItem(`${props.phase}-${props.feedback}-2count`, parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) + 1 )
+    }
+
     if (twoConsecutive < 2 && props.feedback === 'true') {
       setMetUrl(`/amts/${props.block + 1}/true`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
+      console.log('option 1')
     } else if (twoConsecutive === 2 && props.feedback === 'true') {
       setMetUrl(`/amts/1/false`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
+      console.log('option 2')
     } else if (twoConsecutive < 2 && props.feedback === 'false') {
       setMetUrl(`/amts/${props.block + 1}/true`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
+      console.log('option 3')
     }else if (twoConsecutive === 2 && props.feedback === 'false') {
       setMetUrl(`/dct/post/1`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
+      console.log('option 4')
+    }
+    console.log('construct function ran')
+    console.log('met', metUrl)
+    console.log('met', notMetUrl)
   }
-
 
   const handleSampleClick = (e) => {
     e.preventDefault()
@@ -62,14 +74,15 @@ const SplitScreen2 = (props) => {
     if (selectedValue === "correct") {
       setCorrects(corrects + 1)
     }
-
     //resets the os-sample stimulus, clicks to 0
     document.getElementById("os-sample").setAttribute("src", props.os)
     setSClick(0)
     //adds to iterator
     setI(i + 1)
-
-
+    //checks to see if URL should be constructed
+    if (trial === props.trials.length) {
+      constructUrl()
+    }
     //NEED TO ADD POST to the Database
     //where PARTICIPANT ID (stored in local storate)
     //and trialCode (create a join)
@@ -78,6 +91,7 @@ const SplitScreen2 = (props) => {
     //color
     //value
     //cumulative corrects
+    
   }
 
   return (
@@ -100,7 +114,7 @@ const SplitScreen2 = (props) => {
             :
             <div />
           }
-
+          { trial > props.maxTrials ? <Link id="link-no-criteria" onClick={() => { window.location.href = `http://localhost:3000/amts/${parseInt(props.block) + 1}/true` }}><button type="button" id="btn" className="btn" >Temp Reload</button></Link> : <></>}
           {/* {props.criteriaRequired === "false" && trial === props.maxTrials
             ?
             <Link id="link-no-criteria" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
