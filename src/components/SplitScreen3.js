@@ -35,20 +35,12 @@ const SplitScreen3 = (props) => {
     e.target.setAttribute("src", props.trials[i][0])
     //adds to click count which will determine if comparisons should display
     setSClick(sClick + 1)
-    //counts trial
-    setTrial(trial + 1)
-    document.getElementById('os-sample').setAttribute("onClick", handleSecondClick)
-  }
-
-  const handleSecondClick = (e) => {
-    setSClick(sClick + 1)
-    document.getElementById('os-sample').setAttribute("onClick", handleSampleClick)
   }
 
   const handleComparisonClick = (e) => {
     e.preventDefault()
-    // //counts trial
-    // setTrial(trial + 1)
+    //counts trial
+    setTrial(trial + 1)
     //info on how the participant did
     setColor(e.target.getAttribute("alt"))
     setPosition(e.target.getAttribute("class"))
@@ -106,13 +98,13 @@ const SplitScreen3 = (props) => {
             <div />
           }
 
-          {props.criteriaRequired === "false" && trial >= props.maxTrials
+          {props.criteriaRequired === "false" && trial === props.maxTrials
             ?
-            <Link id="link" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-            : trial >= props.maxTrials && corrects === props.criteria
-              ? <Link id="link" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-              : trial >= props.maxTrials && corrects < props.criteria
-                ? <Link id="link" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
+            <Link id="link-no-criteria" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+            : props.criteriaRequired === "true" && trial - 1 === props.maxTrials && corrects === props.criteria
+              ? <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+              : props.criteriaRequired === "true" && trial - 1 === props.maxTrials && corrects < props.criteria
+                ? <Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
                 :
                 <></>
           }
