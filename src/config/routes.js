@@ -34,10 +34,10 @@ export default (
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/particpant/:id' component={ParticipantInfo} />
     <Route path='/amts/:block/:feedback' component={Amts} />
-    <Route path='/dct/:condition/:block' component={Dct} />
+    <Route path='/dct/:condition/:block' component={Dct}/>
     <Route path='/evotiv/:block' component={Evotiv} />
     <Route path='/evott/:block' component={Evott} />
-    <Route path='/namts/:set/:block' component={Namts} />
+    <Route path='/namts/:set/:block' component={Namts}/>
     <Route path='/npst/:block' component={Npst} />
     <Route path='/psvotiv/:block' component={Psvotiv} />
     <Route path='/psvotps/:block' component={Psvotps} />
