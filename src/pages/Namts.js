@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NamtsModel from '../models/namts'
 import SplitScreen3 from '../components/SplitScreen3'
-import {Link} from 'react-router-dom'
 
 const Namts = (props) => {
   console.log("THIS IS THE SET", props.match.params.set)
@@ -15,6 +14,7 @@ const Namts = (props) => {
   const [criteria, setCriteria] = useState()
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
+  const [criteriaRequired] = useState("true")
 
   const fetchStimuli = () => {
     NamtsModel.stimuli(set).then((data) => {
@@ -77,6 +77,7 @@ const Namts = (props) => {
           criteria={criteria}
           metUrl={metUrl}
           notMetUrl={notMetUrl}
+          criteriaRequired={criteriaRequired}
         /> : "" }
     </div>
   )

@@ -13,6 +13,7 @@ const Dct = (props) => {
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [metUrl, setMetUrl] = useState()
+  const [criteriaRequired] = useState("false")
 
   const fetchStimuli = () => {
     DctModel.stimuli().then((data) => {
@@ -82,6 +83,7 @@ const Dct = (props) => {
           criteria={criteria}
           metUrl={metUrl}
           phase={phase}
+          criteriaRequired={criteriaRequired}
         /> : ""}
     </div>
   )
