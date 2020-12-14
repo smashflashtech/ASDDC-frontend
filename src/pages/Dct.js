@@ -8,7 +8,7 @@ const Dct = (props) => {
 
   const [os, setOs] = useState()
   const [block] = useState(parseInt(props.match.params.block))
-  const [condition] = useState()
+  const [condition] = useState(props.match.params.condition)
   const [phase] = useState('dct')
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
@@ -53,6 +53,7 @@ const Dct = (props) => {
     })
     //CONSTRUCT MET AND UNMET URLS depending on dyad
     //if dyad = 1 and block = 1 move to namts OR dyad = 2 and block = 3 move to namts
+    console.log("this is the condition", condition)
     if (condition === 'pre' && dyadN === 1) {
       setMetUrl('/instructions/namts/101')
     } else if (condition === 'pre' && dyadN === 2 && block < 3) {
@@ -77,7 +78,7 @@ const Dct = (props) => {
         <SplitScreen3
           os={os}
           trials={trials}
-          set={props.match.params.condition}
+          set={condition}
           block={block}
           maxTrials={maxTrials}
           criteria={criteria}

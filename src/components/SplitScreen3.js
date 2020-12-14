@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import "../css/splitScreen3.css";
 import Button from './Button'
 import '../css/button.css'
@@ -11,6 +11,7 @@ const SplitScreen3 = (props) => {
   console.log("use this to determine if trials are done: ", props.maxTrials)
   console.log("heres the OS: ", props.os)
   console.log("heres the passing criteria: ", props.criteria)
+  console.log("heres the passing criteriaRequired: ", props.criteriaRequired)
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
   const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code
@@ -22,7 +23,7 @@ const SplitScreen3 = (props) => {
   const [position, setPosition] = useState()
   const [criteria, setCriteria] = useState()
   // const [buttonPath, setButtonPath] = useState()
-  
+
   const handleSampleClick = (e) => {
     e.preventDefault()
     setCriteria(props.criteria)
@@ -34,10 +35,20 @@ const SplitScreen3 = (props) => {
     e.target.setAttribute("src", props.trials[i][0])
     //adds to click count which will determine if comparisons should display
     setSClick(sClick + 1)
+    //counts trial
+    setTrial(trial + 1)
+    document.getElementById('os-sample').setAttribute("onClick", handleSecondClick)
+  }
+
+  const handleSecondClick = (e) => {
+    setSClick(sClick + 1)
+    document.getElementById('os-sample').setAttribute("onClick", handleSampleClick)
   }
 
   const handleComparisonClick = (e) => {
     e.preventDefault()
+    // //counts trial
+    // setTrial(trial + 1)
     //info on how the participant did
     setColor(e.target.getAttribute("alt"))
     setPosition(e.target.getAttribute("class"))
@@ -52,8 +63,7 @@ const SplitScreen3 = (props) => {
     setSClick(0)
     //adds to iterator
     setI(i + 1)
-    //counts trial
-    setTrial(trial + 1)
+
 
     //NEED TO ADD POST to the Database
     //where PARTICIPANT ID (stored in local storate)
@@ -65,17 +75,7 @@ const SplitScreen3 = (props) => {
     //cumulative corrects
   }
 
-  // const handleNext = (e) => {
-  //   e.preventDefault()
-  //   setSClick(0)
-  //   setI(0)
-  //   setTrial(1)
-  //   setCorrects(0)
-  //   // document.getElementById("namts-btn").remove()
-  //   // document.getElementById("namts-link").remove()
-  //   window.location.reload()
-  // }
-
+  //GOOGLE SAYS YOU CAN NEST TERNARIES... ohhhh man
   // if (props.phase === "dct") {
   //   setButtonPath(<Link id="dct-link" to={props.metUrl}><button type="button" className="btn">Next Task</button></Link>)
   // } else if (props.phase === "namts" && corrects === props.criteria){
@@ -105,12 +105,17 @@ const SplitScreen3 = (props) => {
             :
             <div />
           }
-                    
-          {/* { trial <= props.maxTrials+1 && corrects === props.criteria ? 
-            <Link id="link" onClick={()=>{window.location.href=props.metUrl}}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-          :
-            <Link id="link" onClick={()=>{window.location.href=props.notMetUrl}><button type="button" id="btn" className="btn">Next Task</button></Link>
-          } */}
+
+          {props.criteriaRequired === "false" && trial >= props.maxTrials
+            ?
+            <Link id="link" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+            : trial >= props.maxTrials && corrects === props.criteria
+              ? <Link id="link" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+              : trial >= props.maxTrials && corrects < props.criteria
+                ? <Link id="link" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
+                :
+                <></>
+          }
         </div>
       </div>
     </div>
