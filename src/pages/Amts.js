@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import SplitScreen2 from '../components/SplitScreen2'
 import AmtsModel from '../models/amts'
 
 const Amts = () => {
@@ -32,7 +33,8 @@ const Amts = () => {
 
   return (
     <div>
-            { comparison !== undefined ? <img src= { comparison } /> : "" }
+            {/* { comparison !== undefined ? <img src= { comparison } /> : "" } */}
+      <SplitScreen2 />
     </div>
   )
 }

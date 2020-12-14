@@ -1,0 +1,41 @@
+#container {
+  min-height:100vh;
+}
+
+.top {
+  height: 50vh;
+  background-color: rgb(255, 154, 210);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom{
+  height: 50vh;
+  background-color: rgb(255, 245, 136);
+  display: flex;
+  
+}
+
+/* Sample Display */
+.os-sample{
+  width: 12vw;
+}
+
+
+/* Comparison Display */
+
+.comparison-container{
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
+/* .left{
+  width: 12vw;
+}
+
+.right{
+  width: 12vw;
+} */
