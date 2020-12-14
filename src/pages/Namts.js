@@ -1,42 +1,92 @@
 import React, { useState, useEffect } from 'react'
 import NamtsModel from '../models/namts'
+import SplitScreen3 from '../components/SplitScreen3'
+import uuid from 'react-uuid'
 
 const Namts = (props) => {
+  console.log("THIS IS THE SET", props.match.params.set)
+  console.log("THIS IS THE block", props.match.params.block)
+  const [block] = useState(parseInt(props.match.params.block))
   const [comparison, setComparison] = useState()
-  const [set, setSet] = useState(props.match.params.set)
-  const [instructions, setInstructions] = useState()
+  const [set] = useState(parseInt(props.match.params.set))
   const [os, setOs] = useState()
-  // const [sample, setSample] = useState()
   const [trials, setTrials] = useState()
-  // const [pretest, setPretest] = useState() //criteria not yet added to json file on the backend
-  // const [posttest, setPostest] = useState()
+  const [maxTrials, setMaxTrials] = useState()
+  const [criteria, setCriteria] = useState()
+  const [metUrl, setMetUrl] = useState()
+  const [notMetUrl, setNotMetUrl] = useState()
 
-  const fetchStimuli=() => {
-    NamtsModel.stimuli(set).then((data)=>{
-      
-      //constructs the image path string
-      setComparison(require(`../stimuli/${data.namts.trials[0][1].imagePath}`).default)
-
-      // //these need to be passed as props
-      setInstructions(data.namts.instructions)
-      setOs(data.namts.observingStim)
-      setTrials(data.namts.trials)
-      // setPretest(data.namts.masteryCriterion.preTest.percentage)
-      // setPostest(data.namts.masteryCriterion.postTest.percentage)
+  const fetchStimuli = () => {
+    NamtsModel.stimuli(set).then((data) => {
+      console.log(data.namts)
+      //Sets Observing stimulus
+      const tempOs = require(`../stimuli/${data.namts.observingStim.imagePath}`).default
+      setOs(tempOs)
+      setCriteria(data.namts.trials.length)
+      setMaxTrials(data.namts.trials.length)
+            // constructs the image path string
+      const megaStimulusBank = []
+      for (let i = 0; i < data.namts.trials.length; i++) {
+        const temp = []
+        const sample = require(`../stimuli/${data.namts.trials[i][0].imagePath}`).default
+        temp.push(sample)
+        const trialCode = data.namts.trials[i][0].trialCode
+        temp.push(trialCode)
+        for (let j = 1; j < data.namts.trials[i].length; j++) {
+          let size = data.namts.trials[i][j].size
+          temp.push(size)
+          let comparison = require(`../stimuli/${data.namts.trials[i][j].imagePath}`).default
+          temp.push(comparison)
+          let position = data.namts.trials[i][j].class
+          temp.push(position)
+          let value = data.namts.trials[i][j].value
+          temp.push(value)
+        }
+        megaStimulusBank.push(temp)
+        for (let k = 0; k < megaStimulusBank.length; k++) {                                       //SHUFFLES THE ARRAY
+          let l = Math.floor(Math.random() * megaStimulusBank.length);
+          let temp = megaStimulusBank[k];
+          megaStimulusBank[k] = megaStimulusBank[l];
+          megaStimulusBank[l] = temp;
+        }
+      }
+      setTrials(megaStimulusBank)
+    })
+    if (set < 115) {
+      setMetUrl({
+        pathname: `/namts/${set + 1}/1`,
+        key: uuid(),
+        state: {applied: true}
       })
+      setNotMetUrl({
+        pathname: `/namts/${set}/${block + 1}`,
+        key: uuid(),
+        state: {applied: true}
+      })
+    } else if (set === 115) {
+      setMetUrl(`/instructions/amts/true/Z"`)
+      setNotMetUrl(`/namts/${set}/${block + 1}`)
+    }
   }
-  useEffect( () => { fetchStimuli() },[])
-  
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", instructions)
+  useEffect(() => { fetchStimuli() }, [])
 
   return (
     <div>
-            { comparison !== undefined ? <img src= { comparison } /> : "" }
+      {/* { comparison !== undefined ? <img src={comparison} /> : ""} */}
+      { trials !== undefined ? 
+        <SplitScreen3
+          os={os}
+          trials={trials}
+          set={set}
+          block={block}
+          maxTrials={maxTrials}
+          criteria={criteria}
+          metUrl={metUrl}
+          notMetUrl={notMetUrl}
+        /> : "" }
     </div>
   )
-      // there will be a link generated based on an if statement that will either link to next phase/condition or restart same condition with updated block code in the link...
+  // there will be a link generated based on an if statement that will either link to next phase/condition or restart same condition with updated block code in the link...
 }
 
 export default Namts
