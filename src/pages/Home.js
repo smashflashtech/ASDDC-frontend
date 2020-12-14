@@ -69,7 +69,7 @@ const Home = () => {
             <li><Link to="/namts/112/1">NAMTS - SET L</Link></li>
             <li><Link to="/namts/113/1">NAMTS - SET M</Link></li>
             <li><Link to="/namts/114/1">NAMTS - SET N</Link></li>
-            <li><Link to="/namts/125/1">NAMTS - SET O</Link></li>
+            <li><Link to="/namts/115/1">NAMTS - SET O</Link></li>
           </ul>
         </li>
         <li><Link to="/amts/1/true">Arbitrary MTS - TRUE (feedback)</Link></li>
