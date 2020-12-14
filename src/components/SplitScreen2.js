@@ -17,6 +17,26 @@ const SplitScreen2 = (props) => {
   const [criteria, setCriteria] = useState()
   const [twoConsecutive, setTwoConsecutive] = useState([])
 
+  const [metUrl, setMetUrl] = useState()
+  const [notMetUrl, setNotMetUrl] = useState()
+
+
+  const constructUrl = () => {
+    if (twoConsecutive < 2 && props.feedback === 'true') {
+      setMetUrl(`/amts/${props.block + 1}/true`)
+      setNotMetUrl(`/amts/${props.block + 1}/true`)
+    } else if (twoConsecutive === 2 && props.feedback === 'true') {
+      setMetUrl(`/amts/1/false`)
+      setNotMetUrl(`/amts/${props.block + 1}/true`)
+    } else if (twoConsecutive < 2 && props.feedback === 'false') {
+      setMetUrl(`/amts/${props.block + 1}/true`)
+      setNotMetUrl(`/amts/${props.block + 1}/true`)
+    }else if (twoConsecutive === 2 && props.feedback === 'false') {
+      setMetUrl(`/dct/post/1`)
+      setNotMetUrl(`/amts/${props.block + 1}/true`)
+  }
+
+
   const handleSampleClick = (e) => {
     e.preventDefault()
     setCriteria(props.criteria)

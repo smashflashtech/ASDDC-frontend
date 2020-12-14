@@ -6,12 +6,12 @@ const Amts = (props) => {
   const [os, setOs] = useState()
   const [trials, setTrials] = useState([])
   const [block] = useState(parseInt(props.match.params.block))
-  const [condition] = useState(props.match.params.condition)
+  const [feedback] = useState(props.match.params.feedback)
   const [phase] = useState('amts')
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
-  const [metUrl, setMetUrl] = useState()
   const [criteriaRequired] = useState("true")
+
 
   const fetchStimuli = () => {
     AmtsModel.stimuli().then((data) => {
@@ -48,10 +48,6 @@ const Amts = (props) => {
       }
       setTrials(megaStimulusBank)
     })
-    //CONSTRUCT MET AND UNMET URLS
-
-
-
   }
 
   useEffect(() => { fetchStimuli() }, [])
@@ -69,9 +65,11 @@ const Amts = (props) => {
           block={block}
           maxTrials={maxTrials}
           criteria={criteria}
-          metUrl={metUrl}
           phase={phase}
           criteriaRequired={criteriaRequired}
+          setDone={setDone}
+          setConsecutive={setConsecutive}
+          feedback={feedback}
         /> : ""}
     </div>
   )
