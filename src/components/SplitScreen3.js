@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import "../css/splitScreen3.css";
-import Button from './Button'
 import '../css/button.css'
 
 const SplitScreen3 = (props) => {
@@ -67,15 +66,6 @@ const SplitScreen3 = (props) => {
     //cumulative corrects
   }
 
-  //GOOGLE SAYS YOU CAN NEST TERNARIES... ohhhh man
-  // if (props.phase === "dct") {
-  //   setButtonPath(<Link id="dct-link" to={props.metUrl}><button type="button" className="btn">Next Task</button></Link>)
-  // } else if (props.phase === "namts" && corrects === props.criteria){
-  //   setButtonPath(<Link id="namts-link" to={props.metUrl}><button type="button" id="namts-btn" className="btn">Next Task</button></Link>)
-  // } else if (props.phase === "namts" && corrects < props.criteria) {
-  //   setButtonPath(<Link id="namts-link"to={props.notMetUrl}><button type="button" id="namts-btn" className="btn">Next Task</button></Link>)
-  // }
-
   return (
     <div id="container">
       <div className="top">
@@ -111,7 +101,6 @@ const SplitScreen3 = (props) => {
         </div>
       </div>
     </div>
-    // there will be a link generated based on an if statement that will either reset page or send to the next phase
   )
 }
 
