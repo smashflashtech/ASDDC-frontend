@@ -19,7 +19,7 @@ const Welcome = (props) => {
 
     //in the future the URL could differ depending on group/dyad assignment
     //for now, everyone starts at the same pretest
-    setStartUrl('/dct/pre/1')
+    setStartUrl('/instructions/dct/pre')
   }
 
   useEffect( () => { participantSetup() },[])
