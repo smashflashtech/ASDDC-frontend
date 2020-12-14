@@ -51,6 +51,7 @@ const Namts = (props) => {
         }
       }
       setTrials(megaStimulusBank)
+      localStorage.setItem(`${phase}`, set)
     })
     if (set < 115) {
       setMetUrl(`/namts/${set + 1}/1`)
