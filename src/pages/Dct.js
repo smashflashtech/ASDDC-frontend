@@ -50,6 +50,7 @@ const Dct = (props) => {
         }
       }
       setTrials(megaStimulusBank)
+      localStorage.setItem(`${phase}-${props.match.params.condition}`, parseInt(props.match.params.block))
     })
     //CONSTRUCT MET AND UNMET URLS depending on dyad
     //if dyad = 1 and block = 1 move to namts OR dyad = 2 and block = 3 move to namts
@@ -61,7 +62,7 @@ const Dct = (props) => {
     } else if (condition === 'pre' && dyadN === 2 && block === 3) {
       setMetUrl('/instructions/namts/101')
     } else if (condition === 'post') {
-      setMetUrl('/instructions/tsf/1')
+      setMetUrl(`/instructions/tsf/${localStorage.getItem('dct-post')}`)
     }
   }
 
