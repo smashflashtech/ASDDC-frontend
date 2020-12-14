@@ -25,20 +25,20 @@ const SplitScreen2 = (props) => {
   const constructUrl = () => {
     console.log("what is the local storage value" , localStorage.getItem(`${props.phase}-${props.feedback}-2count`))
     console.log("what is props.feedback", props.feedback)
-    if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) < 2 && props.feedback === 'true') {
+    if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) < 2 && props.feedback === 'true') {
       setMetUrl(`/amts/${props.block + 1}/true`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 1')
-    } else if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) === 2 && props.feedback === 'true') {
+    } else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) === 2 && props.feedback === 'true') {
       setMetUrl(`/amts/1/false`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 2')
-    } else if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) < 2 && props.feedback === 'false') {
+    } else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) < 2 && props.feedback === 'false') {
       setMetUrl(`/amts/${props.block + 1}/true`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 3')
-    }else if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) === 2 && props.feedback === 'false') {
-      setMetUrl(`/dct/post/1`)
+    }else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) === 2 && props.feedback === 'false') {
+      setMetUrl(`/instructions/dct/post`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 4')
     }
