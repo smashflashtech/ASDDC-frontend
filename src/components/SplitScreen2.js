@@ -5,57 +5,53 @@ import '../css/button.css'
 
 const SplitScreen2 = (props) => {
   console.log("are we in bidness", props.trials)
+  console.log("HERES THE CRITERIA", props.criteria)
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
   const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code
   const [corrects, setCorrects] = useState(0)
+  const [criteria, setCriteria] = useState()
   const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
   const [color, setColor] = useState()
   const [value, setValue] = useState()
   const [position, setPosition] = useState()
-  const [criteria, setCriteria] = useState()
-  const [twoConsecutive] = useState(parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)))
-
+  
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
 
 
+  
   const constructUrl = () => {
-    if (corrects === props.criteria ){
-      console.log("Hello?")
-      localStorage.setItem(`${props.phase}-${props.feedback}-2count`, parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) + 1 )
-    }
-
-    if (twoConsecutive < 2 && props.feedback === 'true') {
+    console.log("what is the local storage value" , localStorage.getItem(`${props.phase}-${props.feedback}-2count`))
+    console.log("what is props.feedback", props.feedback)
+    if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) < 2 && props.feedback === 'true') {
       setMetUrl(`/amts/${props.block + 1}/true`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 1')
-    } else if (twoConsecutive === 2 && props.feedback === 'true') {
+    } else if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) === 2 && props.feedback === 'true') {
       setMetUrl(`/amts/1/false`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 2')
-    } else if (twoConsecutive < 2 && props.feedback === 'false') {
+    } else if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) < 2 && props.feedback === 'false') {
       setMetUrl(`/amts/${props.block + 1}/true`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 3')
-    }else if (twoConsecutive === 2 && props.feedback === 'false') {
+    }else if (localStorage.getItem(`${props.phase}-${props.feedback}-2count`) === 2 && props.feedback === 'false') {
       setMetUrl(`/dct/post/1`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
       console.log('option 4')
     }
     console.log('construct function ran')
-    console.log('met', metUrl)
-    console.log('met', notMetUrl)
   }
 
   const handleSampleClick = (e) => {
     e.preventDefault()
-    setCriteria(props.criteria)
+    setCriteria(parseInt(props.criteria))
     //grabs the trial code
     setTrialCode(e.target.getAttribute("value"))
     //constructs the block code and stores in state
-    setBlockCode(`${props.set}-${props.block}-${trial}`)
+    setBlockCode(`${props.phase}-${props.block}-${trial}`)
     //changes os image to sample image
     e.target.setAttribute("src", props.trials[i][0])
     //adds to click count which will determine if comparisons should display
@@ -81,6 +77,10 @@ const SplitScreen2 = (props) => {
     setI(i + 1)
     //checks to see if URL should be constructed
     if (trial === props.trials.length) {
+      if (corrects >= criteria - 1 ){      
+        console.log("Hello?")
+        localStorage.setItem(`${props.phase}-${props.feedback}-2count`, parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) + 1 )
+      }
       constructUrl()
     }
     //NEED TO ADD POST to the Database
