@@ -6,7 +6,7 @@ const Button = (props) => {
   return (
     <>
       <Link to={props.url}>
-        <button className="welcome-btn">
+        <button className="btn">
           {props.text}
         </button>
         </Link>
