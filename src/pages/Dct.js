@@ -23,7 +23,7 @@ const Dct = (props) => {
       setOs(tempOs)
       setCriteria(99)
       setMaxTrials(data.dct.trials.length)
-      // constructs the image path string
+      // constructs the trials array for rendering
       const megaStimulusBank = []
       for (let i = 0; i < data.dct.trials.length; i++) {
         const temp = []
