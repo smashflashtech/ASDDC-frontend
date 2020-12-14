@@ -88,20 +88,21 @@ const Home = () => {
       <h3>Instructions:</h3>
       <ul className="home-list">
         <ul className="home-list">
-          <li><Link to="/instructions/amts/Z/Z">amts</Link></li>
-          <li><Link to="/instructions/dct/pre/1">dct-pre - block 1</Link></li>
-          <li><Link to="/instructions/evotiv/Z/Z">evotiv</Link></li>
-          <li><Link to="/instructions/evott/Z/Z">evott</Link></li>
-          <li><Link to="/instructions/namts/101/1">namts - set A - block 1</Link></li>
-          <li><Link to="/instructions/npst/Z/Z">npst</Link></li>
-          <li><Link to="/instructions/psvotiv/Z/Z">psvotiv</Link></li>
-          <li><Link to="/instructions/psvotps/Z/Z">psvotps</Link></li>
-          <li><Link to="/instructions/psvott/Z/Z">psvott</Link></li>
-          <li><Link to="/instructions/sdisc/Z/Z">sdisc</Link></li>
-          <li><Link to="/instructions/spair/Z/Z">spair</Link></li>
-          <li><Link to="/instructions/tat/Z/Z">tat</Link></li>
-          <li><Link to="/instructions/tp/Z/Z">tp</Link></li>
-          <li><Link to="/instructions/tsf/Z/Z">tsf</Link></li>
+          <li><Link to="/instructions/amts/Z">amts</Link></li>
+          <li><Link to="/instructions/dct/pre">dct-pre - block 1</Link></li>
+          <li><Link to="/instructions/dct/post">dct-post - block 1</Link></li>
+          <li><Link to="/instructions/evotiv/Z">evotiv</Link></li>
+          <li><Link to="/instructions/evott/Z">evott</Link></li>
+          <li><Link to="/instructions/namts/101">namts - set A - block 1</Link></li>
+          <li><Link to="/instructions/npst/Z">npst</Link></li>
+          <li><Link to="/instructions/psvotiv/Z">psvotiv</Link></li>
+          <li><Link to="/instructions/psvotps/Z">psvotps</Link></li>
+          <li><Link to="/instructions/psvott/Z">psvott</Link></li>
+          <li><Link to="/instructions/sdisc/Z">sdisc</Link></li>
+          <li><Link to="/instructions/spair/Z">spair</Link></li>
+          <li><Link to="/instructions/tat/Z">tat</Link></li>
+          <li><Link to="/instructions/tp/Z">tp</Link></li>
+          <li><Link to="/instructions/tsf/Z">tsf</Link></li>
         </ul>
       </ul>
     </div>
