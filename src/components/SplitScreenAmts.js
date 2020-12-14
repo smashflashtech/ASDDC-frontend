@@ -30,8 +30,8 @@ const SplitScreenAmts = (props) => {
       setMetUrl(`/amts/1/false`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
     } else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) < 2 && props.feedback === 'false') {
-      setMetUrl(`/amts/${props.block + 1}/true`)
-      setNotMetUrl(`/amts/${props.block + 1}/true`)
+      setMetUrl(`/amts/${props.block + 1}/false`)
+      setNotMetUrl(`/amts/${props.block + 1}/false`)
     }else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) === 2 && props.feedback === 'false') {
       setMetUrl(`/instructions/dct/post`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
@@ -107,17 +107,13 @@ const SplitScreenAmts = (props) => {
             :
             <div />
           }
-          { trial > props.maxTrials ? <Link id="link-no-criteria" onClick={() => { window.location.href = `http://localhost:3000/amts/${parseInt(props.block) + 1}/true` }}><button type="button" id="btn" className="btn" >Temp Reload</button></Link> : <></>}
-          {/* {props.criteriaRequired === "false" && trial === props.maxTrials
-            ?
-            <Link id="link-no-criteria" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-            : props.criteriaRequired === "true" && trial - 1 === props.maxTrials && corrects === props.criteria
-              ? <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-              : props.criteriaRequired === "true" && trial - 1 === props.maxTrials && corrects < props.criteria
-                ? <Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
-                :
-                <></>
-          } */}
+          { trial > props.maxTrials && corrects === criteria ? 
+            <Link id="link-criteria-met" onClick={() => { window.location.href = metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+            : trial > props.maxTrials && corrects < criteria ?
+            <Link id="link-criteria-notmet" onClick={() => { window.location.href = notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
+            :
+            console.log("sucka")
+          }
         </div>
       </div>
     </div>
