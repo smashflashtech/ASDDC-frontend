@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import NamtsModel from '../models/namts'
 import SplitScreen3 from '../components/SplitScreen3'
-import uuid from 'react-uuid'
+import {Link} from 'react-router-dom'
 
 const Namts = (props) => {
   console.log("THIS IS THE SET", props.match.params.set)
   console.log("THIS IS THE block", props.match.params.block)
   const [block] = useState(parseInt(props.match.params.block))
-  const [comparison, setComparison] = useState()
+  const [phase] = useState('namst')
   const [set] = useState(parseInt(props.match.params.set))
   const [os, setOs] = useState()
   const [trials, setTrials] = useState()
@@ -53,16 +53,8 @@ const Namts = (props) => {
       setTrials(megaStimulusBank)
     })
     if (set < 115) {
-      setMetUrl({
-        pathname: `/namts/${set + 1}/1`,
-        key: uuid(),
-        state: {applied: true}
-      })
-      setNotMetUrl({
-        pathname: `/namts/${set}/${block + 1}`,
-        key: uuid(),
-        state: {applied: true}
-      })
+      setMetUrl(`/namts/${set + 1}/1`)
+      setNotMetUrl(`/namts/${set}/${block + 1}`)
     } else if (set === 115) {
       setMetUrl(`/instructions/amts/true/Z"`)
       setNotMetUrl(`/namts/${set}/${block + 1}`)
@@ -70,9 +62,11 @@ const Namts = (props) => {
   }
   useEffect(() => { fetchStimuli() }, [])
 
+
+
   return (
     <div>
-      {/* { comparison !== undefined ? <img src={comparison} /> : ""} */}
+      { console.log(trials)}
       { trials !== undefined ? 
         <SplitScreen3
           os={os}

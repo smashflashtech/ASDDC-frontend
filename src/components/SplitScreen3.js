@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import {Link, Redirect} from 'react-router-dom'
 import "../css/splitScreen3.css";
 import Button from './Button'
-
+import '../css/button.css'
 
 const SplitScreen3 = (props) => {
   console.log("are we in bidness", props.trials)
@@ -19,9 +20,12 @@ const SplitScreen3 = (props) => {
   const [color, setColor] = useState()
   const [value, setValue] = useState()
   const [position, setPosition] = useState()
-
+  const [criteria, setCriteria] = useState()
+  // const [buttonPath, setButtonPath] = useState()
+  
   const handleSampleClick = (e) => {
     e.preventDefault()
+    setCriteria(props.criteria)
     //grabs the trial code
     setTrialCode(e.target.getAttribute("value"))
     //constructs the block code and stores in state
@@ -51,7 +55,6 @@ const SplitScreen3 = (props) => {
     //counts trial
     setTrial(trial + 1)
 
-
     //NEED TO ADD POST to the Database
     //where PARTICIPANT ID (stored in local storate)
     //and trialCode (create a join)
@@ -61,6 +64,25 @@ const SplitScreen3 = (props) => {
     //value
     //cumulative corrects
   }
+
+  // const handleNext = (e) => {
+  //   e.preventDefault()
+  //   setSClick(0)
+  //   setI(0)
+  //   setTrial(1)
+  //   setCorrects(0)
+  //   // document.getElementById("namts-btn").remove()
+  //   // document.getElementById("namts-link").remove()
+  //   window.location.reload()
+  // }
+
+  // if (props.phase === "dct") {
+  //   setButtonPath(<Link id="dct-link" to={props.metUrl}><button type="button" className="btn">Next Task</button></Link>)
+  // } else if (props.phase === "namts" && corrects === props.criteria){
+  //   setButtonPath(<Link id="namts-link" to={props.metUrl}><button type="button" id="namts-btn" className="btn">Next Task</button></Link>)
+  // } else if (props.phase === "namts" && corrects < props.criteria) {
+  //   setButtonPath(<Link id="namts-link"to={props.notMetUrl}><button type="button" id="namts-btn" className="btn">Next Task</button></Link>)
+  // }
 
   return (
     <div id="container">
@@ -82,9 +104,12 @@ const SplitScreen3 = (props) => {
             </>
             :
             <div />
-          }
-
-          {trial === props.maxTrials + 1 && corrects < props.criteria ? <Button url={props.metUrl} text={"Next Task"}/> : <></>}
+          }          
+          {/* { trial <= props.maxTrials+1 && corrects === props.criteria ? 
+            <Link id="link" to={props.metUrl}><button type="button" id="btn" className="btn" onClick={handleNext}>Next Task</button></Link>
+          :
+            <Link id="link"to={props.notMetUrl}><button type="button" id="btn" className="btn" onClick={handleNext}>Next Task</button></Link>
+          } */}
         </div>
       </div>
     </div>
