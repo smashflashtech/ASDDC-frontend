@@ -46,7 +46,7 @@ export default (
     <Route path='/sdisc/:block' component={SDisc} />
     <Route path='/tat/:block' component={Tat} />
     <Route path='/tp/:block' component={Tp} />
-    <Route path='/tsf/:block' component={Tsf} />
+    <Route path='/tsf/:condition/:block' component={Tsf} />
     <Route path='/exitsurvey' component={ExitSurvey} />
   </Switch>
 );
