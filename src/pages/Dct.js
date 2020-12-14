@@ -9,7 +9,7 @@ const Dct = (props) => {
   const [os, setOs] = useState()
   const [block] = useState(parseInt(props.match.params.block))
   const [condition] = useState()
-  const [phase] = useState('namts')
+  const [phase] = useState('dct')
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [metUrl, setMetUrl] = useState()
@@ -52,12 +52,14 @@ const Dct = (props) => {
     })
     //CONSTRUCT MET AND UNMET URLS depending on dyad
     //if dyad = 1 and block = 1 move to namts OR dyad = 2 and block = 3 move to namts
-    if (dyadN === 1) {
+    if (condition === 'pre' && dyadN === 1) {
       setMetUrl('/instructions/namts/101')
-    } else if (dyadN === 2 && block < 3) {
+    } else if (condition === 'pre' && dyadN === 2 && block < 3) {
       setMetUrl(`/dct/pre/${block + 1}`)
-    } else if (dyadN === 2 && block === 3) {
+    } else if (condition === 'pre' && dyadN === 2 && block === 3) {
       setMetUrl('/instructions/namts/101')
+    } else if (condition === 'post') {
+      setMetUrl('/instructions/tsf/1')
     }
   }
 
