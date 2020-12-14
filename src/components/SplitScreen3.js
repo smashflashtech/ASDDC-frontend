@@ -104,11 +104,12 @@ const SplitScreen3 = (props) => {
             </>
             :
             <div />
-          }          
+          }
+                    
           {/* { trial <= props.maxTrials+1 && corrects === props.criteria ? 
-            <Link id="link" to={props.metUrl}><button type="button" id="btn" className="btn" onClick={handleNext}>Next Task</button></Link>
+            <Link id="link" onClick={()=>{window.location.href=props.metUrl}}><button type="button" id="btn" className="btn" >Next Task</button></Link>
           :
-            <Link id="link"to={props.notMetUrl}><button type="button" id="btn" className="btn" onClick={handleNext}>Next Task</button></Link>
+            <Link id="link" onClick={()=>{window.location.href=props.notMetUrl}><button type="button" id="btn" className="btn">Next Task</button></Link>
           } */}
         </div>
       </div>
