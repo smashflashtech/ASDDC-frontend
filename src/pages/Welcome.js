@@ -14,6 +14,8 @@ const Welcome = (props) => {
     localStorage.setItem("participantId", props.match.params.participantId)
     localStorage.setItem("dyadL", props.match.params.dyadL)
     localStorage.setItem("dyadN", props.match.params.dyadN)
+    localStorage.setItem(`amts-true-2count`, 0)
+    localStorage.setItem(`amts-false-2count`, 0)
 
     //in the future the URL could differ depending on group/dyad assignment
     //for now, everyone starts at the same pretest
