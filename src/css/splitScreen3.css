@@ -39,3 +39,12 @@
   align-self: center;
 }
 
+.left{
+  width: 15vw;
+}
+.center{
+  width: 15vw;
+}
+.right{
+  width: 15vw;
+}

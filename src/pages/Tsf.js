@@ -1,38 +1,58 @@
 import React, { useState, useEffect } from 'react'
 import TsfModel from '../models/tsf'
 
-const Tsf = () => {
-  const [comparison, setComparison] = useState()
-  const [instructions, setInstructions] = useState()
+const Tsf = (props) => {
+  const [phase] = useState('tsf')
+  const [block] = useState(parseInt(props.match.params.block))
   const [os, setOs] = useState()
-  // const [sample, setSample] = useState()
   const [trials, setTrials] = useState()
-  // const [pretest, setPretest] = useState() //criteria not yet added to json file on the backend
-  // const [posttest, setPostest] = useState()
+  const [maxTrials, setMaxTrials] = useState()
+  const [criteria, setCriteria] = useState()
+  const [criteriaRequired] = useState("true")
 
-  const fetchStimuli=() => {
-    TsfModel.stimuli().then((data)=>{
-      
-      //constructs the image path string
-      setComparison(require(`../stimuli/${data.tsf.trials[0][1].imagePath}`).default)
-
-      // //these need to be passed as props
-      setInstructions(data.tsf.instructions)
-      setOs(data.tsf.observingStim)
-      setTrials(data.tsf.trials)
-      // setPretest(data.tsf.masteryCriterion.preTest.percentage)
-      // setPostest(data.tsf.masteryCriterion.postTest.percentage)
-      })
+  const fetchStimuli = () => {
+    TsfModel.stimuli().then((data) => {
+      console.log(data.tsf)
+      const tempOs = require(`../stimuli/${data.tsf.observingStim.imagePath}`).default
+      setOs(tempOs)
+      setCriteria(data.tsf.trials.length)
+      setMaxTrials(data.tsf.trials.length)
+      // constructs the trials array for rendering
+      const megaStimulusBank = []
+      for (let i = 0; i < data.tsf.trials.length; i++) {
+        const temp = []
+        const trialCode = data.tsf.trials[i][0].trialCode
+        temp.push(trialCode)
+        for (let j = 1; j < data.tsf.trials[i].length; j++) {
+          let color = data.tsf.trials[i][j].color
+          temp.push(color)
+          let comparison = require(`../stimuli/${data.tsf.trials[i][j].imagePath}`).default
+          temp.push(comparison)
+          let position = data.tsf.trials[i][j].class
+          temp.push(position)
+          let value = data.tsf.trials[i][j].value
+          temp.push(value)
+        }
+        megaStimulusBank.push(temp)
+        for (let k = 0; k < megaStimulusBank.length; k++) {                                       //SHUFFLES THE ARRAY
+          let l = Math.floor(Math.random() * megaStimulusBank.length);
+          let temp = megaStimulusBank[k];
+          megaStimulusBank[k] = megaStimulusBank[l];
+          megaStimulusBank[l] = temp;
+        }
+      }
+      setTrials(megaStimulusBank)
+    })
   }
-  useEffect( () => { fetchStimuli() },[])
-  
+  useEffect(() => { fetchStimuli() }, [])
+
   console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
   console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", instructions)
+
 
   return (
     <div>
-            { comparison !== undefined ? <img src= { comparison } /> : "" }
+
     </div>
   )
 }
