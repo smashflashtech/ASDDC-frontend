@@ -32,13 +32,9 @@ const SPair = (props) => {
         temp.push(comparison)
         let value = data.sp.trials[i].value
         temp.push(value)
+        let color = data.sp.trials[i].color
+        temp.push(color)
         megaStimulusBank.push(temp)
-      }
-      for (let k = 0; k < megaStimulusBank.length; k++) {                                       //SHUFFLES THE ARRAY
-        let l = Math.floor(Math.random() * megaStimulusBank.length);
-        let temp = megaStimulusBank[k];
-        megaStimulusBank[k] = megaStimulusBank[l];
-        megaStimulusBank[l] = temp;
       }
       setTrials(megaStimulusBank)
     })
