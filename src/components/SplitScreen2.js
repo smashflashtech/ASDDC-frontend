@@ -92,16 +92,13 @@ const SplitScreen2 = (props) => {
           }
 
           { trial > props.maxTrials && props.criteriaRequired === "false" ?
-            <><Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-            console.log("option1", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )</>
+            <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
             : trial > props.maxTrials && corrects === criteria ? 
-            <><Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-            console.log("option2", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )</>
+            <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
             : trial > props.maxTrials && corrects < criteria ?
-            <><Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
-            console.log("option3", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )</>
+            <Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
             :
-            console.log("SUX", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )
+            <></>
           }
         </div>
       </div>
