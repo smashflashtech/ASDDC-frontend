@@ -13,6 +13,7 @@ const Dct = (props) => {
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [metUrl, setMetUrl] = useState()
+  const [notMetUrl, setNotMetUrl] = useState()
   const [criteriaRequired] = useState("false")
 
   const fetchStimuli = () => {
@@ -21,7 +22,7 @@ const Dct = (props) => {
       //Sets Observing stimuls
       const tempOs = require(`../stimuli/${data.dct.observingStim.imagePath}`).default
       setOs(tempOs)
-      setCriteria(99)
+      setCriteria(data.dct.trials.length)
       setMaxTrials(data.dct.trials.length)
       // constructs the trials array for rendering
       const megaStimulusBank = []
@@ -62,7 +63,8 @@ const Dct = (props) => {
     } else if (condition === 'pre' && dyadN === 2 && block === 3) {
       setMetUrl('/instructions/namts/101')
     } else if (condition === 'post') {
-      setMetUrl(`/instructions/tsf/${localStorage.getItem('dct-post')}`)
+      setMetUrl(`/instructions/tsf/${parseInt(localStorage.getItem(`${phase}-post`))}`)
+      setNotMetUrl(`/arp`)
     }
   }
 
@@ -82,6 +84,7 @@ const Dct = (props) => {
           maxTrials={maxTrials}
           criteria={criteria}
           metUrl={metUrl}
+          notMetUrl={notMetUrl}
           phase={phase}
           criteriaRequired={criteriaRequired}
         /> : ""}

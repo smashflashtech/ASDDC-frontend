@@ -14,13 +14,13 @@ const SplitScreen3 = (props) => {
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
   const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code
+  const [criteria, setCriteria] = useState()
   const [corrects, setCorrects] = useState(0)
   const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
   const [color, setColor] = useState()
   const [value, setValue] = useState()
   const [position, setPosition] = useState()
-  const [criteria, setCriteria] = useState()
   // const [buttonPath, setButtonPath] = useState()
 
   const handleSampleClick = (e) => {
@@ -88,15 +88,20 @@ const SplitScreen3 = (props) => {
             <div />
           }
 
-          {props.criteriaRequired === "false" && trial === props.maxTrials
+          { trial > props.maxTrials && props.phase === 'dct' && parseInt(localStorage.getItem('dct-post')) === 1 && corrects < criteria
             ?
-            <Link id="link-no-criteria" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-            : props.criteriaRequired === "true" && trial - 1 === props.maxTrials && corrects === props.criteria
-              ? <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-              : props.criteriaRequired === "true" && trial - 1 === props.maxTrials && corrects < props.criteria
-                ? <Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
-                :
-                <></>
+            <Link id="link-notmet-criteria" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+            : props.criteriaRequired === "false" && trial > props.maxTrials
+              ?
+              <Link id="link-no-criteria" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+              : props.criteriaRequired === "true" && trial > props.maxTrials && corrects === props.criteria
+                ? 
+                <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+                : props.criteriaRequired === "true" && trial > props.maxTrials && corrects < props.criteria
+                  ? 
+                  <Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
+                  :
+                  <></>
           }
         </div>
       </div>
