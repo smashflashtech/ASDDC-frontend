@@ -32,12 +32,6 @@
   align-self: center;
 }
 
-.left{
-  width: 15vw;
-}
-.center{
-  width: 15vw;
-}
-.right{
+.comparison{
   width: 15vw;
 }
