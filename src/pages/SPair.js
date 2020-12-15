@@ -1,38 +1,36 @@
 import React, { useState, useEffect } from 'react'
+import SplitScreenSp from '../components/SplitScreenSp'
 import SpModel from '../models/sp'
+import Counter from '../components/Counter'
 
 const SPair = () => {
-  const [comparison, setComparison] = useState()
-  const [instructions, setInstructions] = useState()
+  const [count, setCount] = useState(0)
   const [os, setOs] = useState()
   // const [sample, setSample] = useState()
   const [trials, setTrials] = useState()
   // const [pretest, setPretest] = useState() //criteria not yet added to json file on the backend
   // const [posttest, setPostest] = useState()
 
-  const fetchStimuli=() => {
-    SpModel.stimuli().then((data)=>{
-      console.log(data.sp.trials)
-      //constructs the image path string
-      setComparison(require(`../stimuli/${data.sp.trials[0].imagePath}`).default)
+  const fetchStimuli = () => {
+    SpModel.stimuli().then((data) => {
+      console.log(data.sp)
 
-      // //these need to be passed as props
-      setInstructions(data.sp.instructions)
-      setOs(data.sp.observingStim)
-      setTrials(data.sp.trials)
-      // setPretest(data.sp.masteryCriterion.preTest.percentage)
-      // setPostest(data.sp.masteryCriterion.postTest.percentage)
-      })
+    })
   }
-  useEffect( () => { fetchStimuli() },[])
-  
+  useEffect(() => { fetchStimuli() }, [])
+
   console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
   console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", instructions)
+
 
   return (
     <div>
-            { comparison !== undefined ? <img src= { comparison } /> : "" }
+      <Counter count={count} />
+      <SplitScreenSp
+        setCount={setCount}
+        count={count}
+
+      />
     </div>
   )
 }

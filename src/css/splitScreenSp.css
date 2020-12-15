@@ -1,0 +1,43 @@
+#container-sp {
+  max-height:100vh;
+}
+
+.top-sp {
+  height: 44vh;
+  background-color: rgb(159, 132, 184);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-sp{
+  height: 44vh;
+  background-color: rgb(255, 216, 148);
+  display: flex;
+  
+}
+
+/* Sample Display */
+.os-sample{
+  width: 15vw;
+}
+
+
+/* Comparison Display */
+
+.comparison-container-sp{
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.left{
+  width: 15vw;
+}
+.center{
+  width: 15vw;
+}
+.right{
+  width: 15vw;
+}
