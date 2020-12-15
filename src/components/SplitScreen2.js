@@ -6,8 +6,6 @@ import "../css/splitScreen2.css";
 
 const SplitScreen2 = (props) => {
   console.log("are we in bidness", props.trials)
-  console.log("post this to the db: ", props.block)
-  console.log("post this to the db: ", props.set)
   console.log("use this to determine if trials are done: ", props.maxTrials)
   console.log("heres the OS: ", props.os)
   console.log("heres the passing criteria: ", props.criteria)
@@ -15,7 +13,7 @@ const SplitScreen2 = (props) => {
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
   const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code
-  const [criteria, setCriteria] = useState()
+  const [criteria, setCriteria] = useState(props.criteria)
   const [corrects, setCorrects] = useState(0)
   const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
@@ -43,13 +41,15 @@ const SplitScreen2 = (props) => {
     //counts trial
     setTrial(trial + 1)
     //info on how the participant did
-    setColor(e.target.getAttribute("alt"))
+    let color = e.target.getAttribute("alt")
+    setColor(color)
     setPosition(e.target.getAttribute("class"))
     let selectedValue = e.target.getAttribute("value")
     setValue(selectedValue)
     if (selectedValue === "correct") {
       setCorrects(corrects + 1)
     }
+
 
     //resets the os-sample stimulus, clicks to 0
     document.getElementById("os-sample").setAttribute("opacity", 1)
@@ -73,7 +73,7 @@ const SplitScreen2 = (props) => {
       <div className="top">
         <div className="sample-container">
           {props.trials.length && trial <= props.maxTrials ?
-            <img opacity="1" alt="os-sample" id="os-sample" className="os-sample" src={props.os} value={props.trials[i][1]} onClick={handleSampleClick} />
+            <img opacity="1" alt="os-sample" id="os-sample" className="os-sample" src={props.os} value={props.trials[i][0]} onClick={handleSampleClick} />
             : <div />}
         </div>
       </div>
@@ -89,12 +89,17 @@ const SplitScreen2 = (props) => {
             <div />
           }
 
-          { trial > props.maxTrials && corrects === criteria ? 
-            <Link id="link-criteria-met" onClick={() => { window.location.href = metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+          { trial > props.maxTrials && props.criteriaRequired === "false" ?
+            <><Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+            console.log("option1", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )</>
+            : trial > props.maxTrials && corrects === criteria ? 
+            <><Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
+            console.log("option2", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )</>
             : trial > props.maxTrials && corrects < criteria ?
-            <Link id="link-criteria-notmet" onClick={() => { window.location.href = notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
+            <><Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
+            console.log("option3", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )</>
             :
-            console.log("sucka")
+            console.log("SUX", "trial", trial, "maxTrials", props.maxTrials, "criteriaRequired", props.criteriaRequired, "corrects", corrects, "criteria", criteria  )
           }
         </div>
       </div>
