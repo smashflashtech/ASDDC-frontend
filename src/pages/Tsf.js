@@ -46,11 +46,11 @@ const Tsf = (props) => {
         }
       }
       setTrials(megaStimulusBank)
-      localStorage.setItem(`${phase}-${condition}`, block)
     })
+    localStorage.setItem(`${phase}-${condition}`, block)
     //set metUrl here
     if (condition === 'pre') {
-      setMetUrl('/spair/1')
+      setMetUrl('http://localhost:3000/instructions/spair/Z')
     } else if (condition === "post")
       setMetUrl(`/npst/${block}`)
   }
