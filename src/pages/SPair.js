@@ -39,8 +39,7 @@ const SPair = (props) => {
       setTrials(megaStimulusBank)
     })
     localStorage.setItem('spair', block)
-    setMetUrl('/sdiscs/1')
-    setNotMetUrl(`/spair/${block + 1}`)
+    setMetUrl('http://localhost:3000/instructions/sdisc/Z')
   }
   useEffect(() => { fetchStimuli() }, [])
 
