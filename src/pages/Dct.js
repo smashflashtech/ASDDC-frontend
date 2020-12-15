@@ -3,7 +3,7 @@ import DctModel from '../models/dct'
 import SplitScreen3 from '../components/SplitScreen3'
 
 const Dct = (props) => {
-  const [dyadN] = useState(parseInt(localStorage.getItem('dyadN')))
+  const [dyadN] = useState(parseInt(localStorage.getItem('dyad_N')))
   const [trials, setTrials] = useState([])
 
   const [os, setOs] = useState()

@@ -10,12 +10,16 @@ const Welcome = (props) => {
 
   const participantSetup = () =>{
     localStorage.clear()
-    localStorage.setItem("groupId", props.match.params.groupId)
-    localStorage.setItem("participantId", props.match.params.participantId)
-    localStorage.setItem("dyadL", props.match.params.dyadL)
-    localStorage.setItem("dyadN", props.match.params.dyadN)
+    localStorage.setItem("group_id", props.match.params.groupId)
+    localStorage.setItem("participant_id", props.match.params.participantId)
+    localStorage.setItem("dyad_L", props.match.params.dyadL)
+    localStorage.setItem("dyad_N", props.match.params.dyadN)
     localStorage.setItem(`amts-true-2count`, 0)
     localStorage.setItem(`amts-false-2count`, 0)
+    localStorage.setItem(`tat`, 0)
+    let today = new Date()
+    let dateTime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'; '+today.getHours() + ":" + today.getMinutes()
+    localStorage.setItem(`date_of_participation`, dateTime)
 
     //in the future the URL could differ depending on group/dyad assignment
     //for now, everyone starts at the same pretest
