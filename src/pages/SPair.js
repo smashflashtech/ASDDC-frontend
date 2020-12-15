@@ -52,6 +52,7 @@ const SPair = (props) => {
   return (
     <div>
       <Counter count={count} />
+      { trials.length !== undefined ?
       <SplitScreenSp
         setCount={setCount}
         count={count}
@@ -65,7 +66,7 @@ const SPair = (props) => {
         criteriaRequired={criteriaRequired}
         metUrl={metUrl}
         notMetUrl={notMetUrl}
-      />
+      /> : ""}
     </div>
   )
 }
