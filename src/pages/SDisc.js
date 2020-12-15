@@ -7,7 +7,7 @@ const SDisc = (props) => {
   const [phase] = useState('sdisc')
   const [block] = useState(parseInt(props.match.params.block))
   const [os, setOs] = useState()
-  const [trials, setTrials] = useState()
+  const [trials, setTrials] = useState([])
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [criteriaRequired] = useState("true")
@@ -48,25 +48,26 @@ const SDisc = (props) => {
       setTrials(megaStimulusBank)
     })
     setMetUrl('/tsf/post/1')
-    setNotMetUrl(`/spair/${parseInt(localStorage.getItem('spair'))+1}`)
+    setNotMetUrl(`/spair/${parseInt(localStorage.getItem('spair')) + 1}`)
   }
   useEffect(() => { fetchStimuli() }, [])
 
 
   return (
     <div>
-        { trials.length !== undefined ?
-      <SplitScreen2
-        os={os}
-        trials={trials}
-        block={block}
-        maxTrials={maxTrials}
-        criteria={criteria}
-        phase={phase}
-        criteriaRequired={criteriaRequired}
-        metUrl={metUrl}
-        notMetUrl={notMetUrl}
-      /> : ""}
+      { trials.length !== undefined ?
+        <SplitScreen2
+          condition={"tr"}
+          os={os}
+          trials={trials}
+          block={block}
+          maxTrials={maxTrials}
+          criteria={criteria}
+          phase={phase}
+          criteriaRequired={criteriaRequired}
+          metUrl={metUrl}
+          notMetUrl={notMetUrl}
+        /> : ""}
     </div>
   )
 }
