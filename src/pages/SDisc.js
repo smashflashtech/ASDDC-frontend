@@ -47,8 +47,8 @@ const SDisc = (props) => {
       }
       setTrials(megaStimulusBank)
     })
-    setMetUrl('/tsf/post/1')
-    setNotMetUrl(`/spair/${parseInt(localStorage.getItem('spair')) + 1}`)
+    setMetUrl('/instructions/tsf/post/1')
+    setNotMetUrl(`/instructions/spair/${parseInt(localStorage.getItem('spair')) + 1}`)
   }
   useEffect(() => { fetchStimuli() }, [])
 
