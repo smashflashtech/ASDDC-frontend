@@ -3,14 +3,17 @@ import SdModel from '../models/sd'
 import SplitScreen2 from '../components/SplitScreen2'
 import Counter from '../components/Counter'
 
-const SDisc = () => {
+const SDisc = (props) => {
   const [phase] = useState('sdisc')
+  const [block] = useState(parseInt(props.match.params.block))
   const [count, setCount] = useState(0)
   const [os, setOs] = useState()
   const [trials, setTrials] = useState()
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [criteriaRequired] = useState("true")
+  const [metUrl, setMetUrl] = useState()
+  const [notMetUrl, setNotMetUrl] = useState()
 
   const fetchStimuli = () => {
     SdModel.stimuli().then((data) => {
@@ -45,6 +48,11 @@ const SDisc = () => {
       }
       setTrials(megaStimulusBank)
     })
+    //set met/notmet URL here
+    //met goes to tsf post test
+    //unmet goes back to SP
+
+
   }
   useEffect(() => { fetchStimuli() }, [])
 
@@ -61,7 +69,6 @@ const SDisc = () => {
         block={block}
         maxTrials={maxTrials}
         criteria={criteria}
-        metUrl={metUrl}
         phase={phase}
         criteriaRequired={criteriaRequired}
       />

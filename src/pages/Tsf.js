@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import TsfModel from '../models/tsf'
+import SplitScreen2 from '../components/SplitScreen2'
 
 const Tsf = (props) => {
   const [phase] = useState('tsf')
+  const [condition] = useState(props.match.params.condition)
   const [block] = useState(parseInt(props.match.params.block))
   const [os, setOs] = useState()
-  const [trials, setTrials] = useState()
+  const [trials, setTrials] = useState([])
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
-  const [criteriaRequired] = useState("true")
+  const [criteriaRequired] = useState("false")
+  const [metUrl, setMetUrl] = useState()
+
 
   const fetchStimuli = () => {
     TsfModel.stimuli().then((data) => {
@@ -42,17 +46,31 @@ const Tsf = (props) => {
         }
       }
       setTrials(megaStimulusBank)
+      localStorage.setItem(`${phase}-${condition}`, block)
     })
+    //set metUrl here
+    if (condition === 'pre') {
+      setMetUrl()
+    } else if (condition === "post")
+      setMetUrl(``)
   }
   useEffect(() => { fetchStimuli() }, [])
-
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
 
 
   return (
     <div>
-
+    { trials.length !== undefined ?
+      <SplitScreen2
+        os={os}
+        trials={trials}
+        maxTrials={maxTrials}
+        criteria={criteria}
+        phase={phase}
+        condition={condition}
+        block={block}
+        criteriaRequired={criteriaRequired}
+        metUrl={metUrl}
+      /> : ""}
     </div>
   )
 }
