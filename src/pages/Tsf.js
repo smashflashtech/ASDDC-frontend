@@ -52,7 +52,7 @@ const Tsf = (props) => {
     if (condition === 'pre') {
       setMetUrl('http://localhost:3000/instructions/spair/Z')
     } else if (condition === "post")
-      setMetUrl(`/npst/${block}`)
+      setMetUrl(`http://localhost:3000/instructions/npst/${block}`)
   }
   useEffect(() => { fetchStimuli() }, [])
 
