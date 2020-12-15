@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import SdModel from '../models/sd'
 import SplitScreen2 from '../components/SplitScreen2'
-import Counter from '../components/Counter'
+
 
 const SDisc = (props) => {
   const [phase] = useState('sdisc')
   const [block] = useState(parseInt(props.match.params.block))
-  const [count, setCount] = useState(0)
   const [os, setOs] = useState()
   const [trials, setTrials] = useState()
   const [maxTrials, setMaxTrials] = useState()
@@ -56,14 +55,10 @@ const SDisc = (props) => {
   }
   useEffect(() => { fetchStimuli() }, [])
 
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", trials)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~", os)
 
   return (
     <div>
-      <Counter count={count} />
       <SplitScreen2
-        setCount={setCount}
         os={os}
         trials={trials}
         block={block}
@@ -71,6 +66,8 @@ const SDisc = (props) => {
         criteria={criteria}
         phase={phase}
         criteriaRequired={criteriaRequired}
+        metUrl={metUrl}
+        notMetUrl={notMetUrl}
       />
     </div>
   )
