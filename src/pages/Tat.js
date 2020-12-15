@@ -10,6 +10,7 @@ const Tat = () => {
   const [os, setOs] = useState()
   const [maxTrials, setMaxTrials] = useState()
   const [blockCode, setBlockCode] = useState()
+  const [trialCode, setTrialCode] = useState()
   const [value, setValue] = useState()
   const [corrects, setCorrects] = useState(0)
   const [phase] = useState('tat')
@@ -35,9 +36,9 @@ const Tat = () => {
   const handleSampleClick = (e) => {
     e.preventDefault()
     //grabs the trial code
-    let letter = e.target.getAttribute('value')
+    setTrialCode(e.target.getAttribute('value'))
     //constructs the block code and stores in state
-    setBlockCode(`${phase}-${trial}-${letter}`)
+    setBlockCode(`${phase}-${trial}`)
     //changes os image to invisible
     e.target.setAttribute('src', '')
     e.target.setAttribute('alt', '')
@@ -72,6 +73,7 @@ const Tat = () => {
     //where PARTICIPANT ID (stored in local storate)
     //and trialCode (create a join)
     //STORE THIS
+    //trial code
     //block code
     //value
   }
@@ -91,8 +93,8 @@ const Tat = () => {
       </div>
       <div className="word-problem">
         {trials.length && sClick === 1 ?
-          <><h1 onClick={handleComparisonClick} value="correct">{trials[i][0]}</h1>
-            <p>{trials[i][1]}</p></>
+          <><h1 onClick={handleComparisonClick} value="correct">{trials[i][1]}</h1>
+            <p>{trials[i][2]}</p></>
           : <div />}
       </div>
       {trials.length && corrects === 2 ?
