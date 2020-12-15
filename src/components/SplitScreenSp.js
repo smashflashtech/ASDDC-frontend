@@ -87,15 +87,11 @@ const SplitScreenSp = (props) => {
             <div />
           }
 
-          {/* { trial > props.maxTrials && props.criteriaRequired === "false" ?
+          { trial > props.maxTrials ?
             <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-            : trial > props.maxTrials && corrects === criteria ? 
-            <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
-            : trial > props.maxTrials && corrects < criteria ?
-            <Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
             :
             <></>
-          } */}
+          }
         </div>
       </div>
     </div>
