@@ -52,7 +52,7 @@ const Tsf = (props) => {
     if (condition === 'pre') {
       setMetUrl('/spair/1')
     } else if (condition === "post")
-      setMetUrl(`/npst/${parseInt(localStorage.getItem(`${phase}-${condition}`))}`)
+      setMetUrl(`/npst/${block}`)
   }
   useEffect(() => { fetchStimuli() }, [])
 
