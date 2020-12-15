@@ -27,11 +27,12 @@ const SplitScreen2 = (props) => {
     e.preventDefault()
     setCriteria(props.criteria)
     //grabs the trial code
-    setTrialCode(e.target.getAttribute("value"))
+    setTrialCode(e.target.getAttribute('value'))
     //constructs the block code and stores in state
     setBlockCode(`${props.phase}-${props.condition}-${props.block}-${trial}`)
     //changes os image to invisible
-    e.target.setAttribute("opacity", 0)
+    e.target.setAttribute('src', '')
+    e.target.setAttribute('alt', '')
     //adds to click count which will determine if comparisons should display
     setSClick(sClick + 1)
   }
@@ -41,18 +42,19 @@ const SplitScreen2 = (props) => {
     //counts trial
     setTrial(trial + 1)
     //info on how the participant did
-    let color = e.target.getAttribute("alt")
+    let color = e.target.getAttribute('alt')
     setColor(color)
-    setPosition(e.target.getAttribute("class"))
-    let selectedValue = e.target.getAttribute("value")
+    setPosition(e.target.getAttribute('class'))
+    let selectedValue = e.target.getAttribute('value')
     setValue(selectedValue)
-    if (selectedValue === "correct") {
+    if (selectedValue === 'correct') {
       setCorrects(corrects + 1)
     }
 
 
     //resets the os-sample stimulus, clicks to 0
-    document.getElementById("os-sample").setAttribute("opacity", 1)
+    document.getElementById('os-sample').setAttribute('src', props.os)
+    document.getElementById('os-sample').setAttribute('alt', 'os-sample')
     setSClick(0)
     //adds to iterator
     setI(i + 1)
@@ -73,7 +75,7 @@ const SplitScreen2 = (props) => {
       <div className="top">
         <div className="sample-container">
           {props.trials.length && trial <= props.maxTrials ?
-            <img opacity="1" alt="os-sample" id="os-sample" className="os-sample" src={props.os} value={props.trials[i][0]} onClick={handleSampleClick} />
+            <img alt="os-sample" id="os-sample" className="os-sample" src={props.os} value={props.trials[i][0]} onClick={handleSampleClick} />
             : <div />}
         </div>
       </div>
