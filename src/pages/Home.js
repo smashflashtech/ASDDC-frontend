@@ -51,7 +51,7 @@ const Home = () => {
         <li><Link to="/dct/post/3">DCT-post3</Link></li>
         <li><Link to="/tp/pre">TactProbe-pre</Link></li>
         <li><Link to="/tp/post">TactProbe-post</Link></li>
-        <li><Link to="/tsf/pre1/1">Tsf-pre</Link></li>
+        <li><Link to="/tsf/pre/1">Tsf-pre</Link></li>
         <li><Link to="/tsf/post/1">Tsf-post1</Link></li>
         <li><Link to="/tsf/post/2">Tsf-post2</Link></li>
         <li><Link to="/tsf/post/3">Tsf-post3</Link></li>
