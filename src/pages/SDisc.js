@@ -47,17 +47,15 @@ const SDisc = (props) => {
       }
       setTrials(megaStimulusBank)
     })
-    //set met/notmet URL here
-    //met goes to tsf post test
-    //unmet goes back to SP
-
-
+    setMetUrl('/tsf/post/1')
+    setNotMetUrl(`/spair/${parseInt(localStorage.getItem('spair'))+1}`)
   }
   useEffect(() => { fetchStimuli() }, [])
 
 
   return (
     <div>
+        { trials.length !== undefined ?
       <SplitScreen2
         os={os}
         trials={trials}
@@ -68,7 +66,7 @@ const SDisc = (props) => {
         criteriaRequired={criteriaRequired}
         metUrl={metUrl}
         notMetUrl={notMetUrl}
-      />
+      /> : ""}
     </div>
   )
 }
