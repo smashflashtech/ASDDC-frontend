@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import "../css/splitScreenAmts.css";
 import '../css/button.css'
 import AmtsModel from '../models/amts';
+import GResponseModel from '../models/gResponse'
 
 const SplitScreenAmts = (props) => {
   console.log("are we in bidness", props.trials)
@@ -80,7 +81,7 @@ const SplitScreenAmts = (props) => {
       constructUrl()
     }
     console.log("Here I AM !")
-    AmtsModel.create(trialCode ,{
+    GResponseModel.create(trialCode ,{
       participant_id: participant_id,
       position: e.target.getAttribute("class"),
       value: e.target.getAttribute("value"),
