@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "../css/splitScreenAmts.css";
 import '../css/button.css'
+import AmtsModel from '../models/amts';
 
 const SplitScreenAmts = (props) => {
   console.log("are we in bidness", props.trials)
   console.log("HERES THE CRITERIA", props.criteria)
+
+  const [participant_id] = useState(localStorage.getItem('participant_id'))
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
   const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code
@@ -16,12 +19,12 @@ const SplitScreenAmts = (props) => {
   const [color, setColor] = useState()
   const [value, setValue] = useState()
   const [position, setPosition] = useState()
-  
+
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
-  
+
   const constructUrl = () => {
-    console.log("what is the local storage value" , localStorage.getItem(`${props.phase}-${props.feedback}-2count`))
+    console.log("what is the local storage value", localStorage.getItem(`${props.phase}-${props.feedback}-2count`))
     console.log("what is props.feedback", props.feedback)
     if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) < 2 && props.feedback === 'true') {
       setMetUrl(`/amts/${props.block + 1}/true`)
@@ -32,7 +35,7 @@ const SplitScreenAmts = (props) => {
     } else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) < 2 && props.feedback === 'false') {
       setMetUrl(`/amts/${props.block + 1}/false`)
       setNotMetUrl(`/amts/${props.block + 1}/false`)
-    }else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) === 2 && props.feedback === 'false') {
+    } else if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) === 2 && props.feedback === 'false') {
       setMetUrl(`/instructions/dct/post`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
     }
@@ -70,30 +73,24 @@ const SplitScreenAmts = (props) => {
     setI(i + 1)
     //checks to see if URL should be constructed
     if (trial === props.trials.length) {
-      if (corrects >= criteria - 1 ){      
+      if (corrects >= criteria - 1) {
         console.log("Hello?")
-        localStorage.setItem(`${props.phase}-${props.feedback}-2count`, parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) + 1 )
+        localStorage.setItem(`${props.phase}-${props.feedback}-2count`, parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) + 1)
       }
       constructUrl()
     }
-    //NEED TO ADD POST to the Database
-    //where PARTICIPANT ID (stored in local storate)
-    //and trialCode (create a join)
-    //STORE THIS
-    //position
-    //color
-    //value
-    //cumulative corrects
+    console.log("Here I AM !")
+    AmtsModel.create(trialCode ,{
+      participant_id: participant_id,
+      position: e.target.getAttribute("class"),
+      value: e.target.getAttribute("value"),
+      color: e.target.getAttribute("alt"),
+      block_code: blockCode,
+      feedback: Boolean(props.feedback)
+    }).then(data => {
+      console.log("Competed~~~~~~~~~~~~~!!!", data)
+    })
 
-    // "participant_id": 1,
-    // "trial_type_id": 1,
-    // "position":"left",
-    // "color": "red",
-    // "value": "incorrect",
-    // "block_code": "test-block-1",
-    // "cumulative_corrects": 0
-    //SET INFO
-    //FEEDBACK CODE
   }
 
   return (
@@ -116,12 +113,12 @@ const SplitScreenAmts = (props) => {
             :
             <div />
           }
-          { trial > props.maxTrials && corrects === criteria ? 
+          {trial > props.maxTrials && corrects === criteria ?
             <Link id="link-criteria-met" onClick={() => { window.location.href = metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
             : trial > props.maxTrials && corrects < criteria ?
-            <Link id="link-criteria-notmet" onClick={() => { window.location.href = notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
-            :
-            console.log("sucka")
+              <Link id="link-criteria-notmet" onClick={() => { window.location.href = notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
+              :
+              console.log("sucka")
           }
         </div>
       </div>
