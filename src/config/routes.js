@@ -2,6 +2,8 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 //Pages
+import Developer from "../pages/Developer";
+import Dashboard from "../pages/Dashboard";
 import ParticipantInfo from "../pages/ParticipantInfo";
 import Welcome from "../pages/Welcome";
 import Home from "../pages/Home";
@@ -22,6 +24,7 @@ import Npst from "../pages/Npst";
 import ExitSurvey from "../pages/ExitSurvey";
 import UrlConstructor from "../pages/UrlConstructor";
 import Instructions from "../pages/Instructions";
+import CreateParticipant from "../pages/CreateParticipant";
 
 
 
@@ -31,6 +34,7 @@ export default (
     <Route exact path='/' component={Home} />
     <Route path='/ASDDC/:groupId/:participantId/:dyadL/:dyadN' component={Welcome} />
     <Route path='/instructions/:phase/:set' component={Instructions} />
+    <Route path='/createparticipant' component={CreateParticipant} />
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/particpant/:id' component={ParticipantInfo} />
     <Route path='/amts/:block/:feedback' component={Amts} />
@@ -48,5 +52,7 @@ export default (
     <Route path='/tp/:block' component={Tp} />
     <Route path='/tsf/:condition/:block' component={Tsf} />
     <Route path='/exitsurvey' component={ExitSurvey} />
+    <Route path='/dashboard' component={Dashboard} />
+    <Route path='/developer' component={Developer} />
   </Switch>
 );
