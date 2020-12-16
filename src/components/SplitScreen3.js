@@ -2,15 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "../css/splitScreen3.css";
 import '../css/button.css'
+import GResponseModel from '../models/gResponse'
 
 const SplitScreen3 = (props) => {
-  console.log("are we in bidness", props.trials)
-  console.log("post this to the db: ", props.block)
-  console.log("post this to the db: ", props.set)
-  console.log("use this to determine if trials are done: ", props.maxTrials)
-  console.log("heres the OS: ", props.os)
-  console.log("heres the passing criteria: ", props.criteria)
-  console.log("heres the passing criteriaRequired: ", props.criteriaRequired)
+  const [participant_id] = useState(localStorage.getItem('participant_id'))
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
   const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code
@@ -29,7 +24,7 @@ const SplitScreen3 = (props) => {
     //grabs the trial code
     setTrialCode(e.target.getAttribute("value"))
     //constructs the block code and stores in state
-    setBlockCode(`${props.set}-${props.block}-${trial}`)
+    setBlockCode(`${props.phase}-${props.set}-${props.block}-${trial}`)
     //changes os image to sample image
     e.target.setAttribute("src", props.trials[i][0])
     //adds to click count which will determine if comparisons should display
@@ -55,23 +50,16 @@ const SplitScreen3 = (props) => {
     //adds to iterator
     setI(i + 1)
 
-
-    //NEED TO ADD POST to the Database
-    //where PARTICIPANT ID (stored in local storate)
-    //and trialCode (create a join)
-    //STORE THIS
-    //position
-    //color
-    //value
-    //cumulative corrects
-
-    // "participant_id": 1,
-    // "trial_type_id": 1,
-    // "position":"left",
-    // "color": "red",
-    // "value": "incorrect",
-    // "block_code": "test-block-1",
-    // "cumulative_corrects": 0
+    GResponseModel.create(trialCode ,{
+      participant_id: participant_id,
+      position: e.target.getAttribute("class"),
+      value: e.target.getAttribute("value"),
+      color_size: e.target.getAttribute("alt"),
+      block_code: blockCode,
+      feedback: Boolean(props.feedback)
+    }).then(data => {
+      console.log("Competed~~~~~~~~~~~~~!!!", data)
+    })
 
   }
 

@@ -60,7 +60,7 @@ const SplitScreen2 = (props) => {
       participant_id: participant_id,
       position: e.target.getAttribute("class"),
       value: e.target.getAttribute("value"),
-      color: e.target.getAttribute("alt"),
+      color_size: e.target.getAttribute("alt"),
       block_code: blockCode,
       feedback: Boolean(props.feedback)
     }).then(data => {
