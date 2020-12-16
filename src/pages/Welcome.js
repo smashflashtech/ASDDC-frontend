@@ -7,9 +7,12 @@ import Button from '../components/Button'
 const Welcome = (props) => {
   //url to begin is always DCT pre 1
   const [startUrl,setStartUrl] = useState()
-
+  const [dev] = useState(localStorage.getItem('dev'))
+  
   const participantSetup = () =>{
+    console.log('THIS IS DEV',dev)
     localStorage.clear()
+    if(dev !== null) {localStorage.setItem('dev', 'on')}
     localStorage.setItem("group_id", props.match.params.groupId)
     localStorage.setItem("participant_id", props.match.params.participantId)
     localStorage.setItem("dyad_L", props.match.params.dyadL)
