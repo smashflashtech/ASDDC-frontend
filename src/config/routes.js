@@ -25,7 +25,7 @@ import ExitSurvey from "../pages/ExitSurvey";
 import UrlConstructor from "../pages/UrlConstructor";
 import Instructions from "../pages/Instructions";
 import CreateParticipant from "../pages/CreateParticipant";
-
+import EditParticipant from "../pages/EditParticipant";
 
 
 //exporting routes
