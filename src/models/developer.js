@@ -1,6 +1,6 @@
 const url = `http://localhost:5000`
 
-class HomeModel {
+class DeveloperModel {
 
   static test = () => {
     return fetch(`${url}/`).then(res => res.json())
@@ -8,4 +8,4 @@ class HomeModel {
 
 }
 
-export default HomeModel
+export default DeveloperModel
