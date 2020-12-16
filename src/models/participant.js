@@ -6,8 +6,14 @@ class ParticipantModel {
     return fetch(`${url}/participants`).then(res => res.json())
   }
 
-  static create = () => {
-    return fetch(`${url}/participants`).then(res => res.json())
+  static create = (participant) => {
+    return fetch(`${url}/participants`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(participant)
+    }).then(res => res.json())
   }
 
   static one = () => {
