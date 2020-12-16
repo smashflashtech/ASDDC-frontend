@@ -35,8 +35,12 @@ const Developer = () => {
 
       <h3>Researcher Tools:</h3>
       <ul className="home-list">
+        <li><Link to="/">Home</Link></li>
         <li><Link to="/urlconstructor">UrlConstructor</Link></li>
-        <li><Link to="/particpant/1">Participant ONE Info</Link></li>
+        <li><Link to="/participant/create">Create Participant</Link></li>
+        <li><Link to="/particpant/edit/1">Edit Participant</Link></li>
+        <li><Link to="/participant/all">All Participants</Link></li>
+        <li><Link to="/particpant/1">Participant Info (#1)</Link></li>
       </ul>
 
       <h3>Welcome Pages</h3>
