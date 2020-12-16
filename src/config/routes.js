@@ -26,6 +26,7 @@ import UrlConstructor from "../pages/UrlConstructor";
 import Instructions from "../pages/Instructions";
 import CreateParticipant from "../pages/CreateParticipant";
 import EditParticipant from "../pages/EditParticipant";
+import AllParticipants from "../pages/AllParticipants";
 
 
 //exporting routes
@@ -34,9 +35,6 @@ export default (
     <Route exact path='/' component={Home} />
     <Route path='/ASDDC/:groupId/:participantId/:dyadL/:dyadN' component={Welcome} />
     <Route path='/instructions/:phase/:set' component={Instructions} />
-    <Route path='/createparticipant' component={CreateParticipant} />
-    <Route path='/urlconstructor' component={UrlConstructor} />
-    <Route path='/particpant/:id' component={ParticipantInfo} />
     <Route path='/amts/:block/:feedback' component={Amts} />
     <Route path='/dct/:condition/:block' component={Dct}/>
     <Route path='/evotiv/:block' component={Evotiv} />
@@ -53,6 +51,11 @@ export default (
     <Route path='/tsf/:condition/:block' component={Tsf} />
     <Route path='/exitsurvey' component={ExitSurvey} />
     <Route path='/dashboard' component={Dashboard} />
+    <Route path='/participant/create' component={CreateParticipant} />
+    <Route path='/participant/edit/:id' component={EditParticipant} />
+    <Route path='/participant/all' component={AllParticipants} />
+    <Route path='/particpant/:id' component={ParticipantInfo} />
+    <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/developer' component={Developer} />
   </Switch>
 );
