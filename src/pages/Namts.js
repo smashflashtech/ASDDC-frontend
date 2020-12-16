@@ -79,6 +79,7 @@ const Namts = (props) => {
           metUrl={metUrl}
           notMetUrl={notMetUrl}
           criteriaRequired={criteriaRequired}
+          phase={phase}
         /> : "" }
     </div>
   )
