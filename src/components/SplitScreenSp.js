@@ -60,6 +60,13 @@ const SplitScreenSp = (props) => {
     //color
     //value
 
+    // "participant_id": 1,
+    // "trial_type_id": 1,
+    // "position":"left",
+    // "color": "red",
+    // "value": "incorrect",
+    // "block_code": "test-block-1",
+    // "cumulative_corrects": 0
 
   }
 
