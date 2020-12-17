@@ -16,16 +16,22 @@ class ParticipantModel {
     }).then(res => res.json())
   }
 
-  static one = () => {
-    return fetch(`${url}/participants`).then(res => res.json())
+  static one = (participantId) => {
+    return fetch(`${url}/participant/${participantId}`).then(res => res.json())
   }
 
-  static update = () => {
-    return fetch(`${url}/participant/:id`).then(res => res.json())
+  static update = (participantId, participant) => {
+    return fetch(`${url}/participant/${participantId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(participant)
+    }).then(res => res.json())
   }
 
-  static delete = () => {
-    return fetch(`${url}/participant/:id`).then(res => res.json())
+  static delete = (participantId) => {
+    return fetch(`${url}/participant/${participantId}`, {method: "DELETE"}).then(res => res.json())
   }
 
 }
