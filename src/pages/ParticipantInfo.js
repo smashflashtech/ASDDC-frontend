@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import ParticipantModel from '../models/participant'
 
+
 const ParticipantInfo = (props) => {
   console.log("WHAT IS THIS?", props.match.params.id)
   const [participantId] = useState(props.match.params.id)
@@ -28,7 +29,7 @@ const ParticipantInfo = (props) => {
 
 
   return (
-    <div>
+    <div className="participant-card">
       <h3>Participant {participantId}</h3>
       <p><span>Date of Participation: </span>{date_of_participation}</p>
       <p><span>Group ID: </span>{group_id}</p>

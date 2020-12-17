@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../css/urlConstructor.css'
 
 const UrlConstructor = () => {
@@ -11,14 +11,17 @@ const UrlConstructor = () => {
 
 
   return (
-    <>
-      <p>⬅️ <Link to={'/dashboard'}>Back to Dashboard</Link></p>
+    <div className="uc-body-container">
+      <p>⬅️<Link className="uc-link" to={'/dashboard'}> Back to Dashboard</Link></p>
       <div className="uc-body">
+      <div className="uc-img-container">
+        <img className="uc-img" src="https://www.flaticon.com/svg/static/icons/svg/3893/3893146.svg"/>
+      </div>
         <div className="uc-container">
           <div className="uc-top">
             <div className="uc-left">
-              <form className="uc-form"><h3 className="uc-h3">Enter Information:</h3>
-                <label>Group ID</label><br />
+              <form className="uc-form"><h3 className="uc-h3 oswald">Enter Information:</h3>
+                <label className="incon">Group ID</label><br />
                 <input
                   onChange={(e) => { setGroupId(e.target.value) }}
                   value={groupId}
@@ -26,7 +29,7 @@ const UrlConstructor = () => {
                   name="groupId"
                   placeholder="Number (#)"
                 /><br />
-                <label>Participant ID</label><br />
+                <label className="incon">Participant ID</label><br />
                 <input
                   onChange={(e) => { setParticipantId(e.target.value) }}
                   value={participantId}
@@ -34,7 +37,7 @@ const UrlConstructor = () => {
                   name="participantId"
                   placeholder="Number (#)"
                 /><br />
-                <label>Dyad Letter</label><br />
+                <label className="incon">Dyad Letter</label><br />
                 <input
                   onChange={(e) => { setDyadL(e.target.value) }}
                   value={dyadL}
@@ -42,7 +45,7 @@ const UrlConstructor = () => {
                   name="dyadL"
                   placeholder="Letter (L)"
                 /><br />
-                <label>Dyad Number</label><br />
+                <label className="incon">Dyad Number</label><br />
                 <input
                   onChange={(e) => { setDyadN(e.target.value) }}
                   value={dyadN}
@@ -53,23 +56,31 @@ const UrlConstructor = () => {
               </form>
             </div>
             <div className="uc-right">
-              <h3 className="uc-h3">Key</h3>
-              <ol className="uc-list"><h5>Group</h5>
-                <li>MET</li>
-                <li>EVOT</li>
-                <li>PSVOT</li>
-              </ol>
+              <ul className="uc-list"><h3 className="oswald">Group</h3>
+                <li><span className="oswald">MET:</span><span className="incon"> 1</span></li>
+                <li><span className="oswald">EVOT:</span><span className="incon"> 2</span></li>
+                <li><span className="oswald">PSVOT:</span><span className="incon"> 3</span></li>
+              </ul>
+              <ul className="uc-list"><h3>Dyad N</h3>
+                <li><span className="oswald">MET:</span><span className="incon"> A - H</span></li>
+                <li><span className="oswald">EVOT:</span><span className="incon"> I - P</span></li>
+                <li><span className="oswald">PSVOT:</span><span className="incon"> Q - X</span></li>
+              </ul>
+              <ul className="uc-list"><h3>Dyad N</h3>
+                <li><span className="oswald">1</span></li>
+                <li><span className="oswald">2</span></li>
+              </ul>
             </div>
           </div>
           <div className="uc-bottom">
-            <h3>Here is the URL:</h3>
+            <h3 className="oswald">Here is the URL:</h3>
             <div className="uc-url-container">
-              <p className="uc-url">{`${baseUrl}/ASDDC/${groupId}/${participantId}/${dyadL.toUpperCase()}/${dyadN}`}</p>
+              <p className="uc-url incon">{`${baseUrl}/ASDDC/${groupId}/${participantId}/${dyadL.toUpperCase()}/${dyadN}`}</p>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

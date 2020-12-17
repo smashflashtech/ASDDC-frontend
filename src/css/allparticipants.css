@@ -1,0 +1,57 @@
+.incon{
+  font-family: 'Inconsolata', monospace;
+}
+.oswald{
+  font-family: 'Oswald', sans-serif;
+}
+
+.ap-body{
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  background-color: #CDD1DB;
+  background-size: cover;
+  position: fixed; 
+  overflow-y: scroll;
+  top: 0; right: 0; bottom: 0; left: 0; 
+}
+
+.ap-link{
+  text-decoration: none;
+  color: rgb(46, 180, 189);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+}
+
+.ap-link:hover{
+  color: rgb(83, 140, 109);
+}
+
+
+.p-card{
+  background-color: white;
+  box-shadow: 5px 5px 15px #59595985;
+  margin: 2%;
+  padding: 2%;
+  border-radius: 2px;
+  width: 23vw;
+  text-align: center;
+}
+
+.ap-details{
+  text-align: left;
+}
+
+.ap-pic-container{
+  padding: 5%;
+}
+
+.ap-pic{
+  width:15vw;
+}
+
+.p-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

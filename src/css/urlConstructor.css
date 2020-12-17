@@ -1,6 +1,26 @@
+.incon{
+  font-family: 'Inconsolata', monospace;
+}
+.oswald{
+  font-family: 'Oswald', sans-serif;
+}
+
+.uc-img-container{
+  width: 40%;
+  margin: 0 5% 0 0;
+}
+
+.uc-img{
+width: 100%;
+}
+
 .uc-body{
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
+  padding: 5%;
+  background-color: #CDD1DB;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,12 +32,14 @@
   justify-content: space-around;
   align-items: center;
   width: 80vh;
-  min-width:550px;
+  /* min-width:550px; */
   height: 350px;
   border: 2px solid rgba(156, 184, 169, 0.262);
   margin: 0;
-  box-shadow: 5px 5px 15px #d8e9e5;
+  box-shadow: 5px 5px 15px #59595985;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.543);
+  padding: 2%
 }
 
 .uc-top{
@@ -51,6 +73,7 @@ input{
 .uc-bottom{
   height:28%;
   width: 100%;
+  padding: 5% 3%;
 }
 
 .uc-url-container{
@@ -66,3 +89,27 @@ input{
 .uc-url{
   color: rgb(176, 0, 135);
 }
+
+a.attribution{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.31);
+}
+
+div.attribution{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.358);
+  align-self: flex-end;
+}
+
+.uc-link{
+  text-decoration: none;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  padding: 0 0 0 1%;
+}
+
+.uc-link:hover{
+  color: rgb(83, 140, 109);
+}
+
