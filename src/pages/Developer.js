@@ -88,7 +88,8 @@ const Developer = () => {
         </ul>
         </div>
         <div className="dev-m-right">
-          <ul className="home-list"><h3 className="oswald">Non-Arbitrary MTS</h3>
+        <h3 className="oswald">Non-Arbitrary MTS</h3>
+          <ul className="home-list">
             <li><Link className="incon" to="/namts/101/1">NAMTS - SET A</Link></li>
             <li><Link className="incon" to="/namts/102/1">NAMTS - SET B</Link></li>
             <li><Link className="incon" to="/namts/103/1">NAMTS - SET C</Link></li>

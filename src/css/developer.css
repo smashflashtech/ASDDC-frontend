@@ -54,3 +54,7 @@
   padding: 2% 3%;
   box-shadow: 5px 5px 15px #59595985;
 }
+
+ul{
+  list-style-type: circle;
+}
