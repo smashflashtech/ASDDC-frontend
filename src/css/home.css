@@ -60,3 +60,15 @@
 .h-dev, .h-re {
   height: 60vh;
 }
+
+
+a.attribution{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.31);
+}
+
+div.attribution{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.358);
+  align-self: flex-end;
+}
