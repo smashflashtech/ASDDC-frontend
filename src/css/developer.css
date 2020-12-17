@@ -1,0 +1,56 @@
+.dev-body{
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  background-color: #CDD1DB;
+  background-size: cover;
+  position: fixed; 
+  overflow-y: scroll;
+  top: 0; right: 0; bottom: 0; left: 0; 
+}
+
+.r-test-container{
+  background-color: rgba(255, 255, 255, 0.377);
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;  
+  margin: 1%;
+}
+
+.response-test{
+  padding: 1%;
+}
+
+.tool-toggle{
+  margin: 1%;
+}
+
+.dev-title{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.dev-top-container, .dev-middle-container{
+  display: flex;
+}
+
+.dev-r-tools, .dev-h-list{
+  background-color: white;
+  border-radius: 1px;
+  width: 45vw;
+  margin: 1%;
+  padding: 2% 3%;
+  box-shadow: 5px 5px 15px #59595985;
+}
+
+.dev-m-left, .dev-m-right{
+  background-color: white;
+  border-radius: 1px;
+  width: 45vw;
+  margin: 1%;
+  padding: 2% 3%;
+  box-shadow: 5px 5px 15px #59595985;
+}
