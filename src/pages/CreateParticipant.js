@@ -97,7 +97,7 @@ const CreateParticipant = (props) => {
             value={notes}
           />
         </div>
-        <button className="cp-button" type="submit">Create Participant</button>
+        <button className="cp-button btn" type="submit">Create Participant</button>
       </form>
     </div>
   )

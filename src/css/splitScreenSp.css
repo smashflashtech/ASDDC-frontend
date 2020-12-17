@@ -4,7 +4,7 @@
 
 .top-sp {
   height: 44vh;
-  background-color: rgb(159, 132, 184);
+  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,7 +12,7 @@
 
 .bottom-sp{
   height: 44vh;
-  background-color: rgb(255, 216, 148);
+  background-color: white;
   display: flex;
   
 }

@@ -116,9 +116,9 @@ const EditParticipant = (props) => {
             value={notes}
           />
         </div>
-        <button className="cp-submit-button" type="submit">Save Changes</button>
+        <button className="cp-submit-button btn" type="submit">Save Changes</button>
       </form>
-      <form onSubmit={handleDelete}><button className="cp-delete-button" type="submit">Delete</button></form>
+      <form onSubmit={handleDelete}><button className="cp-delete-button btn" type="submit">Delete</button></form>
     </div>
   )
 }

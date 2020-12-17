@@ -18,8 +18,8 @@ const ParticipantCard = (props) => {
       <p><span>Dyad: </span> {participant.dyad_L}{participant.dyad_N}</p>
       <p><span>Remedial: </span> {participant.remedial}</p>
       <p><span>Notes: </span>{participant.notes}</p>
-      <button><Link to={`/participant/one/${participant.id}`}>More Info</Link></button>
-      <button><Link to={`/participant/edit/${participant.id}`}>Edit Participant</Link></button>
+      <button className="p-button btn"><Link to={`/participant/one/${participant.id}`}>More Info</Link></button>
+      <button className="p-button btn"><Link to={`/participant/edit/${participant.id}`}>Edit Participant</Link></button>
     </div>
   ))
   : <></>}
