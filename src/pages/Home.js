@@ -11,7 +11,8 @@ const Home = () => {
       <div className="h-container">
         <div className="h-banner">
           <h1 className="incon">Welcome to ASDDC!</h1>
-          <h3 className="incon">Who are you? </h3>
+          <p>Automated Stimulus Display and Data Collection</p>
+          <p className="incon way">...Who are you?</p>
         </div>
 
         <div className="h-options">
