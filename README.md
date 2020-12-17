@@ -88,7 +88,7 @@ STRETCH: As a used I would like to export search results to an excel spreadsheet
 
 
 ## Future Development
-### Future iterations will include:
+Future iterations will include:
 * Differential feedback (gray screen, black screen, js confetti)
 * Sound input recording
 * Sound stimulus presentation
