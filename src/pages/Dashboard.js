@@ -20,7 +20,7 @@ const Dashboard = () => {
 
           <Link className="d-title link" to="/participant/all">
             <div className="dash-card d-2">
-              <img src="https://www.flaticon.com/svg/static/icons/svg/1071/1071539.svg" />
+              <img className="dash-all" src="https://www.flaticon.com/svg/static/icons/svg/1071/1071539.svg" />
               <p>All Participants</p>
             </div>
           </Link>

@@ -58,16 +58,23 @@
   color: rgb(83, 140, 109);
 }
 
+.dash-all{
+  max-height:100%;
+}
+
 .dash-url{
   width: 50%;
+  max-height:100%;
 }
 
 .dash-one{
   width: 50%;
+  max-height:100%;
 }
 
 .dash-home{
   width: 45%;
+  max-height:100%;
 }
 
 a.attribution{
