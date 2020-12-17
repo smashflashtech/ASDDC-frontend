@@ -1,0 +1,95 @@
+.d-font{
+  font-family: 'Architects Daughter', cursive;
+}
+
+.dashboard-body{
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  background-color: #CDD1DB;
+  /* background-image: url(https://images.pexels.com/photos/3109168/pexels-photo-3109168.jpeg); */
+  /* background-image: url(https://images.pexels.com/photos/33085/knowledge-book-library-glasses.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260); */
+  background-size: cover;
+  position: fixed; 
+  overflow-y: scroll;
+  top: 0; right: 0; bottom: 0; left: 0; 
+}
+
+/* .dashboard-container{
+  background-color: rgba(255, 255, 255, 0.53);
+} */
+
+.dash-header{
+  background-color: rgba(255, 255, 255, 0.53);
+  margin: 0 0 5% 0;
+  padding: 1%;
+  text-align: center;
+  border-radius: 1px;
+}
+
+.dash-options{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* background-color: rgba(255, 255, 255, 0.53); */
+}
+
+.dash-card{
+  background-color: rgba(254, 254, 254, 0.95);
+  width: 42vw;
+  height: 35vh;
+  margin: 0%;
+  padding: 5%;
+  border-radius: 2px;
+  box-shadow: 5px 5px 15px #59595985;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0% 5% 0;
+}
+
+.d-1{
+  /* background-image: url(https://www.searchenginewatch.com/wp-content/uploads/2018/10/ThinkstockPhotos-503426092.jpg); */
+  /* opacity: .66; */
+  /* background-image: url(https://www.flaticon.com/premium-icon/icons/svg/1149/1149039.svg);
+  background-size: 100%;
+  background-repeat: no-repeat; */
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.75rem;
+}
+
+.link:hover{
+  color: rgb(83, 140, 109);
+}
+
+.dash-url{
+  width: 50%;
+}
+
+
+.dash-one{
+  width: 50%;
+}
+
+.dash-home{
+  width: 45%;
+}
+
+
+
+a.attribution{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.502);
+}
+
+div.attribution{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.502);
+}
