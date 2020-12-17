@@ -54,10 +54,10 @@ Participant
 *	As a user, on trials the exclude feedback I will see a gray screen.
 
 
-![ERD](ASDDC-frontend/screenshots/p4-erd.png)
-![Wireframe](ASDDC-frontend/screenshots/p4-wireframe-researcher.png)
-![Wireframe](ASDDC-frontend/screenshots/p4-wireframe-participant1.png)
-![Wireframe](ASDDC-frontend/screenshots/p4-wireframe-participant2.png)
+![ERD](/screenshots/p4-erd.png)
+![Wireframe](/screenshots/p4-wireframe-researcher.png)
+![Wireframe](/screenshots/p4-wireframe-participant1.png)
+![Wireframe](/screenshots/p4-wireframe-participant2.png)
 
 
 ## Future Development
