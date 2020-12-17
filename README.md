@@ -35,17 +35,16 @@ CSS
 ![spsample](/screenshots/14-spsample.png)
 ![sptrial](/screenshots/15-sptrial.png)
 ## ERD, Wireframe, & User Stories
-Researcher
+### Researcher
 *	As a user, I will be able to create new participants.
 *	As a user, I will be able to use a URL constructor to generate a URL pattern to provide each participant (containing pertinent participant information). 
-*	As a user, I will be able to change a participant’s status from active to inactive.
 *	As a user, I will view a dashboard that summarizes all the experimental groups and their associated modules.
 *	As a user I will see on the dashboard a description next to each module and an active link to that module page. 
 *	As a user I will be able to access and test all modules as participant 1.
 *	As a user I want to search for raw data for a specific participant, dyad pair, experimental group and view the search results on a table.
 STRETCH: As a used I would like to export search results to an excel spreadsheet.
 
-Participant
+### Participant
 *	As a user I will access ASSDC via a URL provided to me. 
 *	As a user I will be led through a module sequence based on my assigned experimental group and task performance. 
 *	As a user, during each module I will be presented with instructions and task trails.
@@ -61,4 +60,8 @@ Participant
 
 
 ## Future Development
-Future iterations will include differential feedback, sound recording, sound stimulus presentation, and stimulus delivery and data collection for all other phases of this study.
+### Future iterations will include:
+* Differential feedback (gray screen, black screen, js confetti)
+* Sound input recording
+* Sound stimulus presentation
+* Stimulus delivery and data collection for EVOT and PSVOT Groups
