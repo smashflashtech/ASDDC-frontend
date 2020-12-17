@@ -1,24 +1,40 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import '../css/home.css'
+import '../css/home.css'
 
 const Home = () => {
 
 
 
   return (
-    <div>
-      <h1>Welcome!</h1>
+    <div className="h-body">
+      <div className="h-container">
+        <div className="h-banner">
+          <h1 className="incon">Welcome to ASDDC!</h1>
+          <h3 className="incon">Who are you? </h3>
+        </div>
 
+        <div className="h-options">
+          <div className="h-card">
+            <Link className="h-link oswald" to="/developer"  >
+              <div className="h-title">
+                <img className="h-dev" src="https://www.flaticon.com/svg/static/icons/svg/2890/2890354.svg" />
+                <p className="oswald">I'm a developer</p>
+              </div>
+            </Link>
+          </div>
 
+          <div className="h-card">
+            <Link className="h-link oswald" to="/dashboard" >
+              <img className="h-re" src="https://www.flaticon.com/svg/static/icons/svg/3063/3063738.svg" />
+              <p className="oswald">I'm a researcher</p>
+              <div className="h-title">
+              </div>
+            </Link>
+          </div>
+        </div>
 
-      <h3>Click One:</h3>
-      <ul className="home-list">
-        <li><Link to="/developer"  >I'm a developer</Link></li>
-        <li><Link to="/dashboard" >I'm a researcher</Link></li>
-
-      </ul>
-
+      </div>
     </div>
   )
 }

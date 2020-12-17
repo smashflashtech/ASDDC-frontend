@@ -1,0 +1,55 @@
+.incon{
+  font-family: 'Inconsolata', monospace;
+}
+.oswald{
+  font-family: 'Oswald', sans-serif;
+}
+
+.h-body{
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  background-color: #CDD1DB;
+  background-size: cover;
+  position: fixed; 
+  overflow-y: scroll;
+  top: 0; right: 0; bottom: 0; left: 0; 
+}
+
+.h-banner{
+  margin: 0 0 3% 0;
+}
+
+.h-link{
+  text-decoration: none;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.75rem;
+}
+
+.h-link:hover{
+  color: rgb(83, 140, 109);
+}
+
+.h-body{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.h-card{
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 15px #59595985;
+  text-align: center;
+  padding: 0 0 2% 0;
+}
+
+.h-options{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.h-dev, .h-re {
+  height: 60vh;
+}
