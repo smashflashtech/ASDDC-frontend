@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import InstructionsModel from '../models/instructions'
+import '../css/instructions.css'
 
 const Instructions = (props) => {
   const [instructions, setInstructions] = useState()
@@ -17,22 +18,24 @@ const Instructions = (props) => {
   }
 
   useEffect(() => { fetchStimuli() }, [])
-  
+
   let url = ""
-  if (phaseName === "dct" || "tsf" || "namts"){
+  if (phaseName === "dct" || "tsf" || "namts") {
     url = `/${phaseName}/${set}/1`
   } else if (phaseName === "amts") {
     url = `/${phaseName}/1/${set}`
-  } else if (phaseName === "npst"){
-    url= `/${phaseName}/${set}`
+  } else if (phaseName === "npst") {
+    url = `/${phaseName}/${set}`
   } else {
     url = `/${phaseName}/1`
   }
 
   return (
-    <div>
-      INSTRUCTIONS: {instructions}
-      <Link to={url}>Start ➡️</Link>
+    <div className="i-body">
+      <div className="instruction-container">
+        <p><span className="oswald i-title">INSTRUCTIONS:</span><span className="incon"> {instructions}</span></p>
+        <div className="btn-container"><Link to={url}><button className="i-btn btn">Start</button></Link></div>
+      </div>
     </div>
   )
 }
