@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ParticipantModel from '../models/participant'
+import '../css/addeditparticipant.css'
 
 const EditParticipant = (props) => {
   const [participantId] = useState(props.match.params.id)
@@ -45,7 +46,9 @@ const EditParticipant = (props) => {
 }
 
   return (
-    <div>
+    <div className="ae-body">
+    <div className="e-form-container">
+    <div className="e-form-left">
       <h1>Edit Participant {participantId}</h1>
       <form className="cp-form" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -118,7 +121,11 @@ const EditParticipant = (props) => {
         </div>
         <button className="cp-submit-button btn" type="submit">Save Changes</button>
       </form>
-      <form onSubmit={handleDelete}><button className="cp-delete-button btn" type="submit">Delete</button></form>
+      </div>
+      <div className="e-form-right">
+      <form className="form-right" onSubmit={handleDelete}><button className="cp-delete-button btn" type="submit">Delete</button></form>
+      </div>
+    </div>
     </div>
   )
 }

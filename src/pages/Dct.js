@@ -5,7 +5,6 @@ import SplitScreen3 from '../components/SplitScreen3'
 const Dct = (props) => {
   const [dyadN] = useState(parseInt(localStorage.getItem('dyad_N')))
   const [trials, setTrials] = useState([])
-
   const [os, setOs] = useState()
   const [block] = useState(parseInt(props.match.params.block))
   const [condition] = useState(props.match.params.condition)
@@ -53,7 +52,7 @@ const Dct = (props) => {
       setTrials(megaStimulusBank)
       localStorage.setItem(`${phase}-${props.match.params.condition}`, parseInt(props.match.params.block))
     })
-    //CONSTRUCT MET AND UNMET URLS depending on dyad
+    //Constructing Met/UnMet
     //if dyad = 1 and block = 1 move to namts OR dyad = 2 and block = 3 move to namts
     console.log("this is the condition", condition)
     if (condition === 'pre' && dyadN === 1) {

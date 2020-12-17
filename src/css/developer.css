@@ -6,7 +6,6 @@
   background-size: cover;
   position: fixed; 
   overflow-y: scroll;
-  top: 0; right: 0; bottom: 0; left: 0; 
 }
 
 .r-test-container{
@@ -55,6 +54,32 @@
   box-shadow: 5px 5px 15px #59595985;
 }
 
-ul{
+ul.dev{
   list-style-type: circle;
+}
+
+.dev-link{
+  text-decoration: none;
+  color: rgb(21, 129, 148);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+}
+
+.dev-link:hover{
+  color: rgb(227, 180, 94);
+}
+
+.dev-tool{
+  padding: 0 0 0 1%;
+}
+
+.dev-icon{
+  font-size: 10px;
+  opacity: .5;
+}
+
+.dev-hint{
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.678);
+  padding: 0 0 0 1%;
 }

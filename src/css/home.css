@@ -65,7 +65,8 @@
 }
 
 .h-dev, .h-re {
-  height: 60vh;
+  max-height: 60vh;
+  width: 36vw;
 }
 
 

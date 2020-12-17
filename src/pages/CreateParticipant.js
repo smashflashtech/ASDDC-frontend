@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ParticipantModel from '../models/participant'
+import '../css/addeditparticipant.css'
 
 const CreateParticipant = (props) => {
   const [group_id, setGroup_id] = useState()
@@ -24,8 +25,10 @@ const CreateParticipant = (props) => {
   }
 
   return (
-    <>
-      <p>⬅️ <Link to={'/dashboard'}>Back to Dashboard</Link></p>
+    <div>
+      <p>⬅️ <Link className="ae-link" to={'/dashboard'}>Back to Dashboard</Link></p>
+    <div className="ae-body">
+    <div className="ae-form-container">
       <div>
         <h1>Create Participant</h1>
         <form className="cp-form" onSubmit={handleSubmit}>
@@ -103,7 +106,9 @@ const CreateParticipant = (props) => {
           <button className="cp-button btn" type="submit">Create Participant</button>
         </form>
       </div>
-    </>
+    </div>
+    </div>
+    </div>
   )
 }
 

@@ -6,7 +6,7 @@ import routes from './config/routes'
 function App() {
   return (
     <div className="App">
-        { localStorage.getItem('dev') === 'on' ? <Link to="/developer">💩</Link> : <></>}
+        { localStorage.getItem('dev') === 'on' ? <Link to="/developer">⬅️<span className="oswald dev-link dev-tool">Back to Dev Home</span></Link> : <></>}
         { routes }
     </div>
   );

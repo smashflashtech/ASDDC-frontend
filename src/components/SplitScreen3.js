@@ -5,38 +5,35 @@ import '../css/button.css'
 import GResponseModel from '../models/gResponse'
 
 const SplitScreen3 = (props) => {
-  const [participant_id] = useState(localStorage.getItem('participant_id'))
+  //Logic Data
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
-  const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code
+  const [trial, setTrial] = useState(1)
   const [criteria, setCriteria] = useState()
   const [corrects, setCorrects] = useState(0)
+  //Data to post to database
+  const [participant_id] = useState(localStorage.getItem('participant_id'))
   const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
   const [color, setColor] = useState()
   const [value, setValue] = useState()
   const [position, setPosition] = useState()
-  // const [buttonPath, setButtonPath] = useState()
+
+
 
   const handleSampleClick = (e) => {
     e.preventDefault()
-    setCriteria(props.criteria)
-    //grabs the trial code
-    setTrialCode(e.target.getAttribute("value"))
-    //constructs the block code and stores in state
-    setBlockCode(`${props.phase}-${props.set}-${props.block}-${trial}`)
-    //changes os image to sample image
-    e.target.setAttribute("src", props.trials[i][0])
-    //adds to click count which will determine if comparisons should display
+    setCriteria(props.criteria)                                         //grabs the trial code
+    setTrialCode(e.target.getAttribute("value"))                        //constructs the block code and stores in state
+    setBlockCode(`${props.phase}-${props.set}-${props.block}-${trial}`) //changes os image to sample image
+    e.target.setAttribute("src", props.trials[i][0])                    //adds to click count which will determine if comparisons should display
     setSClick(sClick + 1)
   }
 
   const handleComparisonClick = (e) => {
     e.preventDefault()
-    //counts trial
-    setTrial(trial + 1)
-    //info on how the participant did
-    setColor(e.target.getAttribute("alt"))
+    setTrial(trial + 1)                                   //counts trial
+    setColor(e.target.getAttribute("alt"))                //info on how the participant did
     setPosition(e.target.getAttribute("class"))
     let selectedValue = e.target.getAttribute("value")
     setValue(selectedValue)
@@ -44,23 +41,20 @@ const SplitScreen3 = (props) => {
       setCorrects(corrects + 1)
     }
 
-    //resets the os-sample stimulus, clicks to 0
-    document.getElementById("os-sample").setAttribute("src", props.os)
-    setSClick(0)
-    //adds to iterator
-    setI(i + 1)
+    //Logic Magic
+    document.getElementById("os-sample").setAttribute("src", props.os) //resets the os-sample stimulus
+    setSClick(0), //sample clicks to 0
+      setI(i + 1)   //adds to iterator
 
-    GResponseModel.create(trialCode ,{
+    //Post performance to the database
+    GResponseModel.create(trialCode, {
       participant_id: participant_id,
       position: e.target.getAttribute("class"),
       value: e.target.getAttribute("value"),
       color_size: e.target.getAttribute("alt"),
       block_code: blockCode,
       feedback: Boolean(props.feedback)
-    }).then(data => {
-      console.log("Competed~~~~~~~~~~~~~!!!", data)
-    })
-
+    }).then(data => { })
   }
 
   return (
@@ -85,17 +79,17 @@ const SplitScreen3 = (props) => {
             <div />
           }
 
-          { trial > props.maxTrials && props.phase === 'dct' && parseInt(localStorage.getItem('dct-post')) === 1 && corrects < criteria
+          {trial > props.maxTrials && props.phase === 'dct' && parseInt(localStorage.getItem('dct-post')) === 1 && corrects < criteria
             ?
             <Link id="link-notmet-criteria" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
             : props.criteriaRequired === "false" && trial > props.maxTrials
               ?
               <Link id="link-no-criteria" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
               : props.criteriaRequired === "true" && trial > props.maxTrials && corrects === props.criteria
-                ? 
+                ?
                 <Link id="link-criteria-met" onClick={() => { window.location.href = props.metUrl }}><button type="button" id="btn" className="btn" >Next Task</button></Link>
                 : props.criteriaRequired === "true" && trial > props.maxTrials && corrects < props.criteria
-                  ? 
+                  ?
                   <Link id="link-criteria-notmet" onClick={() => { window.location.href = props.notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
                   :
                   <></>

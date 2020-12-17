@@ -3,8 +3,6 @@ import NamtsModel from '../models/namts'
 import SplitScreen3 from '../components/SplitScreen3'
 
 const Namts = (props) => {
-  console.log("THIS IS THE SET", props.match.params.set)
-  console.log("THIS IS THE block", props.match.params.block)
   const [block] = useState(parseInt(props.match.params.block))
   const [phase] = useState('namst')
   const [set] = useState(parseInt(props.match.params.set))
@@ -24,7 +22,7 @@ const Namts = (props) => {
       setOs(tempOs)
       setCriteria(data.namts.trials.length)
       setMaxTrials(data.namts.trials.length)
-            // constructs the image path string
+      // constructs the image path string
       const megaStimulusBank = []
       for (let i = 0; i < data.namts.trials.length; i++) {
         const temp = []
@@ -53,6 +51,7 @@ const Namts = (props) => {
       setTrials(megaStimulusBank)
       localStorage.setItem(`${phase}`, set)
     })
+    //constructing URLs
     if (set < 115) {
       setMetUrl(`/namts/${set + 1}/1`)
       setNotMetUrl(`/namts/${set}/${block + 1}`)
@@ -67,7 +66,6 @@ const Namts = (props) => {
 
   return (
     <div>
-      { console.log(trials)}
       { trials !== undefined ? 
         <SplitScreen3
           os={os}
