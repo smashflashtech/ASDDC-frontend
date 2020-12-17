@@ -43,7 +43,7 @@ const SplitScreen3 = (props) => {
 
     //Logic Magic
     document.getElementById("os-sample").setAttribute("src", props.os) //resets the os-sample stimulus
-    setSClick(0), //sample clicks to 0
+    setSClick(0) //sample clicks to 0
       setI(i + 1)   //adds to iterator
 
     //Post performance to the database
