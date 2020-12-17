@@ -74,14 +74,14 @@ STRETCH: As a used I would like to export search results to an excel spreadsheet
 * Michael Petty for all the essential lesson in python and database design. This project really made all those tidbits come together.
 
 * Struggle Bus fam for all the laughs from start to finish, early mornings, and late nights. Everything is better with friends and colleagues. 
-** Jane Cho
-** Brock Molmen
-** Kelsey Whallon
-** Tess Bishop
-** Jamie Cabrigas
-** Lauren Nguyen
-** Lucia Franco
-** Casey Jenkins
+    * Jane Cho
+    * Brock Molmen
+    * Kelsey Whallon
+    * Tess Bishop
+    * Jamie Cabrigas
+    * Lauren Nguyen
+    * Lucia Franco
+    * Casey Jenkins
 
 
 
