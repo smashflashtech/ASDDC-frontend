@@ -80,6 +80,7 @@ STRETCH: As a used I would like to export search results to an excel spreadsheet
 ## Future Development
 Future iterations will include:
 * Differential feedback (gray screen, black screen, js confetti)
+* Full screen request/Auto full screen
 * Sound input recording
 * Sound stimulus presentation
 * Stimulus delivery and data collection for EVOT and PSVOT Groups
