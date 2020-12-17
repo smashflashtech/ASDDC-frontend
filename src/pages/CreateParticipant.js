@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import ParticipantModel from '../models/participant'
 
-const CreateParticipant = () => {
+const CreateParticipant = (props) => {
   const [group_id, setGroup_id] = useState()
   const [dyad_L, setDyad_L] = useState()
   const [dyad_N, setDyad_N] = useState()
   const [date_of_participation, setDate_of_participation] = useState()
+  const [remedial, setRemedial] = useState()
   const [notes, setNotes] = useState()
 
   const handleSubmit = (e) => {
@@ -17,7 +18,7 @@ const CreateParticipant = () => {
       date_of_participation,
       notes
     }).then(data => {
-      console.log('elllffiiinnnn', data)
+      props.history.push('/participant/all')
     })
   }
 
@@ -72,6 +73,17 @@ const CreateParticipant = () => {
             id="date_of_participation"
             name="date_of_participation"
             value={date_of_participation}
+          /><br/>
+          <label className="cp-label" htmlFor="date_of_participation">Remedial: </label><br/>
+          <input
+            className="cp-input"
+            onChange={(e) => { setRemedial(e.target.value) }}
+            rows="5"
+            cols="40"
+            type="text"
+            id="remedial"
+            name="remedial"
+            value={remedial}
           /><br/>
           <label className="cp-label" htmlFor="date_of_participation">Notes: </label><br/>
           <input
