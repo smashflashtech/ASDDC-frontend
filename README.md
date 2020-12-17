@@ -52,8 +52,9 @@ STRETCH: As a used I would like to export search results to an excel spreadsheet
 *	As a user, on trials that include feedback I will see either a black screen following incorrect responses or a firework display. 
 *	As a user, on trials the exclude feedback I will see a gray screen.
 
-
+### ERD
 ![ERD](/screenshots/p4-erd.png)
+### Wireframe
 ![Wireframe](/screenshots/p4-wireframe-researcher.png)
 ![Wireframe](/screenshots/p4-wireframe-participant1.png)
 ![Wireframe](/screenshots/p4-wireframe-participant2.png)
@@ -74,18 +75,6 @@ STRETCH: As a used I would like to export search results to an excel spreadsheet
 * Michael Petty for all the essential lesson in python and database design. This project really made all those tidbits come together.
 
 * Struggle Bus fam for all the laughs from start to finish, early mornings, and late nights. Everything is better with friends and colleagues. 
-    * Jane Cho
-    * Brock Molmen
-    * Kelsey Whallon
-    * Tess Bishop
-    * Jamie Cabrigas
-    * Lauren Nguyen
-    * Lucia Franco
-    * Casey Jenkins
-
-
-
-
 
 ## Future Development
 Future iterations will include:
