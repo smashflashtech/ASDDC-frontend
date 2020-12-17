@@ -12,27 +12,27 @@ const Dashboard = () => {
           <h3 className="d-font">What would you like to do...?</h3>
         </div>
         <div className="dash-options">
-          <Link className="d-1-title link" to="/urlconstructor">
+          <Link className="d-title link" to="/urlconstructor">
             <div className="dash-card d-1">
               <img className="dash-url" src="https://www.flaticon.com/svg/static/icons/svg/3579/3579201.svg" alt="URL constructor" />
               <p>URL Constructor</p>
             </div></Link>
 
-          <Link className="d-2-title link" to="/participant/all">
+          <Link className="d-title link" to="/participant/all">
             <div className="dash-card d-2">
               <img src="https://www.flaticon.com/svg/static/icons/svg/1071/1071539.svg" />
               <p>All Participants</p>
             </div>
           </Link>
 
-          <Link className="d-3-title link" to="/participant/create">
+          <Link className="d-title link" to="/participant/create">
             <div className="dash-card d-3">
               <img className="dash-one" src="https://www.flaticon.com/svg/static/icons/svg/2444/2444467.svg" />
               <p>Create Participant</p>
             </div>
           </Link>
 
-          <Link className="d-4-title link" to="/">
+          <Link className="d-title link" to="/">
             <div className="dash-card d-4">
               <img className="dash-home" src="https://www.flaticon.com/svg/static/icons/svg/3596/3596083.svg" />
               <p>Home</p>
