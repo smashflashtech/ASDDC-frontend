@@ -60,28 +60,28 @@ STRETCH: As a used I would like to export search results to an excel spreadsheet
 
 ## Code Snippets
 ### Front-End
-![image-require](ASDDC-frontend/screenshots/p4-code-f-reactimgpath.png)
-![nestedternary](ASDDC-frontend/screenshots/p4-code-f-nestedternary.png)
+![image-require](screenshots/p4-code-f-reactimgpath.png)
+![nestedternary](screenshots/p4-code-f-nestedternary.png)
 ### Back-End
-![participantcrud](ASDDC-frontend/screenshots/p4-code-b-participantcrud.png)
-![jsondata](ASDDC-frontend/screenshots/p4-code-b-jsondata.png)
-![modelexample](ASDDC-frontend/screenshots/p4-code-b-classassociationmodel.png)
-![route](ASDDC-frontend/screenshots/p4-code-b-rroute.png)
-![controller](ASDDC-frontend/screenshots/p4-code-b-rcontroller.png)
+![participantcrud](screenshots/p4-code-b-participantcrud.png)
+![jsondata](screenshots/p4-code-b-jsondata.png)
+![modelexample](screenshots/p4-code-b-classassociationmodel.png)
+![route](screenshots/p4-code-b-rroute.png)
+![controller](screenshots/p4-code-b-rcontroller.png)
 
 ## Credits
 * Brock Whitbread-Cole for the ongoing support and the vote of confidence that I could take on a new stack and pursue this undertaking.
 * Michael Petty for all the essential lesson in python and database design. This project really made all those tidbits come together.
 
-Struggle Bus fam for all the laughs from start to finish, early mornings, and late nights. Everything is better with friends and colleagues. 
-* Jane Cho
-* Brock Molmen
-* Kelsey Whallon
-* Tess Bishop
-* Jamie Cabrigas
-* Lauren Nguyen
-* Lucia Franco
-* Casey Jenkins
+* Struggle Bus fam for all the laughs from start to finish, early mornings, and late nights. Everything is better with friends and colleagues. 
+** Jane Cho
+** Brock Molmen
+** Kelsey Whallon
+** Tess Bishop
+** Jamie Cabrigas
+** Lauren Nguyen
+** Lucia Franco
+** Casey Jenkins
 
 
 
