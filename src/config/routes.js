@@ -52,9 +52,9 @@ export default (
     <Route path='/exitsurvey' component={ExitSurvey} />
     <Route path='/dashboard' component={Dashboard} />
     <Route path='/participant/create' component={CreateParticipant} />
-    <Route path='/participant/edit/:id' component={EditParticipant} />
+    <Route exact path='/particpant/one/:id' component={ParticipantInfo} />
+    <Route exact path='/participant/edit/:id' component={EditParticipant} />
     <Route path='/participant/all' component={AllParticipants} />
-    <Route path='/particpant/:id' component={ParticipantInfo} />
     <Route path='/urlconstructor' component={UrlConstructor} />
     <Route path='/developer' component={Developer} />
   </Switch>
