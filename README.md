@@ -73,7 +73,7 @@ STRETCH: As a used I would like to export search results to an excel spreadsheet
 ## Credits
 * Brock Whitbread-Cole for the ongoing support and the vote of confidence that I could take on a new stack and pursue this undertaking.
 * Michael Petty for all the essential lesson in python and database design. This project really made all those tidbits come together.
-
+* Stack overflow and all its users for the many answers I found deep in the stack.
 * Struggle Bus fam for all the laughs from start to finish, early mornings, and late nights. Everything is better with friends and colleagues. 
 
 ## Future Development
