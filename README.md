@@ -13,6 +13,7 @@ I believe that research in Behavior Analysis can greatly benefit from taking adv
 React
 SqlAlchemy
 Flask
+Postgres
 HTML
 Javascript
 CSS
