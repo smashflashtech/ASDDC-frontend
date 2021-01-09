@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import DeveloperModel from '../models/developer'
 import '../css/developer.css'
 import Feedback from '../components/Feedback'
+import UseFeedback from '../hooks/UseFeedback'
 
 const Developer = () => {
   const [response, setResponse] = useState("")
@@ -40,26 +41,25 @@ const Developer = () => {
   const handleFeedback = (e) => {
     e.preventDefault()
     let selectedValue = e.target.getAttribute("value")
-    feedback(selectedValue)
+    UseFeedback(selectedValue)
   }
-
-  const feedback = (selectedValue) => {
-    let feedback = localStorage.getItem('feedback')
-    if (feedback === "false"){
-      let overlay = document.getElementById('neutral')
-      overlay.style.display = "inline-block"
-      setTimeout(function(){overlay.style.display = "none"}, 3000)
-    } else if (feedback === "true" && selectedValue === "correct"){
-      let overlay = document.getElementById('yay')
-      console.log("show them fireworks")
-      overlay.style.display = "inline-block"
-      setTimeout(function(){overlay.style.display = "none"}, 3000)
-    } else if (feedback === "true" && selectedValue === "incorrect"){
-      let overlay = document.getElementById('nay')
-      overlay.style.display="inline-block"
-      setTimeout(function(){overlay.style.display = "none"}, 3000)
-    }
-  }
+//MAKE A CUSTOM HOOK
+  // const feedback = (selectedValue) => {
+  //   let feedback = localStorage.getItem('feedback')
+  //   if (feedback === "false"){
+  //     let overlay = document.getElementById('neutral')
+  //     overlay.style.display = "inline-block"
+  //     setTimeout(function(){overlay.style.display = "none"}, 3000)
+  //   } else if (feedback === "true" && selectedValue === "correct"){
+  //     let overlay = document.getElementById('yay')
+  //     overlay.style.display = "inline-block"
+  //     setTimeout(function(){overlay.style.display = "none"}, 3000)
+  //   } else if (feedback === "true" && selectedValue === "incorrect"){
+  //     let overlay = document.getElementById('nay')
+  //     overlay.style.display="inline-block"
+  //     setTimeout(function(){overlay.style.display = "none"}, 3000)
+  //   }
+  // }
 
   return (
     <div className="dev-body">
