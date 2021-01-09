@@ -46,14 +46,18 @@ const Developer = () => {
   const feedback = (selectedValue) => {
     let feedback = localStorage.getItem('feedback')
     if (feedback === "false"){
-      console.log("show them grayscreen")
-      console.log("then call closeOverlay after 3 seconds")
+      let overlay = document.getElementById('neutral')
+      overlay.style.display = "inline-block"
+      setTimeout(function(){overlay.style.display = "none"}, 3000)
     } else if (feedback === "true" && selectedValue === "correct"){
+      let overlay = document.getElementById('yay')
       console.log("show them fireworks")
-      console.log("then call closeOverlay after 3 seconds")
+      overlay.style.display = "inline-block"
+      setTimeout(function(){overlay.style.display = "none"}, 3000)
     } else if (feedback === "true" && selectedValue === "incorrect"){
-      console.log("show them blackscreen")
-      console.log("then call closeOverlay after 3 seconds")
+      let overlay = document.getElementById('nay')
+      overlay.style.display="inline-block"
+      setTimeout(function(){overlay.style.display = "none"}, 3000)
     }
   }
 
@@ -166,9 +170,9 @@ const Developer = () => {
           </ul>
         </div>
       </div>
-      <Feedback overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
-      <Feedback overlayClass={"blackScreen"} contentClass={"noShow"} opacity={0}/>
-      <Feedback overlayClass={"grayScreen"} contentClass={"noShow"} opacity={0}/>
+      <Feedback id={"yay"} overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
+      <Feedback id={"nay"} overlayClass={"blackScreen"} contentClass={"noShow"} opacity={0}/>
+      <Feedback id={"neutral"} overlayClass={"grayScreen"} contentClass={"noShow"} opacity={0}/>
 
     </div>
   )

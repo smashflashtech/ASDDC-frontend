@@ -5,7 +5,7 @@ import Confetti from 'react-confetti'
 const Feedback = (props) => {
   // const { width, height } = useWindowSize()
   return (
-    <div className={props.overlayClass}>
+    <div id={props.id} className={props.overlayClass}>
       <div className={props.contentClass}>
         <Confetti opacity={props.opacity}/>
       </div>
