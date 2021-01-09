@@ -16,7 +16,6 @@ const Developer = () => {
 
   useEffect(() => { fetchTest() }, [])
 
-
   const refreshNav = () => {
     if (localStorage.getItem('dev') === null) {
       localStorage.setItem('dev', 'on')
@@ -24,6 +23,37 @@ const Developer = () => {
     } else {
       localStorage.clear()
       window.location.reload()
+    }
+  }
+
+  const resetLocalStorage = () =>{
+    localStorage.clear()
+  }
+
+  const setFeedback =() => {
+    localStorage.setItem('feedback', 'true')
+  }
+  const setNoFeedback =() => {
+    localStorage.setItem('feedback', 'false')
+  }
+
+  const handleFeedback = (e) => {
+    e.preventDefault()
+    let selectedValue = e.target.getAttribute("value")
+    feedback(selectedValue)
+  }
+
+  const feedback = (selectedValue) => {
+    let feedback = localStorage.getItem('feedback')
+    if (feedback === "false"){
+      console.log("show them grayscreen")
+      console.log("then call closeOverlay after 3 seconds")
+    } else if (feedback === "true" && selectedValue === "correct"){
+      console.log("show them fireworks")
+      console.log("then call closeOverlay after 3 seconds")
+    } else if (feedback === "true" && selectedValue === "incorrect"){
+      console.log("show them blackscreen")
+      console.log("then call closeOverlay after 3 seconds")
     }
   }
 
@@ -86,6 +116,14 @@ const Developer = () => {
             <li><Link className="incon dev-link" to="/psvotps/1">Psvot PS</Link></li>
             <li><Link className="incon dev-link" to="/npst/1">Novel PST</Link></li>
             <li><Link className="incon dev-link" to="/exitsurvey">ExitSurvey</Link></li>
+          </ul>
+          <h3 className=" oswald">Feedback Tests</h3>
+          <ul className="dev">
+            <li><Link className="incon dev-link" onClick={resetLocalStorage}>Reset Local Storage</Link></li>
+            <li><Link className="incon dev-link" onClick={setFeedback}>Set Feedback 1</Link></li>
+            <li><Link className="incon dev-link" onClick={setNoFeedback}>Set No Feedback</Link></li>
+            <li><Link className="incon dev-link" onClick={handleFeedback} value="correct">Correct</Link></li>
+            <li><Link className="incon dev-link" onClick={handleFeedback} value="incorrect">Incorrect</Link></li>
           </ul>
         </div>
         <div className="dev-m-right">
