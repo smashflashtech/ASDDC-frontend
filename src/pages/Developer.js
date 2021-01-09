@@ -128,9 +128,9 @@ const Developer = () => {
           </ul>
         </div>
       </div>
-      <Feedback overlayClass={"confetti"} contentClass={"show"}/>
-      <Feedback overlayClass={"blackScreen"} contentClass={"noShow"}/>
-      <Feedback overlayClass={"grayScreen"} contentClass={"noShow"}/>
+      <Feedback overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
+      <Feedback overlayClass={"blackScreen"} contentClass={"noShow"} opacity={0}/>
+      <Feedback overlayClass={"grayScreen"} contentClass={"noShow"} opacity={0}/>
 
     </div>
   )
