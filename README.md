@@ -10,13 +10,16 @@ https://github.com/smashflashtech/ASDDC-backend
 I believe that research in Behavior Analysis can greatly benefit from taking advantage of the technology that is available for use in research. Not only does it increase the speed an accuracy of the research itself, but it also informs us of how technology can be use to improve the everyday lives of those being studied. The thing about creating software for a study is that if you don't know how to do it yourself, you have to be able to communicate your needs to a web developer and so so clearly--hoping nothing gets lost in translation (and that what you measure is actually correct). I was and am motivated to learn about the key requirements in communicating effectively and the details of what is really required to build an application. With that knowledge I can go on to create apps for future research and help others bridge the gap between researchers and developers.
 
 ## Technologies Used
-React
-SqlAlchemy
-Flask
-Postgres
-HTML
-Javascript
-CSS
+### Front-End
+* React
+* HTML
+* Javascript
+* CSS
+### Back-End
+* Python
+* SqlAlchemy
+* Flask
+* PostgresSQL
 
 ##### Screenshot(s) 
 ![Home](/screenshots/01-home.png)
