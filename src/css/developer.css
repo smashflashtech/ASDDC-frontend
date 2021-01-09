@@ -4,7 +4,8 @@
   padding: 5%;
   background-color: #CDD1DB;
   background-size: cover;
-  position: fixed; 
+  /* position: fixed;  */
+  position: relative;
   overflow-y: scroll;
 }
 

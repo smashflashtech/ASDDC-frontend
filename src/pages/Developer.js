@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import DeveloperModel from '../models/developer'
 import '../css/developer.css'
+import Feedback from '../components/Feedback'
 
 const Developer = () => {
   const [response, setResponse] = useState("")
@@ -58,37 +59,37 @@ const Developer = () => {
         </div>
       </div>
       <div className="dev-middle-container">
-      <div className="dev-m-left">
-        <h3 className=" oswald">Conditions</h3>
-        <ul className="dev">
-          <li><Link className="incon dev-link" to="/dct/pre/1">DCT-pre1</Link></li>
-          <li><Link className="incon dev-link" to="/dct/pre/2">DCT-pre2</Link></li>
-          <li><Link className="incon dev-link" to="/dct/pre/3">DCT-pre3</Link></li>
-          <li><Link className="incon dev-link" to="/dct/post/1">DCT-post1</Link></li>
-          <li><Link className="incon dev-link" to="/dct/post/2">DCT-post2</Link></li>
-          <li><Link className="incon dev-link" to="/dct/post/3">DCT-post3</Link></li>
-          <li><Link className="incon dev-link" to="/tp/pre">TactProbe-pre</Link></li>
-          <li><Link className="incon dev-link" to="/tp/post">TactProbe-post</Link></li>
-          <li><Link className="incon dev-link" to="/tsf/pre/1">Tsf-pre</Link></li>
-          <li><Link className="incon dev-link" to="/tsf/post/1">Tsf-post1</Link></li>
-          <li><Link className="incon dev-link" to="/tsf/post/2">Tsf-post2</Link></li>
-          <li><Link className="incon dev-link" to="/tsf/post/3">Tsf-post3</Link></li>
-          <li><Link className="incon dev-link" to="/amts/1/true">Arb MTS - TRUE (FB)</Link></li>
-          <li><Link className="incon dev-link" to="/amts/1/false">Arb MTS - FALSE (No FB)</Link></li>
-          <li><Link className="incon dev-link" to="/tat/1">Tat</Link></li>
-          <li><Link className="incon dev-link" to="/spair/1">SPair</Link></li>
-          <li><Link className="incon dev-link" to="/sdisc/1">SDisc</Link></li>
-          <li><Link className="incon dev-link" to="/evott/1">Evot T</Link></li>
-          <li><Link className="incon dev-link" to="/evotiv/1">Evot IV</Link></li>
-          <li><Link className="incon dev-link" to="/psvott/1">Psvot T</Link></li>
-          <li><Link className="incon dev-link" to="/psvotiv/1">Psvot IV</Link></li>
-          <li><Link className="incon dev-link" to="/psvotps/1">Psvot PS</Link></li>
-          <li><Link className="incon dev-link" to="/npst/1">Novel PST</Link></li>
-          <li><Link className="incon dev-link" to="/exitsurvey">ExitSurvey</Link></li>
-        </ul>
+        <div className="dev-m-left">
+          <h3 className=" oswald">Conditions</h3>
+          <ul className="dev">
+            <li><Link className="incon dev-link" to="/dct/pre/1">DCT-pre1</Link></li>
+            <li><Link className="incon dev-link" to="/dct/pre/2">DCT-pre2</Link></li>
+            <li><Link className="incon dev-link" to="/dct/pre/3">DCT-pre3</Link></li>
+            <li><Link className="incon dev-link" to="/dct/post/1">DCT-post1</Link></li>
+            <li><Link className="incon dev-link" to="/dct/post/2">DCT-post2</Link></li>
+            <li><Link className="incon dev-link" to="/dct/post/3">DCT-post3</Link></li>
+            <li><Link className="incon dev-link" to="/tp/pre">TactProbe-pre</Link></li>
+            <li><Link className="incon dev-link" to="/tp/post">TactProbe-post</Link></li>
+            <li><Link className="incon dev-link" to="/tsf/pre/1">Tsf-pre</Link></li>
+            <li><Link className="incon dev-link" to="/tsf/post/1">Tsf-post1</Link></li>
+            <li><Link className="incon dev-link" to="/tsf/post/2">Tsf-post2</Link></li>
+            <li><Link className="incon dev-link" to="/tsf/post/3">Tsf-post3</Link></li>
+            <li><Link className="incon dev-link" to="/amts/1/true">Arb MTS - TRUE (FB)</Link></li>
+            <li><Link className="incon dev-link" to="/amts/1/false">Arb MTS - FALSE (No FB)</Link></li>
+            <li><Link className="incon dev-link" to="/tat/1">Tat</Link></li>
+            <li><Link className="incon dev-link" to="/spair/1">SPair</Link></li>
+            <li><Link className="incon dev-link" to="/sdisc/1">SDisc</Link></li>
+            <li><Link className="incon dev-link" to="/evott/1">Evot T</Link></li>
+            <li><Link className="incon dev-link" to="/evotiv/1">Evot IV</Link></li>
+            <li><Link className="incon dev-link" to="/psvott/1">Psvot T</Link></li>
+            <li><Link className="incon dev-link" to="/psvotiv/1">Psvot IV</Link></li>
+            <li><Link className="incon dev-link" to="/psvotps/1">Psvot PS</Link></li>
+            <li><Link className="incon dev-link" to="/npst/1">Novel PST</Link></li>
+            <li><Link className="incon dev-link" to="/exitsurvey">ExitSurvey</Link></li>
+          </ul>
         </div>
         <div className="dev-m-right">
-        <h3 className="oswald">Non-Arbitrary MTS</h3>
+          <h3 className="oswald">Non-Arbitrary MTS</h3>
           <ul className="dev home-list">
             <li><Link className="incon dev-link" to="/namts/101/1">NAMTS - SET A</Link></li>
             <li><Link className="incon dev-link" to="/namts/102/1">NAMTS - SET B</Link></li>
@@ -106,27 +107,31 @@ const Developer = () => {
             <li><Link className="incon dev-link" to="/namts/114/1">NAMTS - SET N</Link></li>
             <li><Link className="incon dev-link" to="/namts/115/1">NAMTS - SET O</Link></li>
           </ul>
-    
-      <h3 className="oswald">Instructions:</h3>
-      <ul className="dev home-list">
-          <li><Link className="incon dev-link" to="/instructions/amts/Z">amts</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/dct/pre">dct-pre - block 1</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/dct/post">dct-post - block 1</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/evotiv/Z">evotiv</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/evott/Z">evott</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/namts/101">namts - set A - block 1</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/npst/Z">npst</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/psvotiv/Z">psvotiv</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/psvotps/Z">psvotps</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/psvott/Z">psvott</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/sdisc/Z">sdisc</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/spair/Z">spair</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/tat/Z">tat</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/tp/Z">tp</Link></li>
-          <li><Link className="incon dev-link" to="/instructions/tsf/Z">tsf</Link></li>
-        </ul>
+
+          <h3 className="oswald">Instructions:</h3>
+          <ul className="dev home-list">
+            <li><Link className="incon dev-link" to="/instructions/amts/Z">amts</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/dct/pre">dct-pre - block 1</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/dct/post">dct-post - block 1</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/evotiv/Z">evotiv</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/evott/Z">evott</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/namts/101">namts - set A - block 1</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/npst/Z">npst</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/psvotiv/Z">psvotiv</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/psvotps/Z">psvotps</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/psvott/Z">psvott</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/sdisc/Z">sdisc</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/spair/Z">spair</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/tat/Z">tat</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/tp/Z">tp</Link></li>
+            <li><Link className="incon dev-link" to="/instructions/tsf/Z">tsf</Link></li>
+          </ul>
+        </div>
       </div>
-      </div>
+      <Feedback overlayClass={"confetti"} contentClass={"show"}/>
+      <Feedback overlayClass={"blackScreen"} contentClass={"noShow"}/>
+      <Feedback overlayClass={"grayScreen"} contentClass={"noShow"}/>
+
     </div>
   )
 }
