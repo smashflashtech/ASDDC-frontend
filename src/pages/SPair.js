@@ -14,6 +14,7 @@ const SPair = (props) => {
   const [criteriaRequired] = useState("true")
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
+  localStorage.setItem('feedback', 'false')
 
   const fetchStimuli = () => {
     SpModel.stimuli().then((data) => {
