@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 //Pages
 import Developer from "../pages/Developer";
 import Dashboard from "../pages/Dashboard";

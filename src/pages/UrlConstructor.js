@@ -15,7 +15,7 @@ const UrlConstructor = () => {
       <p>⬅️<Link className="uc-link" to={'/dashboard'}> Back to Dashboard</Link></p>
       <div className="uc-body">
       <div className="uc-img-container">
-        <img className="uc-img" src="https://www.flaticon.com/svg/static/icons/svg/3893/3893146.svg"/>
+        <img className="uc-img" src="https://www.flaticon.com/svg/static/icons/svg/3893/3893146.svg" alt="Construct a URL pattern"/>
       </div>
         <div className="uc-container">
           <div className="uc-top">

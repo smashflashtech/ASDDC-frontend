@@ -68,13 +68,11 @@ const Dct = (props) => {
     }
   }
 
-
   useEffect(() => { fetchStimuli() }, [])
 
   //THIS IS LIKELY GOING TO BE PASS DOWN TO COMPONENTS WHEN YOU WORK IT OUT
   return (
     <div>
-      {/* { console.log(trials)} */}
       { trials.length !== undefined ?
         <SplitScreen3
           os={os}

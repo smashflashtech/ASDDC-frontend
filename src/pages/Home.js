@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import '../css/home.css'
 
@@ -20,7 +20,7 @@ const Home = () => {
             <div className="h-card">
               <Link className="h-link oswald" to="/developer"  >
                 <div className="h-title">
-                  <img className="h-dev" src="https://www.flaticon.com/svg/static/icons/svg/2890/2890354.svg" />
+                  <img className="h-dev" src="https://www.flaticon.com/svg/static/icons/svg/2890/2890354.svg" alt="I'm a Developer"/>
                   <p className="oswald">I'm a developer</p>
                 </div>
               </Link>
@@ -28,7 +28,7 @@ const Home = () => {
 
             <div className="h-card">
               <Link className="h-link oswald" to="/dashboard" >
-                <img className="h-re" src="https://www.flaticon.com/svg/static/icons/svg/3063/3063738.svg" />
+                <img className="h-re" src="https://www.flaticon.com/svg/static/icons/svg/3063/3063738.svg" alt="I'm a Researcher"/>
                 <p className="oswald">I'm a researcher</p>
                 <div className="h-title">
                 </div>

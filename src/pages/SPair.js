@@ -13,7 +13,7 @@ const SPair = (props) => {
   const [criteria, setCriteria] = useState()
   const [criteriaRequired] = useState("true")
   const [metUrl, setMetUrl] = useState()
-  const [notMetUrl, setNotMetUrl] = useState()
+  const [notMetUrl] = useState('null')
   localStorage.setItem('feedback', 'false')
 
   const fetchStimuli = () => {
