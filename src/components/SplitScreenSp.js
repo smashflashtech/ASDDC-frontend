@@ -58,10 +58,7 @@ const SplitScreenSp = (props) => {
       color_size: e.target.getAttribute("alt"),
       block_code: blockCode,
       feedback: Boolean(props.feedback)
-    }).then(data => {
-      console.log("Competed~~~~~~~~~~~~~!!!", data)
-    })
-
+    }).then(data => {})
   }
 
 
