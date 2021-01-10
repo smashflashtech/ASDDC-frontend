@@ -13,6 +13,7 @@ const Namts = (props) => {
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
   const [criteriaRequired] = useState("true")
+  localStorage.setItem('feedback', 'true')
 
   const fetchStimuli = () => {
     NamtsModel.stimuli(set).then((data) => {
