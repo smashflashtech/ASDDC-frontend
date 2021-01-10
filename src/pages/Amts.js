@@ -11,7 +11,7 @@ const Amts = (props) => {
   const [maxTrials, setMaxTrials] = useState()
   const [criteria, setCriteria] = useState()
   const [criteriaRequired] = useState("true")
-
+  localStorage.setItem('feedback', props.match.params.feedback)
 
   const fetchStimuli = () => {
     AmtsModel.stimuli().then((data) => {
