@@ -36,13 +36,10 @@ const SplitScreenSp = (props) => {
     let selectedValue = e.target.getAttribute('value')
     setValue(selectedValue)
     if (color === "purple") {
-      console.log("YESSS")
       props.setCount(props.count + 5)
     } else if (color === "orange") {
-      console.log("NOOO")
       props.setCount(props.count - 5)
     }
-    console.log(props.count)
     //resets the os-sample stimulus, clicks to 0
     document.getElementById('os-sample').setAttribute('src', props.os)
     document.getElementById('os-sample').setAttribute('alt', 'os-sample')
