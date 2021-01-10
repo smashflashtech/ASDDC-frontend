@@ -14,7 +14,8 @@ const Dct = (props) => {
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
   const [criteriaRequired] = useState("false")
-
+  localStorage.setItem('feedback', 'false')
+  
   const fetchStimuli = () => {
     DctModel.stimuli().then((data) => {
       console.log(data.dct)
