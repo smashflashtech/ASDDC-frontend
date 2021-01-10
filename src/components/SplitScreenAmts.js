@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "../css/splitScreenAmts.css";
 import '../css/button.css'
-import AmtsModel from '../models/amts';
 import GResponseModel from '../models/gResponse'
+import Feedback from '../components/Feedback'
+import UseFeedback from '../hooks/UseFeedback'
 
 const SplitScreenAmts = (props) => {
-  console.log("are we in bidness", props.trials)
-  console.log("HERES THE CRITERIA", props.criteria)
-
   const [participant_id] = useState(localStorage.getItem('participant_id'))
   const [sClick, setSClick] = useState(0)
   const [i, setI] = useState(0)
@@ -25,8 +23,6 @@ const SplitScreenAmts = (props) => {
   const [notMetUrl, setNotMetUrl] = useState()
 
   const constructUrl = () => {
-    console.log("what is the local storage value", localStorage.getItem(`${props.phase}-${props.feedback}-2count`))
-    console.log("what is props.feedback", props.feedback)
     if (parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) < 2 && props.feedback === 'true') {
       setMetUrl(`/amts/${props.block + 1}/true`)
       setNotMetUrl(`/amts/${props.block + 1}/true`)
@@ -75,12 +71,10 @@ const SplitScreenAmts = (props) => {
     //checks to see if URL should be constructed
     if (trial === props.trials.length) {
       if (corrects >= criteria - 1) {
-        console.log("Hello?")
         localStorage.setItem(`${props.phase}-${props.feedback}-2count`, parseInt(localStorage.getItem(`${props.phase}-${props.feedback}-2count`)) + 1)
       }
       constructUrl()
     }
-    console.log("Here I AM !")
     GResponseModel.create(trialCode ,{
       participant_id: participant_id,
       position: e.target.getAttribute("class"),
@@ -89,9 +83,9 @@ const SplitScreenAmts = (props) => {
       block_code: blockCode,
       feedback: Boolean(props.feedback)
     }).then(data => {
-      console.log("Competed~~~~~~~~~~~~~!!!", data)
     })
 
+    UseFeedback(selectedValue)
   }
 
   return (
@@ -119,10 +113,13 @@ const SplitScreenAmts = (props) => {
             : trial > props.maxTrials && corrects < criteria ?
               <Link id="link-criteria-notmet" onClick={() => { window.location.href = notMetUrl }}><button type="button" id="btn" className="btn">Next Task</button></Link>
               :
-              console.log("sucka")
+              <></>
           }
         </div>
       </div>
+      <Feedback id={"yay"} overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
+      <Feedback id={"nay"} overlayClass={"blackScreen"} contentClass={"noShow"} opacity={0}/>
+      <Feedback id={"neutral"} overlayClass={"grayScreen"} contentClass={"noShow"} opacity={0}/>
     </div>
   )
 }
