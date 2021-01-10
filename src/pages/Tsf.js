@@ -16,7 +16,6 @@ const Tsf = (props) => {
 
   const fetchStimuli = () => {
     TsfModel.stimuli().then((data) => {
-      console.log(data.tsf)
       const tempOs = require(`../stimuli/${data.tsf.observingStim.imagePath}`).default
       setOs(tempOs)
       setCriteria(data.tsf.trials.length)
