@@ -10,7 +10,6 @@ const Developer = () => {
 
   const fetchTest = () => {
     DeveloperModel.test().then((testData) => {
-      console.log(testData.message.info)
       setResponse(testData.message.butReally)
     })
   }
