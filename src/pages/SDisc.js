@@ -13,7 +13,7 @@ const SDisc = (props) => {
   const [criteriaRequired] = useState("true")
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()
-
+  localStorage.setItem('feedback', 'false')
   const fetchStimuli = () => {
     SdModel.stimuli().then((data) => {
       console.log(data.sd)
