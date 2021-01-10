@@ -12,7 +12,7 @@ const Tsf = (props) => {
   const [criteria, setCriteria] = useState()
   const [criteriaRequired] = useState("false")
   const [metUrl, setMetUrl] = useState()
-
+  localStorage.setItem('feedback', 'false')
 
   const fetchStimuli = () => {
     TsfModel.stimuli().then((data) => {
