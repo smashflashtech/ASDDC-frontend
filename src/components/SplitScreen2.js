@@ -14,10 +14,10 @@ const SplitScreen2 = (props) => {
   const [corrects, setCorrects] = useState(0)
   const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
-  const [color, setColor] = useState()
-  const [value, setValue] = useState()
-  const [position, setPosition] = useState()
-
+  const [color, setColor] = useState() // These are here for dev tracking
+  const [value, setValue] = useState() // These are here for dev tracking
+  const [position, setPosition] = useState() // These are here for dev tracking
+  console.log('The ', value, 'item selected was ', color, ' located on the ', position, ' position.' )  // These are here for dev tracking
 
 
   const handleSampleClick = (e) => {
@@ -100,7 +100,7 @@ const SplitScreen2 = (props) => {
           }
         </div>
       </div>
-      <Feedback id={"yay"} overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
+            <Feedback id={"yay"} overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
       <Feedback id={"nay"} overlayClass={"blackScreen"} contentClass={"noShow"} opacity={0}/>
       <Feedback id={"neutral"} overlayClass={"grayScreen"} contentClass={"noShow"} opacity={0}/>
     </div>

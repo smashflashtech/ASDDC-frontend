@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import '../css/allparticipants.css'
 
@@ -15,7 +15,7 @@ const ParticipantCard = (props) => {
           <div key={index} className="p-card">
             <h3>Participant {participant.id}</h3>
             <div className="ap-pic-container">
-              <img className="ap-pic" src="https://www.flaticon.com/svg/static/icons/svg/2368/2368378.svg" />
+              <img className="ap-pic" src="https://www.flaticon.com/svg/static/icons/svg/2368/2368378.svg" alt={`Participant ${index}`}/>
             </div>
             <div className="ap-details">
               <p><span className="oswald">Group ID: </span><span className="incon">{participant.group_id}</span></p>

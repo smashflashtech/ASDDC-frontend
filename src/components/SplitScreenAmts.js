@@ -15,9 +15,10 @@ const SplitScreenAmts = (props) => {
   const [criteria, setCriteria] = useState()
   const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
-  const [color, setColor] = useState()
-  const [value, setValue] = useState()
-  const [position, setPosition] = useState()
+  const [color, setColor] = useState() // These are here for dev tracking
+  const [value, setValue] = useState() // These are here for dev tracking
+  const [position, setPosition] = useState() // These are here for dev tracking
+  console.log('The ', value, 'item selected was ', color, ' located on the ', position, ' position.' )  // These are here for dev tracking
 
   const [metUrl, setMetUrl] = useState()
   const [notMetUrl, setNotMetUrl] = useState()

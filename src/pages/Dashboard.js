@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import '../css/dashboard.css'
 
@@ -20,21 +20,21 @@ const Dashboard = () => {
 
           <Link className="d-title link" to="/participant/all">
             <div className="dash-card d-2">
-              <img className="dash-all" src="https://www.flaticon.com/svg/static/icons/svg/1071/1071539.svg" />
+              <img className="dash-all" src="https://www.flaticon.com/svg/static/icons/svg/1071/1071539.svg" alt="All Participants" />
               <p>All Participants</p>
             </div>
           </Link>
 
           <Link className="d-title link" to="/participant/create">
             <div className="dash-card d-3">
-              <img className="dash-one" src="https://www.flaticon.com/svg/static/icons/svg/2444/2444467.svg" />
+              <img className="dash-one" src="https://www.flaticon.com/svg/static/icons/svg/2444/2444467.svg" alt="Create Participant" />
               <p>Create Participant</p>
             </div>
           </Link>
 
           <Link className="d-title link" to="/">
             <div className="dash-card d-4">
-              <img className="dash-home" src="https://www.flaticon.com/svg/static/icons/svg/3596/3596083.svg" />
+              <img className="dash-home" src="https://www.flaticon.com/svg/static/icons/svg/3596/3596083.svg" alt="Go Back to Home" />
               <p>Home</p>
             </div>
           </Link>

@@ -10,8 +10,9 @@ const SplitScreenSp = (props) => {
   const [trial, setTrial] = useState(1) //tracks what trial we're on and will be used to construct block code  const [blockCode, setBlockCode] = useState()
   const [trialCode, setTrialCode] = useState()
   const [blockCode, setBlockCode] = useState()
-  const [color, setColor] = useState()
-  const [value, setValue] = useState()
+  const [color, setColor] = useState() // These are here for dev tracking
+  const [value, setValue] = useState() // These are here for dev tracking
+  console.log('The ', value, 'item selected was ', color, '.' )  // These are here for dev tracking
   
   const handleSampleClick = (e) => {
     e.preventDefault()
