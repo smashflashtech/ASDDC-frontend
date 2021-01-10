@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "../css/splitScreen2.css";
 import GResponseModel from '../models/gResponse'
-
-
+import Feedback from '../components/Feedback'
+import UseFeedback from '../hooks/UseFeedback'
 
 const SplitScreen2 = (props) => {
   const [participant_id] = useState(localStorage.getItem('participant_id'))
@@ -63,9 +63,9 @@ const SplitScreen2 = (props) => {
       color_size: e.target.getAttribute("alt"),
       block_code: blockCode,
       feedback: Boolean(props.feedback)
-    }).then(data => {
-      console.log("Competed~~~~~~~~~~~~~!!!", data)
-    })
+    }).then(data => {})
+
+    UseFeedback(selectedValue)
   }
 
   return (
@@ -100,6 +100,9 @@ const SplitScreen2 = (props) => {
           }
         </div>
       </div>
+      <Feedback id={"yay"} overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
+      <Feedback id={"nay"} overlayClass={"blackScreen"} contentClass={"noShow"} opacity={0}/>
+      <Feedback id={"neutral"} overlayClass={"grayScreen"} contentClass={"noShow"} opacity={0}/>
     </div>
   )
 }
