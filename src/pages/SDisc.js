@@ -16,7 +16,6 @@ const SDisc = (props) => {
   localStorage.setItem('feedback', 'false')
   const fetchStimuli = () => {
     SdModel.stimuli().then((data) => {
-      console.log(data.sd)
       const tempOs = require(`../stimuli/${data.sd.observingStim.imagePath}`).default
       setOs(tempOs)
       setCriteria(data.sd.trials.length)
