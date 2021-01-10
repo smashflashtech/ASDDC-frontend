@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import "../css/splitScreen3.css";
 import '../css/button.css'
 import GResponseModel from '../models/gResponse'
+import UseFeedback from '../hooks/UseFeedback';
+import Feedback from '../components/Feedback'
 
 const SplitScreen3 = (props) => {
   //Logic Data
@@ -55,6 +57,8 @@ const SplitScreen3 = (props) => {
       block_code: blockCode,
       feedback: Boolean(props.feedback)
     }).then(data => { })
+
+    UseFeedback(selectedValue)
   }
 
   return (
@@ -96,6 +100,9 @@ const SplitScreen3 = (props) => {
           }
         </div>
       </div>
+      <Feedback id={"yay"} overlayClass={"confetti"} contentClass={"show"} opacity={1}/>
+      <Feedback id={"nay"} overlayClass={"blackScreen"} contentClass={"noShow"} opacity={0}/>
+      <Feedback id={"neutral"} overlayClass={"grayScreen"} contentClass={"noShow"} opacity={0}/>
     </div>
   )
 }
