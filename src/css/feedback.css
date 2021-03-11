@@ -29,5 +29,5 @@ div.grayScreen{
   z-index: 100;
   height: 100vh;
   min-width: 100vw;
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
 }
