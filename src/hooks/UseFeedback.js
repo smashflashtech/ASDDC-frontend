@@ -15,7 +15,6 @@ const UseFeedback = (selectedValue) => {
     overlay.style.display = "inline-block"
     let timerId = setTimeout(function () { overlay.style.display = "none"; clearTimeout(timerId) }, 2000)
   }
-  // }
 
   return (<></>)
 }
